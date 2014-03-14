@@ -11,7 +11,7 @@
   <meta name="robots" content="noindex, nofollow" /> 
   <?php } ?>
 
-  <title>BYU-Idaho Radio</title>
+  <title>BYU-Idaho Speeches</title>
 
   <!-- Radio Station Meta -->
   <meta name="description" content="BYU-Idaho Radio provides news, campus updates, devotionals, and inspirational music to listeners worldwide.">
