@@ -19,9 +19,12 @@ Version: 2.1
 
 /*/////////////// GENERAL //////////////// */
 html, body {
-	
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+h1, h2, h3, h4 ,h5 ,h6 {
+	font-family: Arial, Helvetica, sans-serif;
+}
 /*/////////////// HEADERS //////////////*/
 header {
 
@@ -78,7 +81,6 @@ body {
 
 
 div.col-xs-12.col-sm-8 {
-	border-right: 2px solid @byui-blue; 
 	padding-right:20px;
 	h2 {
 		font-family: Arial, Helvetica, sans-serif;
@@ -87,15 +89,24 @@ div.col-xs-12.col-sm-8 {
 
 div.entry {
 	clear:both;
-	.speaker-info {
+	.event-description {
 		padding-top:10px;
-		width:75%;
-		float:left;
+		margin-bottom: 25px;
+		h2,h3,h4 {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		h2 {
+			font-size:1.5em;
+			margin-bottom:0;
+			font-weight: bold;
+		}
 		h3 {
+			font-size:1.25em;
 			margin-top:0;
 			margin-bottom:5px;
 		}
 		h4 {
+			font-size:1.1em;
 			margin-top:0;
 			font-style: italic;
 		}
@@ -107,7 +118,9 @@ div.entry {
 		float:right;
 		text-align: right;
 	}
-
+	#discussion {
+		display:none;
+	}
 }
 
 div.event-featured {
@@ -118,46 +131,74 @@ div.event-featured {
 		display:none;
 	}
 	.additional-featured {
-		padding-bottom:20px;
+		border: 1px solid @byui-blue;
+		margin-top:20px;
 		.custom-box {
-			width:33.33333%;
+			border-right:1px solid @byui-blue;
+			width:25%;
 			display:block;
 			float:left;
 			padding-right:2%;
-			a {
-				display:block;
-				color:#000;
+			.left {
+				text-align: left;
+				float:left;
+			}
+			&.last {
+				border:none;
+			}
+			&:hover {
+				background-color:@byui-blue;
+				h3 {
+					color:#fff;
+				}
 			}
 			h3 {
+				margin:0;
 				color:@byui-blue;
 				font-size:18px;
-				margin-bottom:5px;
+				line-height: 60px;
 			}
 			&:after {
 				clear:both;
 			}
 			.feat_icon {
-				width: 40px;
+				padding-left:15px;
+				height:60px;
+				.paddingTopBot(10px);
+				width: auto;
 				float: left;
-				padding-top: 22px;
-				padding-bottom: 30px;
-				margin-right: 15px;
 			}
 		}
 	}
-
-	border-bottom: 2px solid @byui-blue;
+	.addition-featured-more {
+		clear:both;
+		div {
+			display:none;
+			ul {
+				margin-top:10px;
+				list-style-type:none;
+			}
+		}
+		div:first-child {
+			display:block;
+		}
+	}
 }
 /*///////////// SIDEBARS ////////*/
 aside {
 	&.hidden-xs.hidden-sm.col-sm-4 {
-		// margin-left:18px;
-		// box-style:border-box;
+		border: 2px solid @byui-blue;
 	}
 	.sidebar-inner {
 		padding-bottom:20px;
-		border-bottom:2px solid @byui-blue;
 		h2 {
+			margin-top:0;
+			margin-bottom: 20px;
+			.marginLeftRight(-15px);
+			.paddingLeftRight(15px);
+			.paddingTopBot(10px);
+			color:#ffffff;
+			background-color:@byui-blue;
 			font-family: Arial, Helvetica, sans-serif;
 			font-size: 23px;
 			text-transform: uppercase;
@@ -177,11 +218,68 @@ aside {
 				content: '"';
 			}
 		}
-		&.social-sharing {
-			img {
-				width:29.33333333%;
-				height: auto;
-				.marginLeftRight(1.5%);
+		&.event-details {
+			ul {
+				list-style-type: none;
+				li {
+					margin-bottom:15px;
+					span {
+						color: @byui-blue;
+						font-weight: bold;
+						text-transform: uppercase;
+						font-size:1.1em;
+					}
+					&:last-child {
+						font-style: italic;
+						ul {
+							margin-top:10px;
+							font-style: normal;
+							li {
+								margin-bottom: 0;
+								&:last-child {
+									font-style: normal;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.speaker-bio {
+			.sidebar-speaker-image {
+				float:left;
+				width:50%;
+				img {
+					height:auto;
+				}
+			}
+			.sidebar-speaker-info {
+				width:50%;
+				float:right;
+				padding-left:3%;
+				h3 {
+					margin-top:0;
+					font-size:1em;
+					font-weight: bold;
+					margin-bottom:5px;
+				}
+				p.sidebar-speaker-meta {
+					font-size:0.9em;
+					margin-top:5px;
+					position:relative;
+				}
+				.read-more {
+					position: absolute;
+					bottom:-15px;
+					right:10px;
+					background-color:#000;
+					color:#fff;
+					padding:5px;
+					border-radius:5px;
+					&:after {
+						content:" >";
+					}
+				}
 			}
 		}
 		&.discussion {
@@ -192,6 +290,12 @@ aside {
 			}
 		}
 		&.sidebar-featured-speeches {
+			h3 {
+				text-transform: uppercase;
+				font-style: italic;
+			}
+			hr {
+			}
 			p {
 				margin-bottom:0;
 			}
@@ -202,13 +306,11 @@ aside {
 	}
 }
 
-.sidebar-speaker-meta {
-    margin-top:20px;
-}
+
 
 /*////////// FOOTER ///////////*/
 footer {
-	
+
 }
 
 /*/////////////// MIX-INS //////////////// */

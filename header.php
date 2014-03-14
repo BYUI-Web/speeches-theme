@@ -64,6 +64,19 @@
 </head>
 
 <body id="base_template"><!-- Body tag must have page template name in it to inherit template-specific css rules -->
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e8f53ed7638d457"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 5
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
  <header role="banner" class="global-header">
   <nav role="navigation" class="site-navigation navbar navbar-inverse">
     <div class="container">
