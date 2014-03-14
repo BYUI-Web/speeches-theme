@@ -1,0 +1,246 @@
+/*   
+Theme Name: BYU-Idaho Radio
+Theme URI: byuidahoradio.org
+Description: BYU-Idaho Radio's Updated theme framework. Updated Dec 9, 2013
+Author: Josh Crowther
+Author URI: joshcrowther.com
+Version: 2.1
+*/
+
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.group { display: inline-block; clear: both; }
+/* start commented backslash hack \*/ * html .group { height: 1%; } .group { display: block; } /* close commented backslash hack */
+
+/*///// Bootstrap Transition Points ///////*/
+@screen-sm-min:768px;
+@screen-md-min:992px;
+@screen-lg-min:1200px;
+@byui-blue:#056cb6;
+
+/*/////////////// GENERAL //////////////// */
+html, body {
+	
+}
+
+/*/////////////// HEADERS //////////////*/
+header {
+
+}
+
+.header-logo {
+	border-bottom:5px solid #CCC;
+	margin-bottom:10px;
+}
+
+/*////////////// NAV ////////////*/
+nav {
+	&.navbar.navbar-default.custom-nav {
+		background-color:transparent;
+		border:none;
+		.navbar-brand {
+			color:@byui-blue;
+		}
+		.navbar-collapse {
+			padding-left:0;
+		}
+	}
+	&.navbar-default.custom-nav .navbar-nav > li > a {
+		color:@byui-blue;
+		&:hover {
+			color:lighten(@byui-blue,30%);
+		}
+	}
+	&.navbar-default.custom-nav .navbar-nav > .active > a {
+		background-color:#ffffff;
+		color:lighten(@byui-blue,30%);
+	}
+}
+.content-wrap {
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+		@media only screen and (min-width:@screen-sm-min) {
+			display: block;
+		}    
+	}
+}
+
+/*//////////// GENERAL CONTENT /////////////*/
+body {
+
+}
+
+.content {
+	padding:0 15px;
+}
+
+.content-wrap {
+	margin-top:20px;
+}
+
+
+div.col-xs-12.col-sm-8 {
+	border-right: 2px solid @byui-blue; 
+	padding-right:20px;
+	h2 {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+}
+
+div.entry {
+	clear:both;
+	.speaker-info {
+		padding-top:10px;
+		width:75%;
+		float:left;
+		h3 {
+			margin-top:0;
+			margin-bottom:5px;
+		}
+		h4 {
+			margin-top:0;
+			font-style: italic;
+		}
+	}
+	.event-meta {
+		padding-top:10px;
+		padding-right:5px;
+		width:25%;
+		float:right;
+		text-align: right;
+	}
+
+}
+
+div.event-featured {
+	object {
+		width:100% !important;
+	}
+	#audio-player {
+		display:none;
+	}
+	.additional-featured {
+		padding-bottom:20px;
+		.custom-box {
+			width:33.33333%;
+			display:block;
+			float:left;
+			padding-right:2%;
+			a {
+				display:block;
+				color:#000;
+			}
+			h3 {
+				color:@byui-blue;
+				font-size:18px;
+				margin-bottom:5px;
+			}
+			&:after {
+				clear:both;
+			}
+			.feat_icon {
+				width: 40px;
+				float: left;
+				padding-top: 22px;
+				padding-bottom: 30px;
+				margin-right: 15px;
+			}
+		}
+	}
+
+	border-bottom: 2px solid @byui-blue;
+}
+/*///////////// SIDEBARS ////////*/
+aside {
+	&.hidden-xs.hidden-sm.col-sm-4 {
+		// margin-left:18px;
+		// box-style:border-box;
+	}
+	.sidebar-inner {
+		padding-bottom:20px;
+		border-bottom:2px solid @byui-blue;
+		h2 {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 23px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		img {
+			height:150px;
+			width:auto;
+		}
+		blockquote {
+			border:none;
+			font-style: normal;
+			font-weight: bold;
+			font-size:1.25em;
+			color:#000;
+			&:before, &:after {
+				content: '"';
+			}
+		}
+		&.social-sharing {
+			img {
+				width:29.33333333%;
+				height: auto;
+				.marginLeftRight(1.5%);
+			}
+		}
+		&.discussion {
+			img {
+				margin-left:10px;
+				height:30px;
+				width:auto;
+			}
+		}
+		&.sidebar-featured-speeches {
+			p {
+				margin-bottom:0;
+			}
+			p.meta {
+				font-style: italic;
+			}
+		}
+	}
+}
+
+.sidebar-speaker-meta {
+    margin-top:20px;
+}
+
+/*////////// FOOTER ///////////*/
+footer {
+	
+}
+
+/*/////////////// MIX-INS //////////////// */
+.center() {
+	margin:0 auto;
+}
+.paddingAll(@value) {
+	padding-top:@value;
+	padding-right:@value;
+	padding-left:@value;
+	padding-bottom:@value;
+}
+.paddingTopBot(@value) {
+	padding-top:@value;
+	padding-bottom:@value;
+}
+.paddingLeftRight(@value) {
+	padding-left:@value;
+	padding-right:@value;
+}
+
+.marginAll(@value) {
+	margin-top:@value;
+	margin-right:@value;
+	margin-left:@value;
+	margin-bottom:@value;
+}
+.marginLeftRight(@value) {
+	margin-left:@value;
+	margin-right:@value;
+}
+.marginTopBot(@value) {
+	margin-top:@value;
+	margin-bottom:@value;
+}

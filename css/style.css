@@ -1,0 +1,848 @@
+/*   
+Theme Name: BYU-Idaho Radio
+Theme URI: byuidahoradio.org
+Description: BYU-Idaho Radio's Updated theme framework. Updated Dec 9, 2013
+Author: Josh Crowther
+Author URI: joshcrowther.com
+Version: 2.1
+*/
+/*///// Bootstrap Transition Points ///////*/
+/*/////////////// GENERAL //////////////// */
+/*/////////////// HEADERS //////////////*/
+.header-logo {
+  border-bottom: 5px solid #CCC;
+  margin-bottom: 10px;
+}
+/*////////////// NAV ////////////*/
+nav.navbar.navbar-default.custom-nav {
+  background-color: transparent;
+  border: none;
+}
+nav.navbar.navbar-default.custom-nav .navbar-brand {
+  color: #056cb6;
+}
+nav.navbar.navbar-default.custom-nav .navbar-collapse {
+  padding-left: 0;
+}
+nav.navbar-default.custom-nav .navbar-nav > li > a {
+  color: #056cb6;
+}
+nav.navbar-default.custom-nav .navbar-nav > li > a:hover {
+  color: #5ab7fa;
+}
+nav.navbar-default.custom-nav .navbar-nav > .active > a {
+  background-color: #ffffff;
+  color: #5ab7fa;
+}
+/*//////////// CONTENT /////////////*/
+.content {
+  padding: 0 15px;
+}
+.content-wrap {
+  margin-top: 20px;
+}
+.home-listen-now {
+  background-color: #e0e0e0;
+  border-color: #d3d3d3;
+  border: 1px solid;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+/*///////////// SIDEBARS ////////*/
+/*////////// FOOTER ///////////*/
+/*/////////////// MIX-INS //////////////// */
+/*//////// OLD RADIO STYLES /////////*/
+/*************************************************
+* General Style
+*************************************************/
+h2 {
+  font-size: 1.3em;
+}
+a {
+  text-decoration: none;
+}
+.ie7 #related_links_header li {
+  border-top: 0px;
+}
+#byu-idaho_radio_button {
+  float: left;
+}
+#GlobalNavigation *,
+#program_nav *,
+#radio_navigation *,
+#related_links_box * {
+  display: block;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-family: inherit;
+}
+#radio_navigation img {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#content {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20px;
+}
+div {
+  display: block;
+}
+#content-home {
+  width: 100%;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img.alignleft {
+  padding: 4px 4px 4px 0;
+  margin: 0 7px 2px 0;
+  display: inline;
+}
+.alignleft {
+  float: left;
+}
+img {
+  border: none;
+  padding: 0;
+}
+/*************************************************
+* End of General Style
+*************************************************/
+/*************************************************
+* On Demand
+*************************************************/
+#podcast_table {
+  font-size: 8pt;
+}
+#radio-podcasts {
+  width: 946px;
+  float: left;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+#podcasts-inner {
+  padding: 6px 10px 2px 10px;
+}
+.radio-title.podcasts,
+#form-podcasts {
+  float: left;
+}
+.radio-title.podcasts {
+  padding-bottom: 5px;
+  margin-right: 13px;
+}
+.category_column_titles_description,
+.category_column_titles_date,
+.category_column_titles_play {
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#podcasts_content,
+#podcast_table {
+  width: 100%;
+}
+li.category_column_titles_play {
+  float: right;
+  display: block;
+  padding: 3px 38px 5px 20px;
+  position: relative;
+  right: -140px;
+  width: 200px;
+}
+li.category_column_titles_description {
+  float: left;
+  display: block;
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  width: 33%;
+  margin-right: 5px;
+}
+li.category_column_titles_date {
+  float: left;
+  display: block;
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  width: 33%;
+  margin-right: 0px;
+}
+li.category_column_titles_play {
+  float: left;
+  display: block;
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  width: 14%;
+}
+li.category_column_titles_download {
+  float: left;
+  display: block;
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  width: 10%;
+}
+li.podcast_post_listing_title {
+  float: left;
+  display: block;
+  padding: 0px;
+  width: 33%;
+  margin-right: 10px;
+}
+li.podcast_post_listing_playdownload {
+  float: left;
+  display: block;
+  padding: 0px;
+  width: 30%;
+}
+li.podcast_post_listing_date {
+  float: left;
+  display: block;
+  padding: 0px;
+  width: 33%;
+}
+.powerpress_links_mp3 {
+  margin: 0px;
+}
+a.rss_subscribe {
+  float: left;
+}
+.post {
+  margin: 0;
+  padding: 0;
+  line-height: 14pt;
+  margin-bottom: 50px;
+}
+#podcast_table {
+  display: block;
+  width: 100%;
+  margin: 5px 0 0 0;
+  float: right;
+}
+div.program_container {
+  margin: 0 0 30px 0;
+}
+.podcast_title_row {
+  display: block;
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+  clear: both;
+}
+#campus_news_posts ul {
+  background-color: gray;
+  margin-left: 10px;
+}
+ul.podcast_post_listing {
+  list-style-type: none;
+  display: block;
+  clear: both;
+}
+li.podcast_post_listing_title {
+  float: left;
+  display: block;
+  padding: 0px;
+  width: 33%;
+  margin-right: 10px;
+}
+span.content_questions {
+  display: block;
+  font-family: Georgia, Times, serif;
+  font-size: 13px;
+  padding: 10px 0;
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+}
+span.podcast_title {
+  font-family: Georgia, Times, serif;
+  font-style: italic;
+  color: #4C4C4C;
+  font-size: 15px;
+  margin: 0 0 0 0;
+  float: left;
+  font-weight: bold;
+}
+ul.category_column_titles {
+  list-style-type: none;
+  display: block;
+}
+li.category_column_titles_description {
+  float: left;
+  display: block;
+  padding: 0 0 5px 10px;
+  clear: both;
+}
+.category_column_titles li {
+  font-family: Georgia, Times, serif;
+  font-size: 8pt;
+  font-style: italic;
+  display: block;
+}
+img.programs_subscribe_all {
+  margin: 0 0 0 0;
+  float: left;
+}
+.entry p {
+  margin: 0;
+  font-family: Georgia, times, serif;
+  font-size: 15px;
+  line-height: 18pt;
+  padding: 10px 0;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+}
+#radiopage .entry p {
+  overflow: hidden;
+  clear: both;
+}
+.subscribe_to_program {
+  font-size: 12px;
+  vertical-align: bottom;
+}
+.podcast_rss_text {
+  margin-left: 10px;
+}
+.podcast_rss_text:hover {
+  color: white;
+}
+.category_column_titles_description,
+.category_column_titles_date,
+.category_column_titles_play {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+audio {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+.categories {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: transparent;
+}
+/*************************************************
+* End of On Demand
+*************************************************/
+/*************************************************
+* Radio Players
+*************************************************/
+#radio-player-container {
+  overflow: hidden;
+  display: inline;
+}
+.fm-player {
+  height: 325px;
+  width: 60%;
+}
+.fm-player-embed {
+  height: 100%;
+  width: 100%;
+}
+#xmlfeed {
+  width: 39%;
+  float: left;
+  margin-left: 1%;
+  height: 325px;
+}
+#playingNow {
+  background-color: orange;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 2.5em;
+}
+#playingNow h3 {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 35px;
+  padding-left: 15px;
+  font-weight: bolder;
+}
+#gray-style {
+  background-color: #888;
+  height: 16px;
+  padding: 3px 0 0 0;
+}
+#xmlfeed-inner {
+  padding: 10px 0 0 10px;
+  background-color: #EEE;
+  height: 221px;
+  background-image: url('http://www.byuidahoradio.org/wp-content/uploads/2012/10/low_contrast_linen.png');
+  color: white;
+  -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  font-family: Georgia,Times,serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+#internet-player,
+#ninety-onefm-player,
+#ninety-fourfm-player {
+  float: left;
+}
+#radio-channel {
+  height: 500px;
+  background-color: black;
+}
+#radio-links {
+  height: 400px;
+  width: 25%;
+  background-color: #CCC;
+  float: left;
+}
+#radio-player {
+  margin-top: 20px;
+  width: 60%;
+  height: 321.5px;
+  float: left;
+}
+#radio-now {
+  height: 400px;
+  width: 25%;
+  background-color: steelBlue;
+  float: left;
+}
+.podcasts_intro h2 {
+  color: steelBlue;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  margin: 0 10px 0 0;
+  font-family: times;
+}
+/* End of Radio Players */
+/* Home */
+.slide slide_0 img,
+.slide slide_1 img,
+.slide slide_2 img {
+  width: 100%;
+}
+.front-image {
+  width: 100%;
+}
+#radio-home .radio-front img {
+  /*border: 2px solid black;
+height: 420px;*/
+  float: left;
+  margin: 0 .8em 0 0;
+}
+.radio-inner {
+  border-radius: 15px;
+  width: 100%;
+  min-width: 240px;
+  overflow: hidden;
+  background-color: black;
+  background-image: url('http://www.byuidahoradio.org/wp-content/uploads/2012/10/low_contrast_linen.png');
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.radio-inner .radio-links {
+  padding-right: 5px;
+}
+.radio-inner img {
+  /*height: 375px;*/
+  /*width: 300px;*/
+}
+.image-inner img {
+  background-color: white;
+}
+#radio-home .radio-front img#student-img {
+  margin-right: 0px;
+}
+#music.radio-front,
+#inspirational.radio-front,
+#student.radio-front {
+  width: 31%;
+  float: left;
+  margin: 0 1.7em .8em 0;
+}
+#student.radio-front {
+  margin-right: 0px;
+}
+.channel-nav {
+  color: white;
+  /*margin-top: -80px;*/
+  float: left;
+  width: 100%;
+  /*height: 80px;*/
+  -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+.channel-inner {
+  padding: 6px 10px 0px 10px;
+}
+.radio-title,
+.radio-type,
+.radio-links {
+  width: 100%;
+  margin-bottom: 3px;
+}
+.radio-title {
+  text-align: center;
+  font-size: 16px;
+}
+.radio-type {
+  font-size: 14px;
+  font-style: italic;
+}
+.radio-links {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+#radio-nav {
+  float: left;
+  position: relative;
+  top: 15px;
+  left: -10px;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+#radio-nav a {
+  float: left;
+  padding: 2px 10px 2px 0;
+  margin: 0 10px 0 10px;
+}
+#radio-nav a:hover,
+#radio-nav a:active {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  padding: 1px 9px 1px 9px;
+  margin: 0 10px 0 0;
+}
+a:hover {
+  text-decoration: none;
+}
+.radio-button p {
+  /*font-size: 30px;
+line-height: 70px;*/
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+  text-shadow: 0px 2px 3px #444;
+}
+a {
+  text-decoration: none;
+}
+.radio-button:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#616161), to(#292929));
+  background: -moz-linear-gradient(19% 75% 90deg, #292929, #616161);
+  border-top: solid 2px #8f8f8f;
+  border-bottom: solid 2px #282828;
+  cursor: pointer;
+}
+.radio-button p:hover {
+  text-shadow: 0px 2px 3px #555;
+}
+.post h2,
+h2 {
+  color: #2B5A8E;
+}
+/*#page{
+min-height: 700px;
+}*/
+p {
+  font-family: Georgia,Times,serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+/*.channel-a {
+float:left;
+width:auto;
+}*/
+.blue-title {
+  color: steelBlue;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  margin: 0 10px 0 0;
+  font-family: times;
+}
+#meteor-slideshow img,
+#meteor-slideshow91fm img,
+#meteor-slideshow94fm img,
+#meteor-slideshowinternet-radio img {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+/*******************************
+* More Custom Styles
+*******************************/
+h2.entry-title {
+  font-size: 18px;
+  padding-top: 15px;
+}
+a.post-edit-link {
+  clear: both;
+  display: block;
+}
+div.entry-utility {
+  font-size: 12px;
+}
+.sixty-percent {
+  width: 60%;
+  float: left;
+}
+.sidebar {
+  width: 39%;
+  position: absolute;
+  right: 25px;
+  padding-right: 85px;
+}
+.fullclear {
+  clear: both;
+}
+.sfp-container {
+  float: right;
+}
+#wpstats {
+  display: none;
+}
+/*************************************************
+* When the web browser is more than 1095px 
+*************************************************/
+@media only screen and (min-width: 1095px) {
+  #xmlfeed-inner {
+    height: 285px;
+  }
+}
+/*************************************************
+* When the web browser is 1095px or less
+*************************************************/
+@media only screen and (max-width: 1095px) {
+  .sidebar {
+    display: none;
+  }
+  .sixty-percent {
+    width: 100%;
+  }
+  .radio-type,
+  .radio-links {
+    font-size: 11px;
+  }
+  #music.radio-front,
+  #inspirational.radio-front,
+  #student.radio-front {
+    width: 32%;
+    float: left;
+    margin: 0 .5em .8em 0;
+  }
+  .fm-player {
+    height: 260px;
+    width: 60%;
+  }
+  #xmlfeed {
+    width: 39%;
+    float: left;
+    margin-left: 1%;
+    height: 200px;
+  }
+  #radio-player {
+    height: 257px;
+  }
+}
+/*************************************************
+* When the web browser is 768px or less
+*************************************************/
+@media only screen and (max-width: 768px) {
+  /* rules defined inside here are only applied to browsers that support CSS media queries and the browser window is 768px or smaller */
+  #radio-nav .menu-radio-nav-container #menu-radio-nav .sub-menu {
+    display: none;
+  }
+  .cat-item {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #music.radio-front,
+  #inspirational.radio-front,
+  #student.radio-front {
+    width: 100%;
+  }
+  #meteor-slideshow img,
+  #meteor-slideshow91fm img,
+  #meteor-slideshow94fm img,
+  #meteor-slideshowinternet-radio img {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  #radio-nav {
+    position: relative;
+    left: 0px;
+  }
+  #radio-nav a {
+    float: left;
+    margin: 0 0 0 0;
+    padding: 2px 0 2px 0;
+    width: 100%;
+    border-bottom: 1px dotted #CCC;
+  }
+  #radio-nav a:hover {
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 2px 0 2px 0;
+    margin: 0 0 0 0;
+    border-bottom: 1px dotted #CCC;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
+  .image-inner .image-inner-a,
+  #meteor-slideshow,
+  #meteor-slideshow91fm,
+  #meteor-slideshow94fm,
+  #meteor-slideshowinternet-radio {
+    width: 35% !important;
+    float: left !important;
+    /*border-right: 1px solid black;*/
+  }
+  .meteor-clip {
+    float: left;
+  }
+  .mslide img {
+    position: static;
+  }
+  .meteor-slides .meteor-clip {
+    height: 192px;
+  }
+  /*.channel-a {
+float:left;
+width:auto;
+}*/
+  .channel-nav {
+    height: 192px;
+  }
+  .channel-nav {
+    /*float: right;*/
+    width: 65%;
+    /*height: 191px;*/
+    /*border-bottom-right-radius: 15px;
+border-bottom-left-radius: 0px;
+box-shadow: 0 1px 0 rgba(255, 255, 255, .2), inset 6px 0px 5px rgba(0, 0, 0, .6), inset 1px 0px 0 rgba(0, 0, 0, .6);*/
+  }
+  #radio-player {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 5px;
+  }
+  #xmlfeed {
+    width: 100%;
+    margin-left: 0%;
+    height: 200px;
+  }
+  .fm-player {
+    height: 300px;
+    width: 100%;
+  }
+  span.content_questions {
+    margin-top: 40px;
+  }
+  .sixty-percent {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    float: left;
+  }
+}
+@media only screen and (min-width: 1095px) {
+  #xmlfeed-inner {
+    height: 287px;
+  }
+}
+/*************************************************
+* When the web browser is 618px or less
+*************************************************/
+@media only screen and (max-width: 618px) {
+  #radio_navigation {
+    border-bottom: none !important;
+  }
+  #radio_navigation img {
+    border-bottom: 5px solid #CCC;
+  }
+}
+/*************************************************
+* When the web browser is 460px or less
+*************************************************/
+@media only screen and (max-width: 460px) {
+  /*.channel-nav {
+height: 126px;
+}*/
+  .meteor-slides .meteor-clip {
+    height: 127px;
+  }
+  .channel-nav {
+    height: 121px;
+  }
+  #radio-player {
+    height: 175px;
+  }
+  #xmlfeed {
+    height: 175px;
+  }
+  .fm-player {
+    height: 220px;
+    width: 100%;
+  }
+}
+#radio_navigation {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 30px 0 42px;
+  border-bottom: 5px solid #CCC;
+}
+#radio_navigation ul {
+  list-style-type: none;
+  display: inline;
+  width: 476px;
+}
+.radio-links a.channel-a {
+  color: #51A4DF;
+}
+a.channel-a:hover {
+  color: white;
+}
+.slideshow_container .slide {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.slideshow_container .slide h2 {
+  display: none;
+}
+.slideshow_container {
+  overflow: hidden;
+}
+/*************************************************
+* End of Home
+*************************************************/
+.archive-post {
+  clear: both;
+  font-size: 14px;
+}
+@media only screen and (min-width: 768px) {
+  .content-wrap ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
