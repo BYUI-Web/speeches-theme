@@ -294,5 +294,34 @@ aside .sidebar-inner.sidebar-featured-speeches p {
 aside .sidebar-inner.sidebar-featured-speeches p.meta {
   font-style: italic;
 }
+/******************Speaker Page************************/
+.speaker-wrapper {
+  margin-top: 60px;
+}
+.speaker-wrapper .speaker-image img {
+  width: 100%;
+  height: 100%;
+}
+.speaker-wrapper .speaker-name {
+  border-bottom: #056cb6 solid 2px;
+  margin-bottom: 25px;
+}
+.speaker-wrapper .speaker-name h2 {
+  margin-top: 5px;
+}
+.speaker-wrapper .speaker-speeches {
+  border: #056cb6 solid 2px;
+}
+.speaker-wrapper aside .speaker-speeches-list {
+  list-style: none;
+}
+.speaker-wrapper aside .speaker-post-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+.speaker-wrapper aside .speaker-post-date {
+  font-size: .9em;
+}
 /*////////// FOOTER ///////////*/
 /*/////////////// MIX-INS //////////////// */
