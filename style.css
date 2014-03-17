@@ -236,6 +236,7 @@ div.event-featured .addition-featured-more div:first-child {
 }
 /*///////////// SIDEBARS ////////*/
 aside.col-sm-4 .aside-holder {
+  margin-top: 30px;
   border: 2px solid #056cb6;
   padding-left: 15px;
   padding-right: 15px;
@@ -244,6 +245,7 @@ aside.col-sm-4 .aside-holder {
   aside.col-sm-4 .aside-holder {
     margin-left: -15px;
     margin-right: -15px;
+    margin-top: 0;
   }
 }
 aside .sidebar-inner {
@@ -329,9 +331,6 @@ aside .sidebar-inner.speaker-bio .sidebar-speaker-info p.sidebar-speaker-meta {
   position: relative;
 }
 aside .sidebar-inner.speaker-bio .sidebar-speaker-info .read-more {
-  position: absolute;
-  bottom: -15px;
-  right: 10px;
   background-color: #323133;
   color: #fff;
   padding: 5px;
