@@ -122,6 +122,25 @@ div.entry {
 		display:none;
 	}
 }
+*.speeches-button {
+	clear:both;
+	margin-top:20px;
+	text-transform: uppercase;
+	color:#fff;
+	background-color:#323133;
+	border-radius:5px;
+	.paddingTopBot(10px);
+	.paddingLeftRight(10px);
+	line-height: 50px;
+	&:hover {
+		color:#fff;
+		text-decoration: none;
+		background-color:lighten(#323133,20%);
+	}
+}
+.center {
+	text-align: center;
+}
 
 div.event-featured {
 	object {
@@ -139,6 +158,16 @@ div.event-featured {
 			display:block;
 			float:left;
 			padding-right:2%;
+			@media only screen and (max-width:768px) {
+				width:50%;
+				&:nth-child(2) {
+					border-right:none;
+					border-bottom:1px solid @byui-blue;
+				}
+				&:first-child {
+					border-bottom:1px solid @byui-blue;
+				}
+			}
 			.left {
 				text-align: left;
 				float:left;
@@ -157,6 +186,12 @@ div.event-featured {
 				color:@byui-blue;
 				font-size:18px;
 				line-height: 60px;
+				@media only screen and (min-width:768px) {
+					line-height: 40px;
+				}
+				@media only screen and (min-width:992px) {
+					line-height: 60px;
+				}
 			}
 			&:after {
 				clear:both;
@@ -167,6 +202,12 @@ div.event-featured {
 				.paddingTopBot(10px);
 				width: auto;
 				float: left;
+				@media only screen and (min-width:768px) {
+					height: 40px;
+				}
+				@media only screen and (min-width:992px) {
+					height: 60px;
+				}
 			}
 		}
 	}
@@ -186,8 +227,16 @@ div.event-featured {
 }
 /*///////////// SIDEBARS ////////*/
 aside {
-	&.hidden-xs.hidden-sm.col-sm-4 {
-		border: 2px solid @byui-blue;
+	&.col-sm-4 {
+		.aside-holder {
+			margin-top:30px;
+			border: 2px solid @byui-blue;
+			.paddingLeftRight(15px);
+			@media only screen and (min-width:768px) {
+				.marginLeftRight(-15px);
+				margin-top:0;
+			}
+		}
 	}
 	.sidebar-inner {
 		padding-bottom:20px;
@@ -269,15 +318,16 @@ aside {
 					position:relative;
 				}
 				.read-more {
-					position: absolute;
-					bottom:-15px;
-					right:10px;
-					background-color:#000;
+					background-color:#323133;
 					color:#fff;
 					padding:5px;
 					border-radius:5px;
 					&:after {
 						content:" >";
+					}
+					&:hover {
+						text-decoration: none;
+						background-color:lighten(#323133,20%);
 					}
 				}
 			}

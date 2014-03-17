@@ -63,7 +63,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body id="base_template"><!-- Body tag must have page template name in it to inherit template-specific css rules -->
+<body id="base_template top"><!-- Body tag must have page template name in it to inherit template-specific css rules -->
 <!-- AddThis Smart Layers BEGIN -->
 <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e8f53ed7638d457"></script>
@@ -185,7 +185,7 @@
 
   <div class="site-banner">
     <div class="container">
-      <a class="site-logo navbar-brand" href="{{ site.baseurl }}/" title="BYU-Idaho">
+      <a class="site-logo navbar-brand" href="http://www.byui.edu" title="BYU-Idaho">
         <span aria-hidden="true" class="icon icon-byui-logo">
           <span class="sr-only">BYU-Idaho</span>
         </span>
