@@ -158,6 +158,7 @@ div.event-featured .additional-featured .custom-box {
   display: block;
   float: left;
   padding-right: 2%;
+  cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
   div.event-featured .additional-featured .custom-box {
