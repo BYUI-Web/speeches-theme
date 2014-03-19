@@ -248,6 +248,9 @@ aside.col-sm-4 .aside-holder {
     margin-top: 0;
   }
 }
+aside.col-sm-4.second {
+  margin-top: 15px;
+}
 aside .sidebar-inner {
   padding-bottom: 20px;
 }
@@ -281,6 +284,44 @@ aside .sidebar-inner blockquote {
 aside .sidebar-inner blockquote:before,
 aside .sidebar-inner blockquote:after {
   content: '"';
+}
+aside .sidebar-inner.home h3 {
+  color: #056cb6;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+aside .sidebar-inner.home h4 {
+  color: #000;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+aside .sidebar-inner.home a h4 {
+  color: #056cb6;
+}
+aside .sidebar-inner.home .sub-text {
+  font-style: italic;
+}
+aside .sidebar-inner.home .sub-text a {
+  font-style: normal;
+  font-weight: bold;
+}
+aside .sidebar-inner.home p {
+  margin-bottom: 0;
+}
+aside .sidebar-inner.home p.meta {
+  font-style: italic;
+}
+aside .sidebar-inner.home .divider {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #056cb6;
+}
+aside .sidebar-inner.home .divider:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 aside .sidebar-inner.event-details ul {
   list-style-type: none;

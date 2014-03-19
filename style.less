@@ -237,6 +237,9 @@ aside {
 				margin-top:0;
 			}
 		}
+		&.second {
+			margin-top:15px;
+		}
 	}
 	.sidebar-inner {
 		padding-bottom:20px;
@@ -265,6 +268,44 @@ aside {
 			color:#000;
 			&:before, &:after {
 				content: '"';
+			}
+		}
+		&.home {
+			h3 {
+				color:@byui-blue;
+				margin-bottom:0;
+				font-weight: bold;
+			}
+			h4 {
+				color:#000;
+				margin-bottom:0;
+				margin-top:10px;
+			}
+			a h4 {
+				color:@byui-blue;
+			}
+			.sub-text {
+				font-style: italic;
+				a {
+					font-style: normal;
+					font-weight: bold;
+				}
+			}
+			p {
+				margin-bottom:0;
+			}
+			p.meta {
+				font-style: italic;
+			}
+			.divider {
+				.marginLeftRight(-15px);
+				.paddingLeftRight(15px);
+				padding-bottom: 20px;
+				border-bottom: 1px solid @byui-blue;
+				&:last-child {
+					padding-bottom:0;
+					border-bottom: none;
+				}
 			}
 		}
 		&.event-details {
