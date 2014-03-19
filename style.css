@@ -399,6 +399,79 @@ aside .sidebar-inner.sidebar-featured-speeches p {
 aside .sidebar-inner.sidebar-featured-speeches p.meta {
   font-style: italic;
 }
+/**************** Home Page ******************/
+.home .home-carousel {
+  border: 5px solid #056cb6;
+  background-color: #fff;
+  height: 200px;
+}
+.home .carousel-control.right {
+  background-image: none;
+  filter: none;
+}
+.home .carousel-control.right:hover {
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+.home .carousel-control.left {
+  background-image: none;
+  filter: none;
+}
+.home .carousel-control.left:hover {
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+.home .recent-speeches {
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #056cb6;
+}
+.home .recent-speeches h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  background-color: #056cb6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.home .recent-speeches h4 {
+  margin-bottom: 0;
+}
+.home .recent-speeches .recent-speech {
+  height: 100%;
+  border-bottom: 1px solid #056cb6;
+  position: relative;
+}
+.home .recent-speeches .recent-speech .speaker-pic {
+  width: 20%;
+  float: left;
+}
+.home .recent-speeches .recent-speech .speaker-pic img {
+  padding: 10%;
+  height: auto;
+}
+.home .recent-speeches .recent-speech .speaker-info {
+  width: 75%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  float: left;
+  height: inherit;
+}
+.home .recent-speeches .recent-speech .speaker-info .post-date {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
 /******************Speaker Page************************/
 .speaker-wrapper {
   margin-top: 60px;

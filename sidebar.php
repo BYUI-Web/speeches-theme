@@ -57,8 +57,8 @@
                     <p class="meta"><?php echo get_post_meta($meta['presenters'][0], 'title')[0]; ?></p>
                 </div>
                 <?php 
-                endif;
                 $counter++;
+                endif;
                 endwhile; 
                 ?>
             </div>
