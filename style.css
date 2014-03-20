@@ -404,7 +404,41 @@ aside .sidebar-inner.sidebar-featured-speeches p.meta {
 .home .home-carousel {
   border: 5px solid #056cb6;
   background-color: #fff;
-  height: 200px;
+  height: 250px;
+}
+.home .carousel-image {
+  height: 100%;
+  float: left;
+}
+.home .carousel-info {
+  padding: 40px;
+  overflow: hidden;
+}
+.home .carousel-speaker-name {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+.home .carousel-speaker-title {
+  font-size: 1.2em;
+  font-style: italic;
+}
+.home .carousel-date {
+  font-style: bold;
+  font-size: 1.2em;
+}
+.home .carousel-link {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px;
+  background-color: #414042;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+.home .carousel-link:hover {
+  text-decoration: none;
 }
 .home .carousel-control.right {
   background-image: none;
@@ -425,6 +459,13 @@ aside .sidebar-inner.sidebar-featured-speeches p.meta {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+.home .carousel-indicators {
+  bottom: -40px;
+}
+.home .carousel-indicators li {
+  background-color: #cbcac9;
+  border: 1px solid #808080;
 }
 .home .recent-speeches {
   margin-top: 40px;

@@ -403,8 +403,43 @@ aside {
 	.home-carousel {
 		border: 5px solid @byui-blue;
 		background-color:#fff;
-		height: 200px;
+		height: 250px;
 	}
+        .carousel-image {
+            height: 100%;
+            float: left;
+        }
+        .carousel-info {
+            padding: 40px;
+            overflow: hidden;
+        }
+        .carousel-speaker-name {
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+        .carousel-speaker-title {
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        .carousel-date {
+            font-style: bold;
+            font-size: 1.2em;
+        }
+        .carousel-link {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            padding: 10px;
+            background-color: #414042;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.5em;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
 	.carousel-control.right {
 		background-image: none;
 		filter: none;
@@ -425,6 +460,14 @@ aside {
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
 		}
 	}
+        .carousel-indicators {
+            bottom: -40px;
+            
+            li {
+                background-color: #cbcac9;
+                border: 1px solid #808080;
+            }
+        }
 	.recent-speeches {
 		margin-top:40px;
 		padding-top:10px;
