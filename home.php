@@ -40,9 +40,9 @@
                     $active = ($counter == 0) ? "active" : "";
                     $url = get_permalink();
                     $date = date('F j, Y', strtotime($meta['event_date'][0]));
-                    $speakerId = explode(", ", $meta['presenters'][0])[0];
-                    $speakerName = get_the_title($speakerId);
-                    $speakerTitle = get_post_meta($speakerId, "title")[0];
+                    $speakerId = explode(", ", $meta['presenters'][0]);
+                    $speakerName = get_the_title($speakerId[0]);
+                    $speakerTitle = get_post_meta($speakerId, "title");
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id($speakerId))[0];
                     ?>
                     <div class="item <?php echo $active ?>">
@@ -50,7 +50,7 @@
                             <img class="carousel-image" src="<?php echo $image; ?>" />
                             <div class="carousel-info">
                                 <p class="carousel-speaker-name"><?php echo $speakerName; ?></p>
-                                <p class="carousel-speaker-title"><?php echo $speakerTitle; ?></p>
+                                <p class="carousel-speaker-title"><?php echo $speakerTitle[0]; ?></p>
                                 <p class="carousel-date"><?php echo $date; ?></p>
                                 <a class="carousel-link" href="<?php echo $url; ?>">How To Prepare</a>
                             </div>

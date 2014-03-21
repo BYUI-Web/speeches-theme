@@ -330,6 +330,9 @@ aside .sidebar-inner.event-details ul {
 aside .sidebar-inner.event-details ul li {
   margin-bottom: 15px;
 }
+aside .sidebar-inner.event-details ul li:first-child {
+  text-transform: capitalize;
+}
 aside .sidebar-inner.event-details ul li span {
   color: #056cb6;
   font-weight: bold;
