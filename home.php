@@ -43,11 +43,11 @@
                     $speakerId = explode(", ", $meta['presenters'][0]);
                     $speakerName = get_the_title($speakerId[0]);
                     $speakerTitle = get_post_meta($speakerId, "title");
-                    $image = wp_get_attachment_image_src(get_post_thumbnail_id($speakerId))[0];
+                    $image = wp_get_attachment_image_src(get_post_thumbnail_id($speakerId));
                     ?>
                     <div class="item <?php echo $active ?>">
                         <div class="home-carousel group">
-                            <img class="carousel-image" src="<?php echo $image; ?>" />
+                            <img class="carousel-image" src="<?php echo $image[0]; ?>" />
                             <div class="carousel-info">
                                 <p class="carousel-speaker-name"><?php echo $speakerName; ?></p>
                                 <p class="carousel-speaker-title"><?php echo $speakerTitle[0]; ?></p>
@@ -71,9 +71,8 @@
                 $meta = get_post_meta(get_the_ID());
                 date_default_timezone_set('America/Denver');
                 $now = strtotime('now');
-                $post_start_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_start_time')[0]);
-                $post_end_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_end_time')[0]);
-                if ($now > $post_end_time) :
+                $post_end_time = get_post_meta(get_the_ID(), 'event_end_time');
+                if ($now > $post_end_time[0]) :
                     ?>
 
                     <div class="recent-speech group">
