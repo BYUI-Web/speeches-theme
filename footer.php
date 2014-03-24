@@ -109,18 +109,18 @@
             WITHOUT LOSING YOUR JOB 
           -->
           <style>
-          .feedback-toggle {
-            position: fixed;
-            bottom: -3px;
-            right: -4px;
-            display: none;
-            border: 1px solid #fff;
-          }
+            .feedback-toggle {
+              position: fixed;
+              bottom: -3px;
+              right: -4px;
+              display: none;
+              border: 1px solid #fff;
+            }
           </style>
           <script>
-          $(function(){
-            $(".feedback-toggle").show();
-          });
+            $(function(){
+              $(".feedback-toggle").show();
+            });
           </script>
 
           <!-- Button trigger modal -->
@@ -154,7 +154,6 @@
 * Analytics information
 ***********************************************-->
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-12079604-8']);
   _gaq.push(['_trackPageview']);
@@ -166,5 +165,16 @@
   })();
 
 </script>
+<?php if ( is_single( array('devotional', 'forum') )) : ?>
+<script type="text/javascript">
+  var disqus_shortname = 'byuidahospeeches'; 
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+<?php endif; ?>
 </body>
 </html>
