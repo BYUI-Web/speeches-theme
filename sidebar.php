@@ -12,19 +12,19 @@
                 $meta = get_post_meta(get_the_ID());
                 date_default_timezone_set('America/Denver');
                 $now = strtotime('now');
-                $post_start_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_start_time')[0]);
-                $post_end_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_end_time')[0]);
-                if ($post_end_time > $now) : ?>
+                $post_start_time = get_post_meta(get_the_ID(), 'event_date');
+                $post_end_time = get_post_meta(get_the_ID(), 'event_end_time');
+                if ($post_end_time[0] > $now) : ?>
                 <div>
-                    <?php if ($post_start_time <= $now) : ?>
+                    <?php if ($post_start_time[0] <= $now) : ?>
                         <a href="<?php the_permalink(); ?>">
                         <?php endif; ?>
                         <h4><?php echo date('F j', strtotime($meta['event_date'][0])); ?></h4>
-                        <?php if ($post_start_time <= $now) : ?>
+                        <?php if ($post_start_time[0] <= $now) : ?>
                         </a>
                     <?php endif; ?>
                     <p><?php echo get_the_title($meta['presenters'][0]); ?></p>
-                    <p class="meta"><?php echo get_post_meta($meta['presenters'][0], 'title')[0]; ?></p>
+                    <p class="meta"><?php echo getSpeakerTitle(get_the_ID()); ?></p>
                 </div>
                 <?php 
                 endif;
@@ -42,19 +42,19 @@
                 $meta = get_post_meta(get_the_ID());
                 date_default_timezone_set('America/Denver');
                 $now = strtotime('now');
-                $post_start_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_start_time')[0]);
-                $post_end_time = strtotime(get_post_meta(get_the_ID(), 'event_date')[0] . ' ' . get_post_meta(get_the_ID(), 'event_end_time')[0]);
-                if ($post_end_time > $now) : ?>
+                $post_start_time = get_post_meta(get_the_ID(), 'event_date');
+                $post_end_time = get_post_meta(get_the_ID(), 'event_end_time');
+                if ($post_end_time[0] > $now) : ?>
                 <div>
-                    <?php if ($post_start_time <= $now) : ?>
+                    <?php if ($post_start_time[0] <= $now) : ?>
                         <a href="<?php the_permalink(); ?>">
                         <?php endif; ?>
                         <h4><?php echo date('F j', strtotime($meta['event_date'][0])); ?></h4>
-                        <?php if ($post_start_time <= $now) : ?>
+                        <?php if ($post_start_time[0] <= $now) : ?>
                         </a>
                     <?php endif; ?>
                     <p><?php echo get_the_title($meta['presenters'][0]); ?></p>
-                    <p class="meta"><?php echo get_post_meta($meta['presenters'][0], 'title')[0]; ?></p>
+                    <p class="meta"><?php echo getSpeakerTitle(get_the_ID()); ?></p>
                 </div>
                 <?php 
                 $counter++;
