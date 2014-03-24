@@ -544,19 +544,32 @@ aside .sidebar-inner.sidebar-featured-speeches p.meta {
 .speaker-wrapper .speaker-name h2 {
   margin-top: 5px;
 }
-.speaker-wrapper .speaker-speeches {
-  border: #056cb6 solid 2px;
+.speaker-wrapper .speaker-speeches .speaker-speeches-header {
+  background-color: #056cb6;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
 }
-.speaker-wrapper aside .speaker-speeches-list {
+.speaker-wrapper .speaker-speeches .speaker-speeches-list {
   list-style: none;
 }
-.speaker-wrapper aside .speaker-post-title {
+.speaker-wrapper .speaker-speeches .speaker-post-title {
   font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 0;
+  font-size: 1.2em;
+  text-decoration: underline;
 }
-.speaker-wrapper aside .speaker-post-date {
+.speaker-wrapper .speaker-speeches .speaker-post-date {
+  text-align: center;
+}
+.speaker-wrapper .speaker-speeches .speaker-post-date .speaker-post-day {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: .8em;
+}
+.speaker-wrapper .speaker-speeches .speaker-post-date .speaker-post-my {
   font-size: .9em;
+  font-style: italic;
 }
 /*////////// FOOTER ///////////*/
 /*/////////////// MIX-INS //////////////// */
