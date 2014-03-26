@@ -3,7 +3,7 @@
         <div class="sidebar-inner home">
             <h2>Upcoming Speeches</h2>
             <div class="divider">
-                <h3>Devotionals</h3>
+                <a href="/devotionals/"><h3>Devotionals</h3></a>
                 <p class="sub-text">Held most Tuesdays in the BYU-Idaho Center at 2:10 p.m.</p>
                 <?php
                 $counter = 0;
