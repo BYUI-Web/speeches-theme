@@ -578,5 +578,70 @@ aside .sidebar-inner.sidebar-featured-speeches p.meta {
   font-size: .9em;
   font-style: italic;
 }
+/*/////////Calendar Page///////////*/
+.calendar-month .month-title {
+  color: #e0754a;
+  font-weight: bold;
+}
+.calendar-month .calendar-post {
+  overflow: hidden;
+}
+.calendar-month .calendar-post-date {
+  background-color: #403f41;
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  width: 46px;
+  height: 46px;
+  border-radius: 23px;
+  text-align: center;
+  padding: 2px;
+  overflow: hidden;
+}
+.calendar-month .calender-post-info {
+  overflow: hidden;
+  padding: 5px 10px;
+}
+.calendar-month .info-post-type {
+  font-size: 1.3em;
+  color: #e0754a;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+.calendar-month .info-post-location {
+  font-size: .75em;
+  font-style: italic;
+}
+.calendar-month .calendar-speaker-name {
+  font-size: .85em;
+  font-weight: bold;
+  line-height: .9em;
+  margin-bottom: 0;
+}
+.calendar-month .calendar-speaker-title {
+  font-size: .8em;
+  font-style: italic;
+}
+.calendar-month .btn-speeches {
+  font-size: .85em;
+  padding: 5px;
+}
+.calendar-switch {
+  float: right;
+  margin-top: -45px;
+}
+.calendar-switch .btn-speeches {
+  font-weight: bold;
+}
+.calendar-switch .cal-active {
+  background-color: #403f41;
+  color: white;
+}
+.btn-speeches {
+  background-color: #e0754a;
+  color: white;
+}
 /*////////// FOOTER ///////////*/
 /*/////////////// MIX-INS //////////////// */
