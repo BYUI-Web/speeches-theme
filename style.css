@@ -130,11 +130,13 @@ div.entry #discussion {
 }
 *.speeches-button {
   clear: both;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   color: #fff;
   background-color: #323133;
   border-radius: 5px;
+  display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -274,7 +276,7 @@ aside.col-sm-4.second {
   margin-top: 15px;
 }
 aside .sidebar-inner {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 aside .sidebar-inner h2 {
   margin-top: 0;
@@ -329,9 +331,6 @@ aside .sidebar-inner.home .sub-text a {
 }
 aside .sidebar-inner.home p {
   margin-bottom: 0;
-}
-aside .sidebar-inner.home p.meta {
-  font-style: italic;
 }
 aside .sidebar-inner.home .divider {
   margin-left: -15px;
@@ -445,6 +444,9 @@ aside .sidebar-inner.etiquette ul {
   padding-left: 15px;
 }
 aside p.meta {
+  font-style: italic;
+}
+p.meta {
   font-style: italic;
 }
 /**************** Home Page ******************/
@@ -617,6 +619,43 @@ aside p.meta {
   color: #fff;
   font-size: 20px;
   margin-right: 20px;
+}
+/************* Speaker Archive *************/
+.post-archive {
+  margin-bottom: 30px;
+}
+.post-archive > span {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: top;
+  margin-right: 20px;
+}
+.post-archive div {
+  display: inline-block;
+}
+.post-archive a h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #E1764B;
+  margin: 0;
+}
+.post-archive a h2 span {
+  text-transform: uppercase;
+}
+.post-archive p {
+  font-weight: bold;
+  margin: 0;
+}
+.post-archive p.meta {
+  font-weight: normal;
 }
 /*////////// FOOTER ///////////*/
 /*/////////////// MIX-INS //////////////// */
