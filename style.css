@@ -591,6 +591,25 @@ p.meta {
 .speaker-wrapper .speaker-name h2 {
   margin-top: 5px;
 }
+.speaker-wrapper .speaker-name .speaker-social {
+  float: right;
+  margin-top: -60px;
+}
+.speaker-wrapper .speaker-name .speaker-social img {
+  width: 40px;
+  margin: 5px 2px;
+}
+.speaker-wrapper .speaker-name .speaker-social a:hover {
+  text-decoration: none;
+}
+.speaker-wrapper .speaker-name .speaker-social .icon-earth {
+  font-size: 40px;
+  margin: 5px 2px;
+  color: #056cb6;
+  text-decoration: none;
+  position: relative;
+  top: 13px;
+}
 .speaker-wrapper .speaker-speeches .speaker-speeches-header {
   background-color: #056cb6;
   color: white;
