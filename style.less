@@ -472,44 +472,10 @@ p.meta {
 /**************** Home Page ******************/
 .home {
     .home-carousel {
-        border: 5px solid @byui-blue;
-        background-color:#fff;
-        height: 250px;
+        margin-bottom: 30px;
     }
     .carousel-image {
-        height: 100%;
-        float: left;
-    }
-    .carousel-info {
-        padding: 40px;
-        overflow: hidden;
-    }
-    .carousel-speaker-name {
-        font-size: 2em;
-        margin-bottom: 0;
-    }
-    .carousel-speaker-title {
-        font-size: 1.2em;
-        font-style: italic;
-    }
-    .carousel-date {
-        font-style: bold;
-        font-size: 1.2em;
-    }
-    .carousel-link {
-        position: absolute;
-        bottom: 40px;
-        right: 40px;
-        padding: 10px;
-        background-color: #414042;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        font-size: 1.5em;
-
-        &:hover {
-            text-decoration: none;
-        }
+        width: 100%;
     }
     .carousel-control.right {
         background-image: none;
@@ -532,57 +498,106 @@ p.meta {
         }
     }
     .carousel-indicators {
-        bottom: -40px;
+        left:90%;
 
         li {
             background-color: #cbcac9;
             border: 1px solid #808080;
         }
     }
-    .recent-speeches {
-        margin-top:40px;
-        padding-top:10px;
-        border-top:1px solid @byui-blue;
-        h2 {
-            margin-top:0;
-            margin-bottom: 20px;
-            .paddingLeftRight(15px);
-            .paddingTopBot(10px);
-            color:#ffffff;
-            background-color:@byui-blue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 23px;
-            text-transform: uppercase;
+
+    .speech-box {
+        border: black solid thin;
+        min-height: 355px;
+
+        h3 {
+            margin: 0;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+        div {
+            padding: 10px;
+
+            .popular-speech {
+                padding: 3px;
+            }
+
+            a {
+                color: black;
+
+                &:hover {
+                    color: @byui-blue;
+                    text-decoration: none;
+                }
+            }
+
+            .popular-title {
+                font-weight: bold;
+                margin-bottom: 0;
+                font-size: 1.1em;
+            }
+            .popular-speaker {
+                font-weight: .9em;
+                margin-bottom: 0;
+            }
+
+            .featured-speech {
+                padding: 3px;
+                margin-bottom: 10px;
+            }
+
+            .featured-title {
+                font-weight: bold;
+                margin-bottom: 0;
+                font-size: 1.3em;
+            }
+            .featured-speaker {
+                font-weight: 1em;
+                margin-bottom: 0;
+            }
+        }
+        .featured-topic-text {
             font-weight: bold;
+            font-size: 1.6em;
+            margin: 0;
         }
-        h4 {
-            margin-bottom:0;
-        }
-        .recent-speech {
-            height:100%;
-            border-bottom:1px solid @byui-blue;
-            position:relative;
-            .speaker-pic {
-                width:20%;
-                float:left;
-                img {
-                    padding:10%;
-                    height:auto;
-                }
-            }
-            .speaker-info {
-                width:75%;
-                .marginLeftRight(2.5%);
-                float:left;
-                height:inherit;
-                .post-date {
-                    position: absolute;
-                    bottom: 10px;
-                    right:0;
-                }
-            }
+        .featured-topic-description {
+            font-size: .9em;
+            font-style: italic;
         }
     }
+    
+    .home-page-links {
+        width: 100%;
+        height: 355px;
+        a {
+            height: 110px;
+            width: 100%;
+            font-size: 2.45em;
+            font-weight: bold;
+            color: white;
+            display: block;
+            line-height: 1em;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 0 0 10px;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .devotionals-link {
+            background-color: #d9541e;
+        }
+        .forums-link {
+            background-color: #9e4276;
+        }
+        .archive-link {
+            background-color: #91999f;
+        }
+    }
+
 }
 
 /******************Speaker Page************************/
@@ -607,7 +622,7 @@ p.meta {
         .speaker-social {
             float: right;
             margin-top: -60px;
-            
+
             img {
                 width: 40px;
                 margin: 5px 2px;
