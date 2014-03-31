@@ -169,6 +169,9 @@ div.event-featured #video-player p {
   font-weight: bold;
   font-size: 1.2em;
 }
+div.event-featured #video-player iframe {
+  width: 100%;
+}
 div.event-featured #audio-player {
   display: none;
 }
@@ -690,6 +693,33 @@ p.meta {
 }
 .post-archive p.meta {
   font-weight: normal;
+}
+.archive-header .archive-header-banner {
+  float: left;
+  width: 50%;
+}
+.archive-header .archive-header-banner h1 {
+  margin-top: 0;
+  line-height: 49px;
+}
+.archive-header .filters {
+  float: right;
+  width: 50%;
+  line-height: 49px;
+  text-align: right;
+}
+.archive-header .filters a {
+  color: #fff;
+  background-color: #323133;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+.archive-header .filters a:hover {
+  background-color: #E1764B;
+  text-decoration: none;
+}
+.archive-header .filters a.active {
+  background-color: #E1764B;
 }
 /*/////////Calendar Page///////////*/
 .calendar-month .month-title {

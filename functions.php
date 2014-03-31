@@ -178,27 +178,9 @@ function breadcrumbs() {
   }
 } // end qt_custom_breadcrumbs()
 
-/* * ******************************************* */
-/* * ********* Gets Post Speaker/Speakers ********** */
-/* * ********* If second param true returns *********** */
-/* * ********* Array of speakers otherwise  ********** */
-/* * ********* just first speaker ********** */
-/* * ******************************************* */
-function getSpeakerTitle($post_id, $returnAll = false) {
-  $speakers;
-  $speaker_id = get_post_meta($post_id, 'presenters');
-  if ($speaker_id) {
-    $speakers = explode(', ', $speaker_id);
-  }
-  if ($returnAll && $speakers) {
-    $speaker_names = array();
-    foreach ($speakers as $indv_speaker) {
-      array_push($speaker_names, get_the_title($indv_speaker));
-    }
-    return $speaker_names;
-  }
-  $speaker_title = get_post_meta($speaker_id[0], 'title');
-  return $speaker_title[0];
-}
 
+// Plugin Extension (Custom Post Types)
+require_once 'framework/wp-extensions.php';
+
+require_once 'framework/event_model.php';
 ?>
