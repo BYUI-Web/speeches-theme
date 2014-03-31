@@ -19,16 +19,28 @@ $popularLoop = new WP_Query(array("post_type" => array("devotional", "forum"), "
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="carousel-image" src="/wp-content/themes/speeches-theme/images/home/devotionals.jpg" />
+                    <img class="carousel-image" src="<?php bloginfo('template_url'); ?>/images/home/homepage-1.jpg" />
+                    <div class="carousel-caption pull-right">
+                        <h2>Come to devotional prepared to learn, Tuesdays at 2:10 p.m. in the I-Center.</h2>
+                    </div>
                 </div>
                 <div class="item">
-                    <img class="carousel-image" src="/wp-content/themes/speeches-theme/images/home/usher.jpg" />
+                    <img class="carousel-image" src="<?php bloginfo('template_url'); ?>/images/home/homepage-2.jpg" />
+                    <div class="carousel-caption pull-right">
+                        <h2>Volunteer to be a Devotional usher. Click here to learn more.</h2>
+                    </div>
                 </div>
                 <div class="item">
-                    <img class="carousel-image" src="/wp-content/themes/speeches-theme/images/home/forum.jpg" />
+                    <img class="carousel-image" src="<?php bloginfo('template_url'); ?>/images/home/homepage-3.jpg" />
+                    <div class="carousel-caption pull-right">
+                        <h2>Attend University Forums to learn more about special topics.</h2>
+                    </div>
                 </div>
                 <div class="item">
-                    <img class="carousel-image" src="/wp-content/themes/speeches-theme/images/home/QA.jpg" />
+                    <img class="carousel-image" src="<?php bloginfo('template_url'); ?>/images/home/homepage-4.jpg" />
+                    <div class="carousel-caption pull-right">
+                        <h2>Q & A Sessions follow University Forums. Come ask your questions.</h2>
+                    </div>
                 </div>
             </div>
         </div>
