@@ -8,7 +8,7 @@
 $id = get_the_ID();
 $speaker_id = $id;
 $speakerName = get_the_title();
-$image = wp_get_attachment_image_src(get_post_thumbnail_id())[0];
+$image = wp_get_attachment_image_src(get_post_thumbnail_id());
 $bio = wpautop(get_post_meta($id, "speaker_bio")[0]);
 
 $speaker_posts = getPostsBySpeaker($id);
@@ -17,7 +17,7 @@ $speaker_posts = getPostsBySpeaker($id);
 <div class="row speaker-wrapper">
     <div class="col-xs-12 col-md-3">
         <div class="speaker-image">
-            <img src="<?php echo $image; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
+            <img src="<?php echo $image[0]; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
         </div>
         <div class="connect speech-box">
             <h3>Connect</h3>
