@@ -662,19 +662,19 @@ p.meta {
   font-size: 20px;
   margin-right: 20px;
 }
-.Devotionals h1 {
+.Devotional h1 {
   color: #e0754a;
 }
-.Devotionals .info-banner {
+.Devotional .info-banner {
   background-color: rgba(224, 117, 74, 0.9);
 }
-.Forums h1 {
+.Forum h1 {
   color: #b83e78;
 }
-.Forums .info-banner {
+.Forum .info-banner {
   background-color: rgba(184, 62, 120, 0.9);
 }
-.Forums .sidebar-inner.event-details ul li span {
+.Forum .sidebar-inner.event-details ul li span {
   color: #b83e78;
 }
 /************* Speaker Archive *************/
