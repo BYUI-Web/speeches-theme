@@ -9,7 +9,7 @@ $id = get_the_ID();
 $speaker_id = $id;
 $speakerName = get_the_title();
 $image = wp_get_attachment_image_src(get_post_thumbnail_id());
-$bio = wpautop(get_post_meta($id, "speaker_bio")[0]);
+$bio = wpautop(get_post_meta($id, "speaker_bio", true));
 
 $speaker_posts = getPostsBySpeaker($id);
 ?>
