@@ -762,6 +762,12 @@ p.meta {
   margin-bottom: 0;
   line-height: 1em;
 }
+.calendar-month .devotional .info-post-type {
+  color: #e0754a;
+}
+.calendar-month .forum .info-post-type {
+  color: #b83e78;
+}
 .calendar-month .info-post-location {
   font-size: .75em;
   font-style: italic;
@@ -794,6 +800,9 @@ p.meta {
 .btn-speeches {
   background-color: #e0754a;
   color: white;
+}
+.forum .btn-speeches {
+  background-color: #b83e78;
 }
 /*////////// FOOTER ///////////*/
 /*/////////////// MIX-INS //////////////// */
