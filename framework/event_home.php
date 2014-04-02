@@ -1,7 +1,7 @@
 <?php 
 
 $qObj = get_queried_object(); 
-$archivePostType = $qObj->labels->name;
+$archivePostType = $qObj->labels->singular_name;
 // Include Model
 require_once 'event_model.php';
 $next_post = getUpcoming($archivePostType,1);

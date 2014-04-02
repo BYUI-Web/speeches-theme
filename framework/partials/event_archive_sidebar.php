@@ -6,9 +6,8 @@ $recent_events = getRecent(3,$current_post_type);
 <aside class="col-xs-12 col-sm-4">
 	<div class="aside-holder <?php echo $archivePostType; ?>">
 		<div class="sidebar-inner group event-details">
-			<h2>Next Event</h2>
+			<h2>Next <?php echo $archivePostType; ?></h2>
 			<ul>
-				<li><span>Event Type: </span>BYU-Idaho <?php echo $current_post_type; ?></li>
 				<li><span>Speaker: </span><?php echo getSpeaker($next_post[0]); ?></li>
 				<li><span>When: </span><?php echo getPostTime($next_post[0]); ?></li>
 				<li><span>Where: </span> <?php echo getEventLocation($next_post[0]); ?></li>
@@ -23,7 +22,7 @@ $recent_events = getRecent(3,$current_post_type);
 			</ul>
 		</div>
 		<div class="sidebar-inner group recent">
-			<h2>Recent Events</h2>
+			<h2>Recent <?php echo $archivePostType; ?>s</h2>
 			<?php foreach ($recent_events as $event) : ?>
 				<div>
 					<span class="sidebar-header-date"><?php echo getShortDate($event); ?></span>
@@ -37,7 +36,7 @@ $recent_events = getRecent(3,$current_post_type);
 			</div>
 		</div>
 		<div class="sidebar-inner group etiquette">
-			<h2>Event Etiquette</h2>
+			<h2><?php echo $archivePostType; ?> Etiquette</h2>
 			<ul>
 				<li>Dress appropriately</li>
 				<li>Hats should be removed</li>
