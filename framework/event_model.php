@@ -121,19 +121,32 @@ function getCalendar($now) {
 	$posts = array($first_month => array(),
 		$second_month => array(),
 		$third_month => array());
-
-	$loop = new WP_Query(array('post_type' => array('devotional', 'forum')));
+	$args = array(
+		'post_type' => array('devotional','forum'),
+		'meta_key' => 'event_date',
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC',
+		'meta_query' => array(
+			array(
+				'key' => 'event_date',
+				'value' => $now,
+				'compare' => '>',
+				'type' => 'NUMERIC'
+				)                   
+			),
+		);
+	$loop = new WP_Query( $args );
 	if ($loop->have_posts()) {
 		while ($loop->have_posts()) {
 			$loop->the_post();
 			$post_date = get_post_meta(get_the_ID(), 'event_date');
 			$post_month = date('F', $post_date[0]);
 			if ($post_month == $first_month) {
-				array_push($posts[$first_month], get_the_ID());
+				array_push($posts[$first_month], array( 'id'=>get_the_ID(), 'post_type' => get_post_type() ));
 			} elseif ($post_month == $second_month) {
-				array_push($posts[$second_month], get_the_ID());
+				array_push($posts[$second_month], array( 'id'=>get_the_ID(), 'post_type' => get_post_type() ));
 			} elseif ($post_month == $third_month) {
-				array_push($posts[$third_month], get_the_ID());
+				array_push($posts[$third_month], array( 'id'=>get_the_ID(), 'post_type' => get_post_type() ));
 			}
 		}
 	}

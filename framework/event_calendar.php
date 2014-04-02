@@ -22,7 +22,8 @@ $calendar = getCalendar(strtotime('now'));
             foreach ($posts as $post) :
 
                 //get post data
-                $post = get_post($post);
+                $type = $post['post_type'];
+                $post = get_post($post['id']);
                 $day = date("d", get_post_meta($post->ID, "event_date", true));
                 $post_type = strtoupper(get_post_type($post->ID));
                 $location = get_post_meta($post->ID, "event_location", true);
@@ -31,7 +32,7 @@ $calendar = getCalendar(strtotime('now'));
                 //get speaker data
                 $speakers = explode(", ", get_post_meta($post->ID, "presenters", true));
                 ?>
-                <div class="calendar-post col-xs-12 col-md-4">
+                <div class="calendar-post col-xs-12 col-md-4 <?php echo $type; ?>">
                     <div class="calendar-post-date">
                         <span><?php echo $day; ?></span>
                     </div>

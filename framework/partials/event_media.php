@@ -67,7 +67,7 @@ else {
     <div class="additional-featured group">
         <div class="custom-box <?php echo ($video_status != "yes") ? 'disabled' : ''; ?>">
             <a href="javascript:void(0)" onclick="dispVideo(this)">
-                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/tv.png" >
+                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($video_status == "yes") ? 'tv' : 'tv-inactive'; ?>.png" >
                 <div class="right">
                     <h3>Watch</h3>
                 </div>
@@ -75,7 +75,7 @@ else {
         </div>
         <div class="custom-box <?php echo ($transcript_status != "yes") ? 'disabled' : ''; ?>">
             <a href="javascript:void(0)" onclick="dispRead(this)">
-                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/read.png" >
+                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($transcript_status == "yes") ? 'read' : 'read-inactive'; ?>.png" >
                 <div class="right">
                     <h3>Read</h3>
                 </div>
@@ -83,7 +83,7 @@ else {
         </div>
         <div class="custom-box <?php echo ($audio_status != "yes") ? 'disabled' : ''; ?>">
             <a href="javascript:void(0)" onclick="dispListen(this)">
-                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/headphones.png" >
+                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($audio_status == "yes") ? 'headphones' : 'listen-inactive'; ?>.png" >
                 <div class="right">
                     <h3>Listen</h3>
                 </div>

@@ -1,21 +1,23 @@
 <?php 
 
+$qObj = get_queried_object(); 
+$archivePostType = $qObj->labels->name;
 // Include Model
 require_once 'event_model.php';
-$next_post = getUpcoming('devotional',1);
+$next_post = getUpcoming($archivePostType,1);
 get_header();
 
 ?>
 <div class="row">
-	<div class="col-xs-12 col-sm-8">
+	<div class="col-xs-12 col-sm-8 archive <?php echo $archivePostType; ?>">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-		<div class="archive-feature">
-		<img src="<?php bloginfo('template_url'); ?>/images/devo.png">
-			<div class="info-banner">
-			<p>Attend this event or watch the live stream on <?php echo getPostTime($next_post[0]); ?> MST</p>
+			<div class="archive-feature">
+				<img src="<?php bloginfo('template_url'); ?>/images/devo.png">
+				<div class="info-banner">
+					<p>Attend this event or watch the live stream on <?php echo getPostTime($next_post[0]); ?> MST</p>
+				</div>
 			</div>
-		</div>
-			<h1>The Importance of Devotional</h1>
+			<h1>The Importance of <?php echo $archivePostType; ?></h1>
 			<p>
 				Devotionals are special worship services and an important setting for studying the doctrines and principles of the restored gospel. Each week, speakers and many other individuals strive to provide a meaningful experience where the Spirit can teach and enlighten us. Because of its special nature, it is important that each of us come to Devotional prepared and ready to learn. In doing so, you will help create an environment in which the Holy Ghost can minister and lift not only you, but also all who are gathered to be taught.
 			</p>

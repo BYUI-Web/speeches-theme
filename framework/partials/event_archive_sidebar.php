@@ -1,10 +1,10 @@
 <?php
 $current_post_type = get_post_type($next_post[0]);
-$recent_events = getRecent(3,'devotional');
+$recent_events = getRecent(3,$current_post_type);
 ?>
 
 <aside class="col-xs-12 col-sm-4">
-	<div class="aside-holder">
+	<div class="aside-holder <?php echo $archivePostType; ?>">
 		<div class="sidebar-inner group event-details">
 			<h2>Next Event</h2>
 			<ul>

@@ -18,6 +18,7 @@ Version: 2.1
 @byui-blue:#056cb6;
 @gray: lighten(#000, 33.5%);
 @orange: #e0754a;
+@purple: #B83E78;
 
 /*/////////////// GENERAL //////////////// */
 html, body {
@@ -264,7 +265,7 @@ aside {
     &.col-sm-4 {
         .aside-holder {
             margin-top:30px;
-            border: 2px solid @byui-blue;
+            border: 2px solid black;
             .paddingLeftRight(15px);
             @media only screen and (min-width:768px) {
                 .marginLeftRight(-15px);
@@ -284,7 +285,7 @@ aside {
             .paddingLeftRight(15px);
             .paddingTopBot(10px);
             color:#ffffff;
-            background-color:@byui-blue;
+            background-color:black;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 23px;
             text-transform: uppercase;
@@ -349,7 +350,7 @@ aside {
                     }
                     margin-bottom:15px;
                     span {
-                        color: @byui-blue;
+                        color: @orange;
                         font-weight: bold;
                         text-transform: uppercase;
                         font-size:1.1em;
@@ -439,7 +440,7 @@ aside {
                 color:#000;
             }
             .sidebar-header-date {
-                color:@byui-blue;
+                color:@orange;
                 text-transform: uppercase;
                 font-weight: bold;
             }
@@ -688,7 +689,6 @@ p.meta {
         height:auto;
     }
     .info-banner {
-        background-color:rgba(5,108,182, 0.7);
         position:absolute;
         top:100px;
         padding:20px;
@@ -697,7 +697,25 @@ p.meta {
         margin-right: 20px;
     }
 }
-
+.Devotionals {
+    h1 {
+        color:@orange;
+    }
+    .info-banner {
+        background-color:rgba(224,117,74, 0.9);
+    }
+}
+.Forums {
+    h1 {
+        color:@purple;
+    }
+    .info-banner {
+        background-color:rgba(184,62,120, 0.9);
+    }
+    .sidebar-inner.event-details ul li span {
+        color:@purple;
+    }
+}
 /************* Speaker Archive *************/
 .post-archive {
     margin-bottom:30px;
@@ -802,6 +820,12 @@ p.meta {
         margin-bottom: 0;
         line-height: 1em;
     }
+    .devotional .info-post-type {
+        color: @orange;
+    }
+    .forum .info-post-type {
+        color: @purple;
+    }
 
     .info-post-location {
         font-size: .75em;
@@ -838,6 +862,10 @@ p.meta {
 .btn-speeches {
     background-color: @orange;
     color: white;
+}
+
+.forum .btn-speeches {
+    background-color: @purple;
 }
 
 /*////////// FOOTER ///////////*/
