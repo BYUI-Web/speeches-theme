@@ -499,57 +499,37 @@ p.meta {
   background-color: #cbcac9;
   border: 1px solid #808080;
 }
-.home .speech-box {
-  border: black solid thin;
-  min-height: 355px;
-}
-.home .speech-box h3 {
-  margin: 0;
-  padding: 10px;
-  background-color: black;
-  color: white;
-}
-.home .speech-box div {
-  padding: 10px;
-}
-.home .speech-box div .popular-speech {
+.home .speech-box .popular-speech {
   padding: 3px;
 }
-.home .speech-box div a {
-  color: black;
-}
-.home .speech-box div a:hover {
-  color: #056cb6;
-  text-decoration: none;
-}
-.home .speech-box div .popular-title {
+.home .speech-box .popular-title {
   font-weight: bold;
   margin-bottom: 0;
   font-size: 1.1em;
 }
-.home .speech-box div .popular-speaker {
+.home .speech-box .popular-speaker {
   font-weight: .9em;
   margin-bottom: 0;
 }
-.home .speech-box div .featured-speech {
+.home .speech-box .featured-speech {
   padding: 3px;
   margin-bottom: 10px;
 }
-.home .speech-box div .featured-title {
+.home .speech-box .featured-title {
   font-weight: bold;
   margin-bottom: 0;
   font-size: 1.3em;
 }
-.home .speech-box div .featured-speaker {
+.home .speech-box .featured-speaker {
   font-weight: 1em;
   margin-bottom: 0;
 }
-.home .speech-box .featured-topic-text {
+.home .featured-topic-text {
   font-weight: bold;
   font-size: 1.6em;
   margin: 0;
 }
-.home .speech-box .featured-topic-description {
+.home .featured-topic-description {
   font-size: .9em;
   font-style: italic;
 }
@@ -596,24 +576,13 @@ p.meta {
 .speaker-wrapper .speaker-name h2 {
   margin-top: 5px;
 }
-.speaker-wrapper .speaker-name .speaker-social {
-  float: right;
-  margin-top: -60px;
+.speaker-wrapper .connect {
+  min-height: 10px;
+  margin-top: 15px;
 }
-.speaker-wrapper .speaker-name .speaker-social img {
-  width: 40px;
-  margin: 5px 2px;
-}
-.speaker-wrapper .speaker-name .speaker-social a:hover {
-  text-decoration: none;
-}
-.speaker-wrapper .speaker-name .speaker-social .icon-earth {
-  font-size: 40px;
-  margin: 5px 2px;
-  color: #056cb6;
-  text-decoration: none;
-  position: relative;
-  top: 13px;
+.speaker-wrapper .connect a {
+  font-style: italic;
+  font-weight: bold;
 }
 .speaker-wrapper .speaker-speeches .speaker-speeches-header {
   background-color: #056cb6;
@@ -810,4 +779,24 @@ p.meta {
   background-color: #b83e78;
 }
 /*////////// FOOTER ///////////*/
+.speech-box {
+  border: black solid thin;
+  min-height: 355px;
+}
+.speech-box h3 {
+  margin: 0;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+.speech-box div {
+  padding: 10px;
+}
+.speech-box div a {
+  color: black;
+}
+.speech-box div a:hover {
+  color: #056cb6;
+  text-decoration: none;
+}
 /*/////////////// MIX-INS //////////////// */

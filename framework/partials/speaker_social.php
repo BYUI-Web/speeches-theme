@@ -8,16 +8,16 @@ $website = get_post_meta($speaker_id, "website", true);
 <div class="speaker-social">
     <?php
         if (!empty($facebook)) {
-            echo "<a href='$facebook' target='_blank'><img src='". get_bloginfo('template_url') ."/images/facebook.png' alt='Facebook Icon'/></a>";
+            echo "<p><a href='$facebook' target='_blank'>Follow on Facebook</a></p>";
         }
         if (!empty($twitter)) {
-            echo "<a href='$twitter' target='_blank'><img src='/wp-content/themes/speeches-theme/images/twitter.png' alt='Twitter Icon'/></a>";
+            echo "<p><a href='$twitter' target='_blank'>Follow on Twitter</a></p>";
         }
         if (!empty($google_plus)) {
-            echo "<a href='$google_plus' target='_blank'><img src='/wp-content/themes/speeches-theme/images/google_plus.png' alt='Google+ Icon'/></a>";
+            echo "<p><a href='$google_plus' target='_blank'>Follow on Google+</a></p>";
         }
         if (!empty($website)) {
-            echo "<a href='$website' target='_blank'><i class='icon-earth'></i></a>";
+            echo "<p><a href='$website' target='_blank'>My Website</a></p>";
         }
     ?>
 </div>
