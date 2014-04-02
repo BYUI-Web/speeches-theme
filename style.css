@@ -247,9 +247,6 @@ div.event-featured .additional-featured .custom-box .feat_icon {
     height: 60px;
   }
 }
-div.event-featured .additional-featured .disabled {
-  background-color: #888888;
-}
 div.event-featured .additional-featured .disabled h3 {
   color: #a2a2a2;
 }
@@ -275,7 +272,7 @@ div.event-featured .addition-featured-more div:first-child {
 /*///////////// SIDEBARS ////////*/
 aside.col-sm-4 .aside-holder {
   margin-top: 30px;
-  border: 2px solid #056cb6;
+  border: 2px solid black;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -302,7 +299,7 @@ aside .sidebar-inner h2 {
   padding-top: 10px;
   padding-bottom: 10px;
   color: #ffffff;
-  background-color: #056cb6;
+  background-color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 23px;
   text-transform: uppercase;
@@ -368,7 +365,7 @@ aside .sidebar-inner.event-details ul li:first-child {
   text-transform: capitalize;
 }
 aside .sidebar-inner.event-details ul li span {
-  color: #056cb6;
+  color: #e0754a;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.1em;
@@ -447,7 +444,7 @@ aside .sidebar-inner.recent a > h3 {
   color: #000;
 }
 aside .sidebar-inner.recent .sidebar-header-date {
-  color: #056cb6;
+  color: #e0754a;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -658,13 +655,27 @@ p.meta {
   height: auto;
 }
 .archive-feature .info-banner {
-  background-color: rgba(5, 108, 182, 0.7);
   position: absolute;
   top: 100px;
   padding: 20px;
   color: #fff;
   font-size: 20px;
   margin-right: 20px;
+}
+.Devotionals h1 {
+  color: #e0754a;
+}
+.Devotionals .info-banner {
+  background-color: rgba(224, 117, 74, 0.9);
+}
+.Forums h1 {
+  color: #b83e78;
+}
+.Forums .info-banner {
+  background-color: rgba(184, 62, 120, 0.9);
+}
+.Forums .sidebar-inner.event-details ul li span {
+  color: #b83e78;
 }
 /************* Speaker Archive *************/
 .post-archive {

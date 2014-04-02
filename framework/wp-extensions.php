@@ -465,7 +465,7 @@ add_filter('single_template', 'get_custom_speaker_template');
 function get_custom_post_type_template($archive_template) {
     global $post;
 
-    if (is_post_type_archive('devotional')) {
+    if (is_post_type_archive('devotional') || is_post_type_archive('forum')) {
         $archive_template = dirname(__FILE__) . '/event_home.php';
     }
     return $archive_template;
