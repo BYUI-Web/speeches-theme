@@ -73,19 +73,19 @@ else {
                 </div>
             </a>
         </div>
-        <div class="custom-box <?php echo ($transcript_status != "yes") ? 'disabled' : ''; ?>">
-            <a href="javascript:void(0)" onclick="dispRead(this)">
-                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($transcript_status == "yes") ? 'read' : 'read-inactive'; ?>.png" >
-                <div class="right">
-                    <h3>Read</h3>
-                </div>
-            </a>
-        </div>
         <div class="custom-box <?php echo ($audio_status != "yes") ? 'disabled' : ''; ?>">
             <a href="javascript:void(0)" onclick="dispListen(this)">
                 <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($audio_status == "yes") ? 'headphones' : 'listen-inactive'; ?>.png" >
                 <div class="right">
                     <h3>Listen</h3>
+                </div>
+            </a>
+        </div>
+        <div class="custom-box <?php echo ($transcript_status != "yes") ? 'disabled' : ''; ?>">
+            <a href="javascript:void(0)" onclick="dispRead(this)">
+                <img class="feat_icon" src="<?php bloginfo('template_url'); ?>/images/<?php echo ($transcript_status == "yes") ? 'read' : 'read-inactive'; ?>.png" >
+                <div class="right">
+                    <h3>Read</h3>
                 </div>
             </a>
         </div>

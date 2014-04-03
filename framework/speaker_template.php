@@ -19,10 +19,7 @@ $speaker_posts = getPostsBySpeaker($id);
         <div class="speaker-image">
             <img src="<?php echo $image[0]; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
         </div>
-        <div class="connect speech-box">
-            <h3>Connect</h3>
-            <?php require_once 'partials/speaker_social.php'; ?>
-        </div>
+        <?php require_once 'partials/speaker_social.php'; ?>
     </div>
     <div class="col-xs-12 col-md-9 speaker-bio-wrapper">
         <div class="speaker-name">
@@ -34,8 +31,8 @@ $speaker_posts = getPostsBySpeaker($id);
             <?php echo $bio; ?>
         </div>
         <section class="speaker-speeches">
-            <div class="speeches-inner">
-                <h2 class="speaker-speeches-header">FROM THIS SPEAKER</h2>
+            <div class="speech-box">
+                <h3>FROM THIS SPEAKER</h3>
                 <ul class="speaker-speeches-list">
                     <?php foreach ($speaker_posts as $post) : ?>
                         <?php
