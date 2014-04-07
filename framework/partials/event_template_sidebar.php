@@ -38,7 +38,7 @@
 		<div class="sidebar-inner group sidebar-featured-speeches">
 			<h2>Related Speeches</h2>
 			<div>
-				<h3>By this Speaker</h3>
+				<h3>Other By this Speaker</h3>
 				<?php 
 				$posts = getPostsBySpeaker($current_post); 
 				if (is_array($posts)) :

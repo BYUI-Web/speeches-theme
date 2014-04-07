@@ -348,13 +348,14 @@ function save_speaker_meta($post_id, $post) {
     $speaker_meta['twitter'] = $_POST['twitter'];
     $speaker_meta['google_plus'] = $_POST['google_plus'];
     $speaker_meta['website'] = $_POST['website'];
-
     $speaker_meta['first_name'] = '';
+
     $name = explode(' ', $post->title);
     for ($i = 0; $i < (count($name) - 1); $i++) {
         $speaker_meta['first_name'] += $name[$i];
     }
     $speaker_meta['last_name'] = $name[count($name)-1];
+
     // Add values of $speaker_meta as custom fields
     foreach ($speaker_meta as $key => $value) {
         if ($post->post_type == 'revision')
@@ -374,6 +375,7 @@ function save_speaker_meta($post_id, $post) {
         if (!$value)
             delete_post_meta($post->ID, $key);
     }
+
 }
 
 add_action('save_post', 'save_speaker_meta', 1, 2); // save the custom fields
@@ -400,7 +402,21 @@ function save_event_meta($post_id, $post) {
     $devotional_meta['presenters'] = $_POST['presenters'];
     $devotional_meta['event_end_time'] = $_POST['event_date'] . " " . $_POST['event_end_time'];
     $devotional_meta['live_stream'] = $_POST['live_stream'];
-    $devotional_meta['live_stream_embed'] = $_POST['live_stream_embed'];
+    $devotional_meta['live_stream_embed'] = '
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<object id="myExperience2470803181001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="1956072169001" />
+  <param name="playerKey" value="AQ~~,AAABCveqfDE~,4WT0xjonGphZPc7bcpuNwtSB7lo4cJKZ" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="@videoPlayer" value="2470803181001" />
+</object>
+<script type="text/javascript">brightcove.createExperiences();</script>
+';
     $devotional_meta['event_location'] = $_POST['event_location'];
     $devotional_meta['topics'] = $_POST['topics'];
     $devotional_meta['video_status'] = $_POST['video_status'];
@@ -436,6 +452,14 @@ function save_event_meta($post_id, $post) {
         if (!$value)
             delete_post_meta($post->ID, $key);
     }
+    // Save Tags
+    wp_set_post_tags($post->ID, $devotional_meta['topics']);
+    $posttags = get_the_tags();
+    if ($posttags) {
+      foreach($posttags as $tag) {
+        echo $tag->name . ' '; 
+    }
+}
 }
 
 add_action('save_post', 'save_event_meta', 1, 2); // save the custom fields
@@ -444,6 +468,13 @@ function get_custom_event_template($single_template) {
     global $post;
 
     if ($post->post_type == 'devotional' || $post->post_type == 'forum') {
+        $pageviews = get_post_meta($post->ID, 'pageviews', true);
+        if ( $pageviews ) {
+            $pageviews++;
+            update_post_meta($post->ID, 'pageviews', $pageviews);
+        } else {
+            add_post_meta($post->ID, 'pageviews', 1);
+        }
         $single_template = dirname(__FILE__) . '/event_template.php';
     }
     return $single_template;
@@ -531,4 +562,20 @@ function do_theme_redirect($url) {
     }
 }
 
+// Page Views Reset. Reset Every Two Weeks
+if ( ! wp_next_scheduled( 'pageviews_reset' ) ) {
+  wp_schedule_event( time(), 'hourly', 'pageviews_reset' );
+}
+
+add_action( 'pageviews_reset', 'reset_pageviews' );
+
+function reset_pageviews() {
+    $loop = new WP_Query( 
+        array( 'post_type' => array('devotional' , 'forum'), 
+            'posts_per_page' => -1 ) );
+    while ( $loop->have_posts() ) { 
+       $loop->the_post(); 
+       update_post_meta(get_the_ID(), 'pageviews', 0);
+   }
+}
 ?>

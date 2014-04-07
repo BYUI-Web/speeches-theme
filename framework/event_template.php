@@ -11,14 +11,12 @@ $current_post_type;
 get_header();
 
 $current_post = get_the_ID();
-$post_types = array('devotional' => 'BYU-Idaho Devtional');
 
 //initialize all meta variables
 $meta = get_post_meta(get_the_ID());
 //loop through meta and create variables with the name of the key
 foreach($meta as $key => $value) { ${$key} = $value[0]; }
 $current_post_type = get_post_type();
-
 ?>
 <div class="row">
     <div class="col-xs-12 col-sm-8">
