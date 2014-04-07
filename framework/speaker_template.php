@@ -10,7 +10,6 @@ $speaker_id = $id;
 $speakerName = get_the_title();
 $image = wp_get_attachment_image_src(get_post_thumbnail_id());
 $bio = wpautop(get_post_meta($id, "speaker_bio", true));
-
 $speaker_posts = getPostsBySpeaker($id);
 ?>
 
@@ -33,28 +32,34 @@ $speaker_posts = getPostsBySpeaker($id);
         <section class="speaker-speeches">
             <div class="speech-box">
                 <h3>FROM THIS SPEAKER</h3>
-                <ul class="speaker-speeches-list">
-                    <?php foreach ($speaker_posts as $post) : ?>
-                        <?php
-                        $post_title = get_the_title($post);
-                        $post_date = get_post_meta($post, "event_date");
-                        $post_date = $post_date[0];
-                        $url = get_permalink($post);
-                        $transcript = get_post_meta($post, "transcript");
-                        $transcript_snippet = substr($transcript[0], 0, 150);
-                        ?>
-                        <li class="row">
-                            <div class="speaker-post-date col-xs-2">
-                                <p class="speaker-post-day"><?php echo date("d", $post_date); ?></p>
-                                <p class="speaker-post-my"><?php echo date("M Y", $post_date); ?></p>
-                            </div>
-                            <div class="col-xs-10">
-                                <a href="<?php echo $url; ?>" class="speaker-post-title"><?php echo $post_title; ?></a>
-                                <blockquote class="speaker-post-snip"><?php echo $transcript_snippet; ?>...</blockquote>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if (is_array($speaker_posts)) : ?>
+                    <ul class="speaker-speeches-list">
+
+                        <?php foreach ($speaker_posts as $post) : ?>
+                            <?php
+                            $post_title = get_the_title($post);
+                            $post_date = get_post_meta($post, "event_date");
+                            $post_date = $post_date[0];
+                            $url = get_permalink($post);
+                            $transcript = get_post_meta($post, "transcript");
+                            $transcript_snippet = substr($transcript[0], 0, 150);
+                            ?>
+                            <li class="row">
+                                <div class="speaker-post-date col-xs-2">
+                                    <p class="speaker-post-day"><?php echo date("d", $post_date); ?></p>
+                                    <p class="speaker-post-my"><?php echo date("M Y", $post_date); ?></p>
+                                </div>
+                                <div class="col-xs-10">
+                                    <a href="<?php echo $url; ?>" class="speaker-post-title"><?php echo $post_title; ?></a>
+                                    <blockquote class="speaker-post-snip"><?php echo $transcript_snippet; ?>...</blockquote>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+
+                    </ul>
+                <?php else: ?>
+                    <?php echo $speaker_posts; ?>
+                <?php endif; ?>
             </div>
         </section>
     </div>

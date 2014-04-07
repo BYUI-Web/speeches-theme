@@ -29,22 +29,38 @@ function postTimeStatus($post_id) {
 function getPostsBySpeaker($current_post_id) {
 	$speakerPosts = array();
 	$counter = 0;
-	$current_post_presenters = get_post_meta($current_post_id, 'presenters');
+	$current_post_presenters = get_post_meta($current_post_id, 'presenters', true);
 
-	if ($current_post_presenters[0])
-		$current_post_presenters = explode(', ', $current_post_presenters[0]);
+	if ($current_post_presenters)
+		$current_post_presenters = explode(', ', $current_post_presenters);
+	else
+		$current_post_presenters = $current_post_id;
 
 	$loop = new WP_Query(array('post_type' => array('devotional', 'forum'), "orderby" => "views"));
 	if ($loop->have_posts()) {
 		while ($loop->have_posts()) {
 			$loop->the_post();
 			$post_id = get_the_ID();
-			$loop_presenters = get_post_meta(get_the_ID(), 'presenters');
-			if ($loop_presenters[0])
-				$loop_presenters = explode(', ', $loop_presenters[0]);
+			$loop_presenters = get_post_meta(get_the_ID(), 'presenters', true);
+			if ($loop_presenters)
+				$loop_presenters = explode(', ', $loop_presenters);
 			foreach ($loop_presenters as $test) {
-				foreach ($current_post_presenters as $comp) {
-					if ($test == $comp) {
+				if (is_array($current_post_presenters)) {
+					foreach ($current_post_presenters as $comp) {
+						if ($test == $comp) {
+							if ($post_id != $current_post_id) {
+								$add = true;
+								foreach ($speakerPosts as $toAdd) {
+									if ($toAdd == $post_id)
+										$add = false;
+								}
+								if ($add)
+									array_push($speakerPosts, $post_id);
+							}
+						}
+					}
+				} else {
+					if ($test == $current_post_presenters) {
 						if ($post_id != $current_post_id) {
 							$add = true;
 							foreach ($speakerPosts as $toAdd) {
