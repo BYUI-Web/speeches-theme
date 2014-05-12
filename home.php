@@ -155,7 +155,7 @@ $upcoming_events = getUpcoming(array("devotional", "forum"));
             <?php endforeach; ?>
 
         </ul>
-        [Calendar >]
+        <a href="/calendar" class="calendar-btn pull-right">Calendar ></a>
     </div>
 </div>
 <?php get_footer(); ?>
