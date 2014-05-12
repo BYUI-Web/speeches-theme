@@ -32,7 +32,7 @@ $recent_events = getRecent(3,$current_post_type);
 				</div>
 			<?php endforeach; ?>
 			<div class="right">
-				<a class="speeches-button" href="#">View Archive</a>
+				<a class="speeches-button" href="/archive">View Archive</a>
 			</div>
 		</div>
 		<div class="sidebar-inner group etiquette">
