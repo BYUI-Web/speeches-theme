@@ -185,7 +185,7 @@
             <span class="sr-only">BYU-Idaho</span>
           </span>
         </a>
-        <div class="site-title"><?php echo ( is_home() ) ? "Home" : ( is_category() ? single_cat_title() : get_the_title());?></div>
+        <div class="site-title"><?php echo ( is_home() ) ? "Speeches" : ( is_category() ? single_cat_title() : get_the_title());?></div>
         <form method="get" action="http://search.byui.edu/search?" _lpchecked="1"  role="search" class="desktop-search form-horizontal container hidden-xs hidden-sm row">
           <div class="search input-group">
             <input type="text" class="form-control" name="q" placeholder="Search" alt="Search the BYU-I website" />
