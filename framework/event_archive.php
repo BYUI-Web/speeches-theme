@@ -25,7 +25,7 @@ if ($loop->have_posts()) {
 	}
 }
 
-u$loop = new WP_Query( $speakers_args );
+$loop = new WP_Query( $speakers_args );
 if ($loop->have_posts()) {
 	while ($loop->have_posts()) { 
 		$loop->the_post();
@@ -76,7 +76,110 @@ get_header();
 		}
 	}
 </script>
+
 <div class="row">
+	<div class="col-xs-12 col-sm-4">
+		<div class="filter-box">
+			<h3>EVENT TYPE</h3>
+			<div class="filters">
+				<div class="flat-form-elements"> 
+					<input type="checkbox" name="event" value="devotional" id="devotional">
+					<label for="devotional">Devotionals</label><br>
+					<input type="checkbox" name="event" value="forum" id="forum">
+					<label for="forum">University Forums</label><br>
+					<input type="checkbox" name="event" value="graduation" id="graduation">
+					<label for="graduation">Graduation</label>
+				</div> 
+			</div>
+		</div>
+		<div class="filter-box">
+			<h3>TOPIC</h3>
+			<div class="filters">
+				<div class="flat-form-elements"> 
+					<input type="checkbox" name="event" value="tag-here" id="tag-here">
+					<label for="tag-here">Agency</label><br>
+					<input type="checkbox" name="event" value="tag-here" id="tag-here">
+					<label for="tag-here">Book of Mormon</label><br>
+					<input type="checkbox" name="event" value="tag-here" id="tag-here">
+					<label for="tag-here">Honesty</label>
+				</div>
+				<br>
+				<a href="#" class="more-btn">See More</a>
+			</div>
+		</div>
+		<div class="filter-box">
+			<h3>SPEAKER</h3>
+			<div class="filters">
+				<div class="flat-form-elements"> 
+					<input type="checkbox" name="event" value="id-here" id="id-here">
+					<label for="id-here">Beck, David L. Beck</label><br>
+					<input type="checkbox" name="event" value="id-here" id="id-here">
+					<label for="id-here">Hanks, Stephen G.</label><br>
+					<input type="checkbox" name="event" value="id-here" id="id-here">
+					<label for="id-here">Fronk, Camille</label><br>
+					<input type="checkbox" name="event" value="id-here" id="id-here">
+					<label for="id-here">Holdaway, Boyd F.</label>
+				</div>
+				<br>
+				<a href="#" class="more-btn">See More</a>
+			</div>
+		</div>
+		<div class="filter-box">
+			<h3>DATE</h3>
+
+			<div class="filters">
+				Between<br>
+				<div class="flat-form-elements"> 
+					<select id="start_month" class="" onchange="updateDateList()">
+						<option value="jan">Jan</option>
+						<option value="feb">Feb</option>
+						<option value="mar">Mar</option>
+					</select>
+					<select id="start_year" class="" onchange="updateDateList()">
+						<option value="2014">2014</option>
+						<option value="2013">2013</option>
+						<option value="2012">2012</option>
+					</select>
+				</div>
+				and
+				<div class="flat-form-elements"> 
+					<select id="end_month" class="" onchange="updateDateList()">
+						<option value="jan">Jan</option>
+						<option value="feb">Feb</option>
+						<option value="mar">Mar</option>
+					</select>
+					<select id="end_year" class="" onchange="updateDateList()">
+						<option value="2014">2014</option>
+						<option value="2013">2013</option>
+						<option value="2012">2012</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-8">
+		Devotionals (x)<br>
+		Book of Mormon (x)<br>
+		Clark, Kim B. (x)<br>
+		Eager, Drew (x)<br>
+		January 2014 to March 2014 (x)<br>
+		<br>
+		2 RESULTS FOUND<br>
+		<hr>
+		<br>
+		DEVOTIONAL: March 14th, 2014<br>
+		The Book of Mormon<br>
+		Drew Eager<br>
+		Business Management Faculty<br>
+		<br>
+		UNIVERSITY FORUM: January 5th, 2014<br>
+		Scripture Study<br>
+		Kim B. Clark<br>
+		President of BYU-Idaho<br>
+	</div>
+</div>
+
+<!--<div class="row">
 	<div class="col-xs-12">
 		<div id="date-filter">
 			<div>
@@ -154,7 +257,7 @@ get_header();
 			<?php endforeach; ?>
 		</div>
 	</div>
-</div>
+</div> -->
 <script type="text/javascript">
 	window.onload = dispDate();
 	window.onload = updateDateList();
