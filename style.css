@@ -802,6 +802,7 @@ p.meta {
   color: #b83e78;
 }
 /************* Speaker Archive *************/
+/* Sidebar */
 .filter-box {
   border: black solid 1px;
   padding-bottom: 15px;
@@ -826,7 +827,7 @@ p.meta {
   padding-left: 17px;
   margin-right: 15px;
   margin-bottom: 0;
-  font-size: 13px;
+  font-size: 14px;
 }
 .filter-box .filters .flat-form-elements label:before {
   content: "";
@@ -836,7 +837,7 @@ p.meta {
   margin-right: 10px;
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 4px;
   border: solid black 1px;
 }
 .filter-box .filters .flat-form-elements input[type=checkbox] {
@@ -888,6 +889,56 @@ p.meta {
 }
 .filter-box .filters .more-btn:hover {
   text-decoration: none;
+}
+.running-filter .remove-filter-x {
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-image: url("images/x.png");
+  background-repeat: no-repeat;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+.archive-results .result-count {
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding-bottom: 5px;
+  border-bottom: solid #eee 2px;
+  font-weight: bold;
+  font-size: 120%;
+}
+.archive-results .result {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+.archive-results .result.devotional .result-header {
+  color: #d9541e;
+}
+.archive-results .result.forum .result-header {
+  color: #9e4276;
+}
+.archive-results .result .result-header {
+  font-size: 125%;
+  font-weight: bold;
+  line-height: 110%;
+}
+.archive-results .result .result-header .result-type {
+  text-transform: uppercase;
+}
+.archive-results .result .result-title {
+  font-size: 125%;
+  font-weight: bold;
+  line-height: 120%;
+}
+.archive-results .result .result-presenter {
+  font-weight: bold;
+  font-size: 85%;
+}
+.archive-results .result .result-presenter-title {
+  font-size: 85%;
+  font-style: italic;
+  line-height: 100%;
 }
 /*
 .post-archive {

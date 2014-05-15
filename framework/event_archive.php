@@ -157,25 +157,28 @@ get_header();
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-8">
-		Devotionals (x)<br>
-		Book of Mormon (x)<br>
-		Clark, Kim B. (x)<br>
-		Eager, Drew (x)<br>
-		January 2014 to March 2014 (x)<br>
-		<br>
-		2 RESULTS FOUND<br>
-		<hr>
-		<br>
-		DEVOTIONAL: March 14th, 2014<br>
-		The Book of Mormon<br>
-		Drew Eager<br>
-		Business Management Faculty<br>
-		<br>
-		UNIVERSITY FORUM: January 5th, 2014<br>
-		Scripture Study<br>
-		Kim B. Clark<br>
-		President of BYU-Idaho<br>
+	<div class="col-xs-12 col-sm-8">
+		<div class="running-filter">Devotionals <a href="#" class="remove-filter-x"></a></div>
+		<div class="running-filter">Book of Mormon <a href="#" class="remove-filter-x"></a></div>
+		<div class="running-filter">Clark, Kim B. <a href="#" class="remove-filter-x"></a></div>
+		<div class="running-filter">Eager, Drew <a href="#" class="remove-filter-x"></a></div>
+		<div class="running-filter">January 2014 to March 2014 <a href="#" class="remove-filter-x"></a></div>
+
+		<div class="archive-results">
+			<div class="result-count">2 RESULTS FOUND</div>
+			<div class="devotional result">
+				<a href="#" class="result-header"><span class="result-type">Devotional</span>: March 14th, 2014</a>
+				<div class="result-title">The Book of Mormon</div>
+				<div class="result-presenter">Drew Eager</div>
+				<div class="result-presenter-title">Business Management Faculty</div>
+			</div>
+			<div class="forum result">
+				<a href="#" class="result-header"><span class="result-type">University Forum</span>: January 5th, 2014</a>
+				<div class="result-title">Scripture Study</div>
+				<div class="result-presenter">Kim B. Clark</div>
+				<div class="result-presenter-title">President of BYU-Idaho</div>
+			</div>
+		</div>
 	</div>
 </div>
 
