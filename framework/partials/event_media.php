@@ -15,10 +15,10 @@ if ($post_status == "past") {
     if ($video_status == "yes") {
         $video_player = $video_embed;
     } else if ($video_status == "not_yet") {
-        $video_player = "<img src='/wp-content/themes/speeches-theme/images/speech-banner.jpg'/>";
+        $video_player = "<img src='".get_template_directory_uri()."/images/devo.png'/>";
         $video_player .= "<p>The video for this event is not yet available. Please check back later.</p>";
     } else if ($video_status == "never") {
-        $video_player = "<img src='/wp-content/themes/speeches-theme/images/speech-banner.jpg'/>";
+        $video_player = "<img src='".get_template_directory_uri()."/images/devo.png'/>";
         $video_player .= "<p>There will not be a video provided for this event.</p>";
     }
     if ($audio_status == "yes") {
@@ -37,7 +37,7 @@ else if ($post_status == "present") {
     }
     //if not then we must show the generic banner
     else {
-        $video_player = "<img src='/wp-content/themes/speeches-theme/images/speech-banner.jpg'/>";
+        $video_player = "<img src='".get_template_directory_uri()."/images/devo.png'/>";
         $video_player .= "<p>This event is currently not available. Attend the event ";
         $video_player .= "on " . date('l, F jS, Y \a\t g:i A', $event_date) . "</p>";
     }
@@ -46,7 +46,7 @@ else if ($post_status == "present") {
 else {
     //we need some sort of banner to display instead of just text
     //Reanna is working on that
-    $video_player = "<img src='/wp-content/themes/speeches-theme/images/speech-banner.jpg'/>";
+    $video_player = "<img src='".get_template_directory_uri()."/images/devo.png'/>";
     $video_player .= "<p>This event is currently not available. Attend the event ";
     if ($live_stream == "yes") {
         $video_player .= "or watch the live stream";

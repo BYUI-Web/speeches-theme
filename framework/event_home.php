@@ -14,7 +14,7 @@ get_header();
 			<div class="archive-feature">
 				<img src="<?php bloginfo('template_url'); ?>/images/devo.png">
 				<div class="info-banner">
-					<p>Attend this event or watch the live stream on <?php echo getPostTime($next_post[0]); ?> MST</p>
+					<p>Attend <?php echo $archivePostType ?> or watch the live stream on <?php echo getPostTime($next_post[0]); ?> MST</p>
 				</div>
 			</div>
 			<h1>The Importance of <?php echo $archivePostType; ?></h1>

@@ -38,12 +38,14 @@ get_header();
 	<div class="archive-header-banner">
 		<h1>Speeches Archive</h1>
 	</div>
+	<br>
+	<!--
 	<div class="filters">
 		<label for="">Browse by: </label>
 		<a href="javascript:void(0)" onclick="dispDate()" id="dispDate">Date</a>
 		<a href="javascript:void(0)" onclick="dispSpeaker()" id="dispSpeaker">Speaker</a>
 		<a href="javascript:void(0)" onclick="dispTopic()" id="dispTopic">Topic</a>
-	</div>
+	</div>-->
 </div>
 <script type="text/javascript">
 	posts = [];
