@@ -128,9 +128,9 @@ $upcoming_events = getUpcoming(array("devotional", "forum"));
 <div class="row">
     <div class="col-xs-12 upcoming-slider-container">
         <h3>Upcoming Speeches</h3>
-        <div class="slide-left"><</div>
-        <div class="slide-right">></div>
-        <ul class="upcoming-slider">
+        <div id="goPrev" class="slide-left"><</div>
+        <div id="goNext" class="slide-right">></div>
+        <ul id="upcoming-events-slider" class="upcoming-slider">
 
             <?php 
             foreach ($upcoming_events as $event) :
@@ -158,4 +158,21 @@ $upcoming_events = getUpcoming(array("devotional", "forum"));
         <a href="/calendar" class="calendar-btn pull-right">Calendar ></a>
     </div>
 </div>
+<script type="text/javascript">
+
+//Rudimentary scrolling functionality for the upcoming slider
+$( "#goPrev" ).click(scrollPrev);
+$( "#goNext" ).click(scrollNext);
+
+function scrollNext() {
+    var frame = $("#upcoming-events-slider")
+    //frame.scrollLeft(frame.width());
+    frame.animate({scrollLeft: frame.width()}, 800);
+}
+function scrollPrev() {
+    var frame = $("#upcoming-events-slider")
+    //frame.scrollLeft(frame.scrollLeft() - frame.width());
+    frame.animate({scrollLeft: frame.scrollLeft() - frame.width()}, 800);
+}
+</script>
 <?php get_footer(); ?>

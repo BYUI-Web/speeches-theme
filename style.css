@@ -623,7 +623,7 @@ p.meta {
   display: block;
   margin-top: 20px;
   height: 400px;
-  overflow: auto;
+  overflow: hidden;
   list-style: none;
   width: 100%;
   padding: 0 60px;
