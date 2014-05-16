@@ -948,6 +948,15 @@ p.meta {
             &:hover {
                 text-decoration:none;
             }
+
+/** Styles for demo testing, these can be removed as soon as needed **/
+            &:active {
+                display: none;
+                & + .flat-form-elements {
+                    display:block !important;
+                }
+            }
+/*END DEMO STYLES*/
         }
     }
 }
@@ -963,6 +972,14 @@ p.meta {
         margin-left:3px;
         vertical-align:middle;
     }
+/** Styles for demo testing, these can be removed as soon as needed **/
+    .remove-filter-x:active {
+        display:none;
+        & + .temp-caption {
+            display:none;
+        }
+    }
+/*END DEMO STYLES*/
 }
 
 .archive-results {

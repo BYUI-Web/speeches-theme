@@ -880,6 +880,8 @@ p.meta {
   text-transform: uppercase;
   font-size: 80%;
   padding: 5px 7px;
+  /** Styles for demo testing, these can be removed as soon as needed **/
+  /*END DEMO STYLES*/
 }
 .filter-box .filters .more-btn:before {
   padding-right: 3px;
@@ -890,6 +892,16 @@ p.meta {
 .filter-box .filters .more-btn:hover {
   text-decoration: none;
 }
+.filter-box .filters .more-btn:active {
+  display: none;
+}
+.filter-box .filters .more-btn:active + .flat-form-elements {
+  display: block !important;
+}
+.running-filter {
+  /** Styles for demo testing, these can be removed as soon as needed **/
+  /*END DEMO STYLES*/
+}
 .running-filter .remove-filter-x {
   display: inline-block;
   position: relative;
@@ -899,6 +911,12 @@ p.meta {
   background-repeat: no-repeat;
   margin-left: 3px;
   vertical-align: middle;
+}
+.running-filter .remove-filter-x:active {
+  display: none;
+}
+.running-filter .remove-filter-x:active + .temp-caption {
+  display: none;
 }
 .archive-results .result-count {
   text-transform: uppercase;
