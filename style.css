@@ -526,6 +526,15 @@ p.meta {
   font-weight: 1em;
   margin-bottom: 0;
 }
+.home .speech-box .speech-list {
+  overflow: scroll;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 20px;
+}
 .home .featured-topic-text {
   font-weight: bold;
   font-size: 1.6em;
@@ -1116,13 +1125,6 @@ p.meta {
   padding: 10px 20px;
   background-color: black;
   color: white;
-}
-.speech-box .speech-list {
-  overflow: scroll;
-  position: absolute;
-  top: 45px;
-  bottom: 0;
-  padding: 12px 20px;
 }
 .speech-box div a {
   color: black;
