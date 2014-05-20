@@ -111,8 +111,8 @@ add_action('init', 'register_speakers_posttype');
 /* * ******************************************* */
 
 function create_post_pub() {
-    add_theme_support('post-thumbnails', array('speaker', 'publicidade'));
-    add_theme_support('thumbnail', array('speaker', 'publicidade'));
+    add_theme_support('post-thumbnails', array('speaker', 'publicidade', 'devotional', 'forum'));
+    add_theme_support('thumbnail', array('speaker', 'publicidade', 'devotional', 'forum'));
 }
 
 add_action('init', 'create_post_pub');
