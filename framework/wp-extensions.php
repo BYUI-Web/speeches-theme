@@ -37,6 +37,7 @@ function register_devotionals_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category', 'post_tag'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "devotionals", 'with_front' => true, "comments"), // Permalinks format
         'menu_position' => 5,
@@ -64,6 +65,7 @@ function register_forums_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category', 'post_tag'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "forums", 'with_front' => true), // Permalinks format
         'menu_position' => 5,
@@ -95,6 +97,7 @@ function register_speakers_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "speaker", 'with_front' => true), // Permalinks format
         'menu_position' => 5,
