@@ -6,7 +6,6 @@ function admin_dependencies() {
 
 add_action('admin_head', 'admin_dependencies');
 
-<?php
  
 function add_menu_icons_styles(){
 ?>
