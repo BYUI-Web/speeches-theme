@@ -18,6 +18,25 @@ function my_head_function() {
 }
 
 add_action('wp_head', 'my_head_function');
+
+
+function add_menu_icons_styles(){
+echo '<style>
+#adminmenu .menu-icon-devotional div.wp-menu-image:before {
+  content: "\f330";
+}
+
+#adminmenu .menu-icon-forum div.wp-menu-image:before {
+  content: "\f473";
+}
+
+#adminmenu .menu-icon-speaker div.wp-menu-image:before {
+  content: "\f338";
+}
+
+</style>';
+}
+add_action( 'admin_head', 'add_menu_icons_styles' );
 /* * ******************************************* */
 /* * *** Register Events Post Types **** */
 /* * ******************************************* */
