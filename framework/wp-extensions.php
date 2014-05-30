@@ -6,25 +6,6 @@ function admin_dependencies() {
 
 add_action('admin_head', 'admin_dependencies');
 
- 
-function add_menu_icons_styles(){
-?>
- 
-<style>
-#adminmenu .menu-icon-devotional div.wp-menu-image:before {
-  content: "\f330";
-}
-#adminmenu .menu-icon-forum div.wp-menu-image:before {
-  content: "\f473";
-}
-#adminmenu .menu-icon-speaker div.wp-menu-image:before {
-  content: "\f338";
-</style>
- 
-<?php
-}
-add_action( 'admin_head', 'add_menu_icons_styles' );
-
 
 function my_admin_footer_function() {
     echo '<script src="' . get_bloginfo('template_url') . '/framework/js/speechesjs.min.js"></script>';
