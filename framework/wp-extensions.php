@@ -578,4 +578,24 @@ function reset_pageviews() {
        update_post_meta(get_the_ID(), 'pageviews', 0);
    }
 }
+
+//Modify the placeholder text of title field for the custom post
+function change_default_title( $title ){
+     $screen = get_current_screen();
+     switch ($screen->post_type) {
+        case 'devotional':
+        return 'Enter Devotional Title Here';
+        case 'speaker':
+        return 'Speaker\'s Full Name';
+        case 'forum':
+        return 'Enter Forum Title Here';
+        default:
+        return 'Enter Title Here';
+     }
+     return $title;
+}
+
+add_filter( 'enter_title_here', 'change_default_title' );
+
+
 ?>

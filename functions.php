@@ -5,6 +5,14 @@ add_theme_support( 'post-thumbnails' );
 // Disable Admin bar
 show_admin_bar( FALSE ); 
 
+
+//Remove unneeded menus from the admin sidebar
+function remove_menus(){
+  remove_menu_page( 'edit-comments.php' );          //Comments
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
 	// Add RSS links to <head> section
 automatic_feed_links();
 
