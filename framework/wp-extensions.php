@@ -600,7 +600,6 @@ function reset_pageviews() {
        update_post_meta(get_the_ID(), 'pageviews', 0);
    }
 }
-<<<<<<< HEAD
 
 //Modify the placeholder text of title field for the custom post
 function change_default_title( $title ){
@@ -622,6 +621,3 @@ add_filter( 'enter_title_here', 'change_default_title' );
 
 
 ?>
-=======
-?>
->>>>>>> bd77a8d8e17a639892efc18becff58275711b7dc
