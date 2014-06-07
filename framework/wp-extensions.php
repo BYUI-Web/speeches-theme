@@ -17,6 +17,25 @@ function my_head_function() {
 }
 
 add_action('wp_head', 'my_head_function');
+
+
+function add_menu_icons_styles(){
+echo '<style>
+#adminmenu .menu-icon-devotional div.wp-menu-image:before {
+  content: "\f330";
+}
+
+#adminmenu .menu-icon-forum div.wp-menu-image:before {
+  content: "\f473";
+}
+
+#adminmenu .menu-icon-speaker div.wp-menu-image:before {
+  content: "\f338";
+}
+
+</style>';
+}
+add_action( 'admin_head', 'add_menu_icons_styles' );
 /* * ******************************************* */
 /* * *** Register Events Post Types **** */
 /* * ******************************************* */
@@ -37,6 +56,7 @@ function register_devotionals_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category', 'post_tag'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "devotionals", 'with_front' => true, "comments"), // Permalinks format
         'menu_position' => 5,
@@ -64,6 +84,7 @@ function register_forums_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category', 'post_tag'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "forums", 'with_front' => true), // Permalinks format
         'menu_position' => 5,
@@ -95,6 +116,7 @@ function register_speakers_posttype() {
         'has_archive' => true,
         'taxonomies' => array('category'),
         'public' => true,
+        'menu_icon' => '',
         'supports' => array('title', 'thumbnail', 'revisions'),
         'rewrite' => array("slug" => "speaker", 'with_front' => true), // Permalinks format
         'menu_position' => 5,
@@ -578,6 +600,7 @@ function reset_pageviews() {
        update_post_meta(get_the_ID(), 'pageviews', 0);
    }
 }
+<<<<<<< HEAD
 
 //Modify the placeholder text of title field for the custom post
 function change_default_title( $title ){
@@ -599,3 +622,6 @@ add_filter( 'enter_title_here', 'change_default_title' );
 
 
 ?>
+=======
+?>
+>>>>>>> bd77a8d8e17a639892efc18becff58275711b7dc
