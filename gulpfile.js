@@ -11,7 +11,7 @@ var files = {
 };
 
 gulp.task('default', ['less', 'minifycss', 'minifyjs'], function() {
-	gulp.watch('./*.less', ['less', 'minifycss']);
+	gulp.watch('./**/*.less', ['less', 'minifycss']);
 	gulp.watch(files.js, ['minifyjs']);
 });
 

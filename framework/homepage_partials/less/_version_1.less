@@ -1,0 +1,77 @@
+.hero-feature {
+	background:#333;
+	position:relative;
+	padding: 25px 0;
+	color:white;
+
+	.feature-image {
+		height:auto;
+		padding: 0;
+	}
+	.feature-caption {
+		padding: 0;
+		padding-left:4.7%;
+		height:100%;
+		.cap-title {
+			margin-bottom:18px;
+			font-weight: normal;
+			font-size: 235%;
+		}
+		.cap-desc {
+			font-weight:100;
+			color:#eee;
+			padding-left:10px;
+			line-height:150%;
+		}
+		.cap-more {
+			display: block;
+			text-align: right;
+			padding-top: 7px;
+			width: 100%;
+			a {
+				color:gray;
+			}
+		}
+	}
+	.cap-cta {
+		position: absolute;
+		bottom:30px;
+		right:200px;
+		overflow: hidden;
+		.cta {
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			border-radius: 99px;
+			margin: 0 10px;
+			padding-top: 28px;
+			font-size: 125%;
+			text-align: center;
+			background-color: @byui-blue;
+			&:hover {
+				text-decoration: none;
+				border: 2px solid white;
+			}
+		}
+	}
+	.rotate-left, .rotate-right {
+		position: absolute;
+		display: block;
+		color:#888;
+		background-color: rgba(34,34,34,.8);
+		top:50%;
+		font-size: 30px;
+		margin-top: -32px;
+		height: 64px;
+		width: 36px;
+		padding: 13px 0;
+		text-align: center;
+		cursor: pointer;
+		&:hover {
+			text-decoration: none;
+			background-color: rgba(34,34,34,.9);
+		}
+	}
+	.rotate-left {left:0;}
+	.rotate-right {right:0;}
+}

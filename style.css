@@ -454,7 +454,7 @@ aside p.meta {
 p.meta {
   font-style: italic;
 }
-/**************** Home Page ******************/
+/**************** Home Page Version:Old******************/
 .home .home-carousel {
   margin-bottom: 30px;
 }
@@ -732,6 +732,88 @@ p.meta {
   font-size: 75%;
   font-style: italic;
   line-height: 105%;
+}
+.hero-feature {
+  background: #333;
+  position: relative;
+  padding: 25px 0;
+  color: white;
+}
+.hero-feature .feature-image {
+  height: auto;
+  padding: 0;
+}
+.hero-feature .feature-caption {
+  padding: 0;
+  padding-left: 4.7%;
+  height: 100%;
+}
+.hero-feature .feature-caption .cap-title {
+  margin-bottom: 18px;
+  font-weight: normal;
+  font-size: 235%;
+}
+.hero-feature .feature-caption .cap-desc {
+  font-weight: 100;
+  color: #eee;
+  padding-left: 10px;
+  line-height: 150%;
+}
+.hero-feature .feature-caption .cap-more {
+  display: block;
+  text-align: right;
+  padding-top: 7px;
+  width: 100%;
+}
+.hero-feature .feature-caption .cap-more a {
+  color: gray;
+}
+.hero-feature .cap-cta {
+  position: absolute;
+  bottom: 30px;
+  right: 200px;
+  overflow: hidden;
+}
+.hero-feature .cap-cta .cta {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 99px;
+  margin: 0 10px;
+  padding-top: 28px;
+  font-size: 125%;
+  text-align: center;
+  background-color: #056cb6;
+}
+.hero-feature .cap-cta .cta:hover {
+  text-decoration: none;
+  border: 2px solid white;
+}
+.hero-feature .rotate-left,
+.hero-feature .rotate-right {
+  position: absolute;
+  display: block;
+  color: #888;
+  background-color: rgba(34, 34, 34, 0.8);
+  top: 50%;
+  font-size: 30px;
+  margin-top: -32px;
+  height: 64px;
+  width: 36px;
+  padding: 13px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.hero-feature .rotate-left:hover,
+.hero-feature .rotate-right:hover {
+  text-decoration: none;
+  background-color: rgba(34, 34, 34, 0.9);
+}
+.hero-feature .rotate-left {
+  left: 0;
+}
+.hero-feature .rotate-right {
+  right: 0;
 }
 /******************Speaker Page************************/
 .speaker-wrapper {

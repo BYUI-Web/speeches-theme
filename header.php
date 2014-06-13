@@ -211,3 +211,4 @@
     <div class="row breadcrumb-row">
         <?php breadcrumbs(); ?>
       </div>
+    </div>
