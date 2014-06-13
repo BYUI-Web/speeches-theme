@@ -3,6 +3,8 @@
 
 <head>
 
+  <?php $analytics_url = 'framework/google_analytics.php';
+        require_once ($analytics_url); ?>
 
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
