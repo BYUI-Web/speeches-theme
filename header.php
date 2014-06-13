@@ -3,9 +3,6 @@
 
 <head>
 
-  <?php $analytics_url = 'framework/google_analytics.php';
-        require_once ($analytics_url); ?>
-
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -58,6 +55,8 @@
 
   <!-- WP_Head -->
   <?php wp_head(); ?>
+  <?php $analytics_url = 'framework/google_analytics.php';
+        require_once ($analytics_url); ?>
 </head>
 
 <body id="base_template top" <?php if ( is_home() ) :?> class="home"<?php endif; ?>><!-- Body tag must have page template name in it to inherit template-specific css rules -->
