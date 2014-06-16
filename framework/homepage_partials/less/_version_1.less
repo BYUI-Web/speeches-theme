@@ -32,28 +32,34 @@
 				color:gray;
 			}
 		}
-	}
-	.cap-cta {
-		position: absolute;
-		bottom:30px;
-		right:200px;
-		overflow: hidden;
-		.cta {
-			display: inline-block;
-			width: 80px;
-			height: 80px;
-			border-radius: 99px;
-			margin: 0 10px;
-			padding-top: 28px;
-			font-size: 125%;
-			text-align: center;
-			background-color: @byui-blue;
-			&:hover {
-				text-decoration: none;
-				border: 2px solid white;
+		.cap-cta {
+			position: relative;
+			text-align: justify;
+			padding:25px 18px 0 0;
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+			}
+			.cta {
+				color: white;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				border-radius: 99px;
+				padding-top: 28px;
+				font-size: 125%;
+				text-align: center;
+				background-color: @byui-blue;
+				border: 2px solid transparent;
+				&:hover {
+					text-decoration: none;
+					border: 2px solid white;
+				}
 			}
 		}
 	}
+
 	.rotate-left, .rotate-right {
 		position: absolute;
 		display: block;
@@ -75,3 +81,93 @@
 	.rotate-left {left:0;}
 	.rotate-right {right:0;}
 }
+
+.master-search {
+	display: block;
+	position: relative;
+	width: 100%;
+	.search-icon {
+		display: block;
+		position: absolute;
+		padding: 7px 14px;
+		font-size: 160%;
+		color:black;
+		vertical-align: middle;
+		z-index: 1;
+		&:before {
+			font-family: 'IcoMoon';
+			content: "\e629";
+		}
+	}
+	.master-query {
+		position: relative;
+		border: none;
+		padding: 10px 0 6px 48px;
+		margin: 0;
+		width: 100%;
+		font-size: 150%;
+		background:#EFEFEF;
+		&:focus + .search-dropdown {
+			display: block;
+		}
+	}
+	.search-dropdown {
+		display: none;
+		position: absolute;
+		background: #EFEFEF;
+		border-top: 1px solid #fefefe;
+		width: 100%;
+		padding: 5px 0;
+
+		&:hover {
+			display: block;
+		}
+		.dd-header {
+			padding-left: 16px;
+			color: #c8c8c8;
+			font-style: italic;
+		}
+		.search-suggestions {
+			.ajax-result {
+				display: block;
+				padding: 4px 16px;
+				margin: 2px 0;
+				font-size: 150%;
+				color: #222;
+				&:hover {
+					background: #4d4d4d;
+					color: white;
+					text-decoration: none;
+				}
+			}
+		}
+		.additional-options {
+			padding: 0 16px;
+
+			input[type=checkbox] {
+				display:none;
+			}
+			label {
+				//finish styling here
+			}
+		}
+	}
+}
+
+@media (max-width:767px) {
+	.hero-feature .feature-caption {
+		.cap-title {
+			text-align:center;
+		}
+		.cap-desc {
+			padding-left: 0;
+			text-align:center;
+		}
+		.cap-cta {
+			text-align: center;
+			.cta {
+				margin: 0 20px;
+			}
+		}
+	}
+} 
