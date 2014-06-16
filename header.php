@@ -155,6 +155,18 @@
                 <li><a href="http://www.byui.edu/maps">Map</a></li>
               </ul>
             </li>
+             <li class="dropdown">
+              <a href="#audience" class="dropdown-toggle" data-toggle="dropdown">
+              Audience <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="http://www.byui.edu/future-students/">Future Students</a></li>
+                <li><a href="https://my.byui.edu/ics">Current Students</a></li>
+                <li><a href="https://my.byui.edu/ics">Employees</a></li>
+                <li><a href="http://beta.byui.edu/parents">Parents and Family</a></li>
+                <li><a href="http://www.byuiconnect.com/s/1085/07-idaho/idaho-start.aspx?gid=4&amp;pgid=61">Alumni</a></li>
+              </ul>
+              </li>
           </ul>
           <div class="navbar-right">
             <a href="https://web.byui.edu/services/login?RedirectURL=https://my.byui.edu/?cid=hli:111" class="sign-in btn btn-primary navbar-btn">Sign In</a>
