@@ -1,10 +1,10 @@
 /*   
-Theme Name: BYU-Idaho Radio
-Theme URI: byuidahoradio.org
-Description: BYU-Idaho Radio's Updated theme framework. Updated Dec 9, 2013
-Author: Josh Crowther
-Author URI: joshcrowther.com
-Version: 2.1
+Theme Name: BYU-Idaho Speeches
+Theme URI: (TBD)
+Description: BYU-Idaho Speeches Theme.
+Author: BYU-Idaho University Relations
+Author URI: http://www.byui.edu/
+Version: 2.0
 */
 .group:after {
   visibility: hidden;
@@ -39,6 +39,13 @@ h4,
 h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'check-boxes';
+  src: url('fonts/checkbox.eot?ehxg6j');
+  src: url('fonts/checkbox.eot?#iefixehxg6j') format('embedded-opentype'), url('fonts/checkbox.woff?ehxg6j') format('woff'), url('fonts/checkbox.ttf?ehxg6j') format('truetype'), url('fonts/checkbox.svg?ehxg6j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 /*/////////////// HEADERS //////////////*/
 .header-logo {
@@ -874,16 +881,79 @@ p.meta {
   font-size: 150%;
   color: #222;
 }
+.master-search .search-dropdown .search-suggestions .ajax-result .suggestion-tag {
+  text-transform: capitalize;
+}
+.master-search .search-dropdown .search-suggestions .ajax-result .suggestion-count {
+  font-size: 80%;
+  font-style: italic;
+}
+.master-search .search-dropdown .search-suggestions .ajax-result .suggestion-message {
+  padding-left: 20px;
+  font-size: 85%;
+  color: #AAA;
+  font-style: italic;
+}
 .master-search .search-dropdown .search-suggestions .ajax-result:hover {
   background: #4d4d4d;
   color: white;
   text-decoration: none;
 }
+.master-search .search-dropdown .search-suggestions .ajax-result:hover .suggestion-tag,
+.master-search .search-dropdown .search-suggestions .ajax-result:hover .suggestion-count {
+  color: #CCC;
+}
+.master-search .search-dropdown .search-suggestions .ajax-result.not-result:hover {
+  background: transparent;
+  color: #222;
+}
+.master-search .search-dropdown .search-suggestions .ajax-result.not-result:hover .suggestion-tag,
+.master-search .search-dropdown .search-suggestions .ajax-result.not-result:hover .suggestion-count {
+  color: #222;
+}
 .master-search .search-dropdown .additional-options {
-  padding: 0 16px;
+  padding: 5px 16px;
 }
 .master-search .search-dropdown .additional-options input[type=checkbox] {
   display: none;
+}
+.master-search .search-dropdown .additional-options input[type=checkbox]:checked + .checkbox-label:before {
+  content: '\e601';
+}
+.master-search .search-dropdown .additional-options .checkbox-label {
+  font-weight: normal;
+  margin-right: 15px;
+  font-size: 110%;
+  cursor: pointer;
+}
+.master-search .search-dropdown .additional-options .checkbox-label:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'check-boxes';
+  content: '\e602';
+  font-size: 16px;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  vertical-align: text-top;
+  text-align: left;
+  line-height: 14px;
+  margin-right: 5px;
+}
+.master-search .search-dropdown .additional-options input[type=submit] {
+  display: block;
+  font-size: 140%;
+  padding: 3px 10px;
+  float: right;
+  margin-top: -7px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #333;
+}
+.master-search .search-dropdown .additional-options input[type=submit]:hover {
+  background-color: #222;
 }
 @media (max-width: 767px) {
   .hero-feature .feature-caption .cap-title {
@@ -895,9 +965,10 @@ p.meta {
   }
   .hero-feature .feature-caption .cap-cta {
     text-align: center;
+    padding: 0;
   }
   .hero-feature .feature-caption .cap-cta .cta {
-    margin: 0 20px;
+    margin: 0 15px;
   }
 }
 /******************Speaker Page************************/

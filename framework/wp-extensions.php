@@ -579,6 +579,15 @@ function indv_pages() {
         }
         do_theme_redirect($return_template);
     }
+    if ($wp->query_vars["pagename"] == 'raw-search') {
+        $templatefilename = 'framework/the_search.php';
+        if (file_exists(TEMPLATEPATH . '/' . $templatefilename)) {
+            $return_template = TEMPLATEPATH . '/' . $templatefilename;
+        } else {
+            $return_template = $plugindir . '/' . $templatefilename;
+        }
+        do_theme_redirect($return_template);
+    }
 }
 
 add_action("template_redirect", 'indv_pages');

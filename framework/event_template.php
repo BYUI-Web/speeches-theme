@@ -18,14 +18,16 @@ $meta = get_post_meta(get_the_ID());
 foreach($meta as $key => $value) { ${$key} = $value[0]; }
 $current_post_type = get_post_type();
 ?>
-<div class="row">
-    <div class="col-xs-12 col-sm-8">
-        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-            <?php include_once('partials/event_media.php'); ?>
-            <?php include_once('partials/transcript_discuss.php'); ?>
-        </div>
-    </div>
-<?php require_once 'partials/event_template_sidebar.php'; ?>
+<div class="container">
+	<div class="row">
+	    <div class="col-xs-12 col-sm-8">
+	        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+	            <?php include_once('partials/event_media.php'); ?>
+	            <?php include_once('partials/transcript_discuss.php'); ?>
+	        </div>
+	    </div>
+	<?php require_once 'partials/event_template_sidebar.php'; ?>
+	</div>
 </div>
 
 <?php get_footer(); ?>

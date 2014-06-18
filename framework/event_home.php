@@ -8,6 +8,7 @@ $next_post = getUpcoming($archivePostType,1);
 get_header();
 
 ?>
+<div class="container">
 <div class="row">
 	<div class="col-xs-12 col-sm-8 archive <?php echo $archivePostType; ?>">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
@@ -34,5 +35,5 @@ get_header();
 	</div>
 	<?php require_once 'partials/event_archive_sidebar.php'; ?>
 </div>
-
+</div>
 <?php get_footer(); ?>

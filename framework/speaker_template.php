@@ -12,7 +12,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id());
 $bio = wpautop(get_post_meta($id, "speaker_bio", true));
 $speaker_posts = getPostsBySpeaker($id);
 ?>
-
+<div class="container">
 <div class="row speaker-wrapper">
     <div class="col-xs-12 col-md-3">
         <div class="speaker-image">
@@ -64,6 +64,5 @@ $speaker_posts = getPostsBySpeaker($id);
         </section>
     </div>
 </div>
-
-<?php
-get_footer();
+</div>
+<?php get_footer(); ?>
