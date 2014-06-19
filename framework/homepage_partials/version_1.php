@@ -42,6 +42,8 @@
 var timeout;
 var freshStart = true;
 $(document).ready(function () {
+	var initalMessage = $("#ajax-suggestions").html();
+
 	//On Page Load START
 
 	$("#search-query").bind('input', function() {
@@ -64,6 +66,9 @@ $(document).ready(function () {
 				ajaxTrigger(userQuery);
 			}, 500);
 			
+		} else if (userQuery.length == 0) {
+			$("#ajax-suggestions").html(initalMessage);
+			freshStart = true;
 		} else {
 			clearTimeout(timeout);
 		}
