@@ -49,7 +49,7 @@ $(document).ready(function () {
 		var userQuery = $(this).val();
 
 		//Only search for things longer than 3 chars
-		if (userQuery.length > 3) {
+		if (userQuery.length > 2) {
 
 			//Clear the default message and show 'loading' on first search.
 			if (freshStart) {
@@ -62,7 +62,7 @@ $(document).ready(function () {
 			timeout = setTimeout(function() {
 				freshStart = false;
 				ajaxTrigger(userQuery);
-			}, 1000);
+			}, 500);
 			
 		} else {
 			clearTimeout(timeout);
