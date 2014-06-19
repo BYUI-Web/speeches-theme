@@ -213,6 +213,69 @@
 	}
 }
 
+.featured-speeches {
+	overflow: hidden;
+	margin-bottom: 40px;
+	.featured-item {
+		position: relative;
+		width: 100%;
+		height: 172px;
+		border-radius:9px;
+		overflow: hidden;
+
+		.feature-image {
+			background-color: #ccc;
+			display: block;
+			position: absolute;
+			z-index: -1;
+			height: auto;
+			width: 100%;
+			top:0;
+			left:0;
+			img {
+				height: auto;
+				width: 100%;
+			}
+		}
+		.feature-caption {
+			background-color: rgba(0, 0, 0, 0.8);
+			display: block;
+			position: absolute;
+			padding: 8px 15px;
+			height: 100%;
+			top:135px;
+			color: white;
+			left:0;
+			text-transform: uppercase;
+			width: 100%;
+			transition: top .5s ease;
+
+
+			.feature-speaker, .feature-header, .feature-description {
+				padding-left: 6px;
+				font-style: italic;
+				font-size: 90%;
+				text-transform: initial;
+			}
+
+			.feature-speaker {
+				margin-top: 12px;
+				
+			}
+
+			.feature-description {
+				margin-top: 8px;
+			}
+		}
+		&:hover {
+			.feature-caption {
+				top:0;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
 //Responsive tweaks
 @media (max-width:767px) {
 	.hero-feature .feature-caption {

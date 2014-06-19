@@ -1,3 +1,6 @@
+<?php 
+?>
+
 <div class="hero-feature">
 	<div class="container">
 		<img class="feature-image col-xs-12 col-sm-7" src="<?php bloginfo('template_url'); ?>/images/hero_placeholder.jpg">
@@ -5,7 +8,7 @@
 			<h2 class="cap-title">This Week's Devotional</h2>
 			<div class="cap-desc">Bacon ipsum dolor sit amet voluptate cillum fatback culpa deserunt bresaola pork tempor pancetta ea capicola. Jerky cow short ribs ball tip adipisicing. Ut doner hamburger rump aute reprehent&nbsp;laborum.</div>
 			<div class="cap-more"><a href="#">See More &gt;&gt;</a></div>
-			<div class="cap-cta"><a href="#" class="cta">Join</a> <a href="#" class="cta">Join</a> <a href="#" class="cta">Join</a></div>
+			<div class="cap-cta"><a href="/devotionals" class="cta">Join</a> <a href="/devotionals" class="cta">Prepare</a> <a href="/devotionals" class="cta">About</a></div>
 		</div>
 	</div>
 	<a class="rotate-left">&lt;</a>
@@ -35,6 +38,56 @@
 		</div>
 	</div>
 </form>
+<br>
+<h3>Recent Speeches</h3>
+<div class="featured-speeches">
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">
+				Caption Here
+				<div class="feature-speaker">John P. Roberts</div>
+				<div class="feature-header">8 January 2014 - University Forum</div>
+				<div class="feature-description">This is a caption bacon ipsum dolor sit amet eiusmod sausage and some other random text to fill up some space.</div>
+			</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">Caption Here</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">Caption Here</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+</div>
+
+<h3>Most Viewed</h3>
+<div class="featured-speeches">
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">Caption Here</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">Caption Here</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="featured-item">
+			<a class="feature-caption">Caption Here</a>
+			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+		</div>
+	</div>
+</div>
+
 </div>
 
 <script type="text/javascript">
