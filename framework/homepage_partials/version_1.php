@@ -58,12 +58,19 @@
 			    }
 			    $speaker_text .= get_the_title($speakers[$i]);
 			}
+			//Check for empty title
+			$the_title = "";
+			if (get_the_title() == '') {
+				$the_title = "No Title";
+			} else {
+				$the_title = get_the_title();
+			}
 			//Get short (single line) title
 			$oneline_title = "";
 			if (strlen(get_the_title()) > 27) {
-				$oneline_title = substr(get_the_title(), 0, 27)."...";
+				$oneline_title = substr($the_title, 0, 27)."...";
 			} else {
-				$oneline_title = get_the_title();
+				$oneline_title = $the_title;
 			}
 			//get first 150 characters of transcript (if available)
 			$speech_snippet = "";
@@ -119,12 +126,19 @@
 		    }
 		    $speaker_text .= get_the_title($speakers[$i]);
 		}
+		//Check for empty title
+		$the_title = "";
+		if (get_the_title() == '') {
+			$the_title = "No Title";
+		} else {
+			$the_title = get_the_title();
+		}
 		//Get short (single line) title
 		$oneline_title = "";
 		if (strlen(get_the_title()) > 27) {
-			$oneline_title = substr(get_the_title(), 0, 27)."...";
+			$oneline_title = substr($the_title, 0, 27)."...";
 		} else {
-			$oneline_title = get_the_title();
+			$oneline_title = $the_title;
 		}
 		//get first 150 characters of transcript (if available)
 		$speech_snippet = "";
