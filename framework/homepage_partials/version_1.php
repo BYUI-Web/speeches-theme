@@ -85,7 +85,7 @@
 		<div class="featured-item">
 			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
 				<div class="oneline-title"><?php echo $oneline_title; ?></div>
-				<div class="full-title"><?php echo get_the_title(); ?></div>
+				<div class="full-title"><?php echo $the_title; ?></div>
 				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
 				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
 				<div class="feature-description"><?php echo $speech_snippet ?></div>
@@ -152,7 +152,7 @@
 		<div class="featured-item">
 			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
 				<div class="oneline-title"><?php echo $oneline_title; ?></div>
-				<div class="full-title"><?php echo get_the_title(); ?></div>
+				<div class="full-title"><?php echo $the_title; ?></div>
 				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
 				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
 				<div class="feature-description"><?php echo $speech_snippet ?></div>
