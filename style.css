@@ -999,6 +999,9 @@ p.meta {
 .featured-speeches .featured-item .feature-caption .full-title {
   display: none;
 }
+.featured-speeches .featured-item .feature-caption .oneline-title {
+  margin-bottom: 20px;
+}
 .featured-speeches .featured-item .feature-caption .feature-speaker,
 .featured-speeches .featured-item .feature-caption .feature-header,
 .featured-speeches .featured-item .feature-caption .feature-description {
