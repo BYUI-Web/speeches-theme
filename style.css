@@ -1004,8 +1004,11 @@ p.meta {
 .featured-speeches .featured-item .feature-caption .feature-speaker {
   margin-top: 12px;
 }
+.featured-speeches .featured-item .feature-caption .feature-header {
+  text-transform: capitalize;
+}
 .featured-speeches .featured-item .feature-caption .feature-description {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .featured-speeches .featured-item:hover .feature-caption {
   top: 0;

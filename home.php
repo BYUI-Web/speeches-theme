@@ -9,12 +9,29 @@ $args = array("post_type" => array("devotional", "forum"),
     'meta_key' => 'pageviews',
     'orderby' => 'meta_value_num',
     'order' => 'DESC',
-    'posts_per_page' => 6);
+    'posts_per_page' => 3);
 
 $popularLoop = new WP_Query( $args );
 
 $upcoming_events = getUpcoming(array("devotional", "forum"));
 
+//get the most recent speeches
+$args = array(
+    'post_type' => array("devotional", "forum"),
+    'meta_key' => 'event_end_time',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC',
+    'meta_query' => array(
+        array(
+            'key' => 'event_end_time',
+            'value' => strtotime('now'),
+            'compare' => '<',
+            'type' => 'NUMERIC'
+            )
+        ),
+    ); 
+
+$recentLoop = new WP_Query( $args );
 ?>
 
 <?php get_header(); ?>

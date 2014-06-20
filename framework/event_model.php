@@ -223,7 +223,7 @@ function getUpcoming($post_type, $post_count = 'all') {
 					'value' => $now,
 					'compare' => '<',
 					'type' => 'NUMERIC'
-					)                   
+					)
 				),
 			); 
 		$loop = new WP_Query( $args );

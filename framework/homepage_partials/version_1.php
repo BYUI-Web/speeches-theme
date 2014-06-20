@@ -1,4 +1,5 @@
 <?php 
+
 ?>
 
 <div class="hero-feature">
@@ -41,51 +42,92 @@
 <br>
 <h3>Recent Speeches</h3>
 <div class="featured-speeches">
+	<?php
+	if ($recentLoop) {
+		for ($j = 0; $recentLoop->have_posts() && $j < 3; $j++) { 
+			$recentLoop->the_post();
+			$speakers = explode(", ", get_post_meta(get_the_ID(), "presenters", true));
+			$speaker_text = "";
+			$numSpeakers = count($speakers);
+			for ($i = 0; $i < $numSpeakers; $i++) {
+			    if ($i != 0 && $numSpeakers > 2) {
+			        $speaker_text .= ",";
+			    }
+			    if ($i + 1 == $numSpeakers && $numSpeakers > 1) {
+			        $speaker_text .= " and";
+			    }
+			    $speaker_text .= get_the_title($speakers[$i]);
+			}
+			$speech_snippet = "";
+			if (get_post_meta(get_the_ID(), "transcript", true) != '') {
+				$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 150)."...";
+			} else {
+				$speech_snippet = "Click to view...";
+			}
+			
+	?>
 	<div class="col-xs-12 col-sm-4">
 		<div class="featured-item">
-			<a class="feature-caption">
-				Caption Here
-				<div class="feature-speaker">John P. Roberts</div>
-				<div class="feature-header">8 January 2014 - University Forum</div>
-				<div class="feature-description">This is a caption bacon ipsum dolor sit amet eiusmod sausage and some other random text to fill up some space.</div>
+			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
+				<?php echo get_the_title(); ?>
+				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
+				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
+				<div class="feature-description"><?php echo $speech_snippet ?></div>
 			</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+			<div class="feature-image"> <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } else {  ?> <img src="<?php bloginfo('template_url'); ?>/images/devo.png"> <?php } ?></div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-4">
-		<div class="featured-item">
-			<a class="feature-caption">Caption Here</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
-		</div>
+<?php }} else { ?>
+<div class="col-xs-12 col-sm-4">
+	<div class="featured-item">
+		<a href="<?php echo the_permalink(); ?>" class="feature-caption">
+			No Recent Speeches
+			<div class="feature-speaker">N/A</div>
+			<div class="feature-header">N/A - N/A</div>
+			<div class="feature-description">There are no recent speeches to display.</div>
+		</a>
+		<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
 	</div>
-	<div class="col-xs-12 col-sm-4">
-		<div class="featured-item">
-			<a class="feature-caption">Caption Here</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
-		</div>
-	</div>
+</div>
+<?php } ?>
 </div>
 
 <h3>Most Viewed</h3>
 <div class="featured-speeches">
+	<?php
+	for ($j = 0; $popularLoop->have_posts() && $j < 3; $j++) { 
+		$popularLoop->the_post();
+		$speakers = explode(", ", get_post_meta(get_the_ID(), "presenters", true));
+		$speaker_text = "";
+		$numSpeakers = count($speakers);
+		for ($i = 0; $i < $numSpeakers; $i++) {
+		    if ($i != 0 && $numSpeakers > 2) {
+		        $speaker_text .= ",";
+		    }
+		    if ($i + 1 == $numSpeakers && $numSpeakers > 1) {
+		        $speaker_text .= " and";
+		    }
+		    $speaker_text .= get_the_title($speakers[$i]);
+		}
+		$speech_snippet = "";
+		if (get_post_meta(get_the_ID(), "transcript", true) != '') {
+			$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 150)."...";
+		} else {
+			$speech_snippet = "Click to view...";
+		}
+	?>
 	<div class="col-xs-12 col-sm-4">
 		<div class="featured-item">
-			<a class="feature-caption">Caption Here</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
+			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
+				<?php echo get_the_title(); ?>
+				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
+				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
+				<div class="feature-description"><?php echo $speech_snippet ?></div>
+			</a>
+			<div class="feature-image"> <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } else {  ?> <img src="<?php bloginfo('template_url'); ?>/images/devo.png"> <?php } ?></div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-4">
-		<div class="featured-item">
-			<a class="feature-caption">Caption Here</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
-		</div>
-	</div>
-	<div class="col-xs-12 col-sm-4">
-		<div class="featured-item">
-			<a class="feature-caption">Caption Here</a>
-			<div class="feature-image"><img src="<?php bloginfo('template_url'); ?>/images/devo.png"></div>
-		</div>
-	</div>
+<?php } ?>
 </div>
 
 </div>
