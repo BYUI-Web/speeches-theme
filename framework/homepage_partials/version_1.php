@@ -60,8 +60,8 @@
 			}
 			//Get short (single line) title
 			$oneline_title = "";
-			if (strlen(get_the_title()) > 25) {
-				$oneline_title = substr(get_the_title(), 0, 25)."...";
+			if (strlen(get_the_title()) > 27) {
+				$oneline_title = substr(get_the_title(), 0, 27)."...";
 			} else {
 				$oneline_title = get_the_title();
 			}
@@ -121,8 +121,8 @@
 		}
 		//Get short (single line) title
 		$oneline_title = "";
-		if (strlen(get_the_title()) > 25) {
-			$oneline_title = substr(get_the_title(), 0, 25)."...";
+		if (strlen(get_the_title()) > 27) {
+			$oneline_title = substr(get_the_title(), 0, 27)."...";
 		} else {
 			$oneline_title = get_the_title();
 		}
