@@ -129,7 +129,7 @@
 		//get first 150 characters of transcript (if available)
 		$speech_snippet = "";
 		if (get_post_meta(get_the_ID(), "transcript", true) != '') {
-			$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 150)."...";
+			$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 125)."...";
 		} else {
 			$speech_snippet = "Click to view...";
 		}
