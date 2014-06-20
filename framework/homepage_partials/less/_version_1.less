@@ -222,6 +222,7 @@
 		height: 172px;
 		border-radius:9px;
 		overflow: hidden;
+		cursor: pointer;
 
 		.feature-image {
 			background-color: #ccc;
@@ -249,7 +250,10 @@
 			text-transform: uppercase;
 			width: 100%;
 			transition: top .5s ease;
-
+			
+			.full-title {
+				display: none;
+			}
 
 			.feature-speaker, .feature-header, .feature-description {
 				padding-left: 6px;
@@ -274,6 +278,12 @@
 			.feature-caption {
 				top:0;
 				text-decoration: none;
+			}
+			.oneline-title {
+				display: none;
+			}
+			.full-title {
+				display: block;
 			}
 		}
 	}

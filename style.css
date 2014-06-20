@@ -965,6 +965,7 @@ p.meta {
   height: 172px;
   border-radius: 9px;
   overflow: hidden;
+  cursor: pointer;
 }
 .featured-speeches .featured-item .feature-image {
   background-color: #ccc;
@@ -993,6 +994,9 @@ p.meta {
   width: 100%;
   transition: top .5s ease;
 }
+.featured-speeches .featured-item .feature-caption .full-title {
+  display: none;
+}
 .featured-speeches .featured-item .feature-caption .feature-speaker,
 .featured-speeches .featured-item .feature-caption .feature-header,
 .featured-speeches .featured-item .feature-caption .feature-description {
@@ -1013,6 +1017,12 @@ p.meta {
 .featured-speeches .featured-item:hover .feature-caption {
   top: 0;
   text-decoration: none;
+}
+.featured-speeches .featured-item:hover .oneline-title {
+  display: none;
+}
+.featured-speeches .featured-item:hover .full-title {
+  display: block;
 }
 @media (max-width: 767px) {
   .hero-feature .feature-caption .cap-title {

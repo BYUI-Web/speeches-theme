@@ -58,6 +58,14 @@
 			    }
 			    $speaker_text .= get_the_title($speakers[$i]);
 			}
+			//Get short (single line) title
+			$oneline_title = "";
+			if (strlen(get_the_title()) > 30) {
+				$oneline_title = substr(get_the_title(), 0, 30)."...";
+			} else {
+				$oneline_title = get_the_title();
+			}
+			//get first 150 characters of transcript (if available)
 			$speech_snippet = "";
 			if (get_post_meta(get_the_ID(), "transcript", true) != '') {
 				$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 150)."...";
@@ -69,7 +77,8 @@
 	<div class="col-xs-12 col-sm-4">
 		<div class="featured-item">
 			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
-				<?php echo get_the_title(); ?>
+				<div class="oneline-title"><?php echo $oneline_title; ?></div>
+				<div class="full-title"><?php echo get_the_title(); ?></div>
 				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
 				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
 				<div class="feature-description"><?php echo $speech_snippet ?></div>
@@ -97,6 +106,7 @@
 	<?php
 	for ($j = 0; $popularLoop->have_posts() && $j < 3; $j++) { 
 		$popularLoop->the_post();
+		//Get the list of speakers
 		$speakers = explode(", ", get_post_meta(get_the_ID(), "presenters", true));
 		$speaker_text = "";
 		$numSpeakers = count($speakers);
@@ -109,6 +119,14 @@
 		    }
 		    $speaker_text .= get_the_title($speakers[$i]);
 		}
+		//Get short (single line) title
+		$oneline_title = "";
+		if (strlen(get_the_title()) > 30) {
+			$oneline_title = substr(get_the_title(), 0, 30)."...";
+		} else {
+			$oneline_title = get_the_title();
+		}
+		//get first 150 characters of transcript (if available)
 		$speech_snippet = "";
 		if (get_post_meta(get_the_ID(), "transcript", true) != '') {
 			$speech_snippet = substr((get_post_meta(get_the_ID(), "transcript", true)), 0, 150)."...";
@@ -119,7 +137,8 @@
 	<div class="col-xs-12 col-sm-4">
 		<div class="featured-item">
 			<a href="<?php echo the_permalink(); ?>" class="feature-caption">
-				<?php echo get_the_title(); ?>
+				<div class="oneline-title"><?php echo $oneline_title; ?></div>
+				<div class="full-title"><?php echo get_the_title(); ?></div>
 				<div class="feature-speaker"><?php echo $speaker_text; ?></div>
 				<div class="feature-header"><?php the_date(); ?> - <?php echo get_post_type() ?></div>
 				<div class="feature-description"><?php echo $speech_snippet ?></div>
