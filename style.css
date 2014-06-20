@@ -958,7 +958,7 @@ p.meta {
 }
 .featured-speeches {
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .featured-speeches .featured-item {
   position: relative;
@@ -967,6 +967,7 @@ p.meta {
   border-radius: 9px;
   overflow: hidden;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .featured-speeches .featured-item .feature-image {
   background-color: #ccc;
@@ -997,10 +998,12 @@ p.meta {
   transition: top .5s ease;
 }
 .featured-speeches .featured-item .feature-caption .full-title {
-  display: none;
+  visibility: hidden;
 }
 .featured-speeches .featured-item .feature-caption .oneline-title {
-  margin-bottom: 20px;
+  position: absolute;
+  top: 8px;
+  display: block;
 }
 .featured-speeches .featured-item .feature-caption .feature-speaker,
 .featured-speeches .featured-item .feature-caption .feature-header,
@@ -1027,7 +1030,7 @@ p.meta {
   display: none;
 }
 .featured-speeches .featured-item:hover .full-title {
-  display: block;
+  visibility: visible;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .featured-speeches .featured-item .feature-image img {

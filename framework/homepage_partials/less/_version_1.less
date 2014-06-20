@@ -216,7 +216,7 @@
 
 .featured-speeches {
 	overflow: hidden;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	.featured-item {
 		position: relative;
 		width: 100%;
@@ -224,6 +224,7 @@
 		border-radius:9px;
 		overflow: hidden;
 		cursor: pointer;
+		margin-bottom: 10px;
 
 		.feature-image {
 			background-color: #ccc;
@@ -254,10 +255,12 @@
 			transition: top .5s ease;
 			
 			.full-title {
-				display: none;
+				visibility: hidden;
 			}
 			.oneline-title {
-				margin-bottom: 20px;
+				position: absolute;
+				top:8px;
+				display: block;
 			}
 
 			.feature-speaker, .feature-header, .feature-description {
@@ -288,7 +291,7 @@
 				display: none;
 			}
 			.full-title {
-				display: block;
+				visibility: visible;
 			}
 		}
 	}
