@@ -121,8 +121,8 @@
 		}
 		//Get short (single line) title
 		$oneline_title = "";
-		if (strlen(get_the_title()) > 30) {
-			$oneline_title = substr(get_the_title(), 0, 30)."...";
+		if (strlen(get_the_title()) > 25) {
+			$oneline_title = substr(get_the_title(), 0, 25)."...";
 		} else {
 			$oneline_title = get_the_title();
 		}
