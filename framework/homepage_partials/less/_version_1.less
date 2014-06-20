@@ -86,6 +86,7 @@
 	display: block;
 	position: relative;
 	width: 100%;
+	z-index: 99;
 	.search-icon {
 		display: block;
 		position: absolute;
@@ -229,8 +230,9 @@
 			display: block;
 			position: absolute;
 			z-index: -1;
-			height: auto;
+			height: 100%;
 			width: 100%;
+			overflow: hidden;
 			top:0;
 			left:0;
 			img {
@@ -290,6 +292,13 @@
 }
 
 //Responsive tweaks
+@media (min-width:768px) and (max-width:991px) {
+	.featured-speeches .featured-item .feature-image img {
+		height: 100%;
+		width: auto;
+		max-width: none;
+	}
+}
 @media (max-width:767px) {
 	.hero-feature .feature-caption {
 		.cap-title {
