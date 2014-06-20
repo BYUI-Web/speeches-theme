@@ -108,8 +108,11 @@
 		width: 100%;
 		font-size: 150%;
 		background:#EFEFEF;
-		&:focus + .search-dropdown {
-			display: block;
+		&:focus {
+			outline: none;
+			& + .search-dropdown {
+				display: block;
+			}
 		}
 	}
 	.search-dropdown {

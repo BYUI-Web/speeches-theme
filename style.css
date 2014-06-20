@@ -52,6 +52,9 @@ h6 {
   border-bottom: 5px solid #CCC;
   margin-bottom: 10px;
 }
+.search-button-fix {
+  border-radius: 0 4px 4px 0;
+}
 /*////////////// NAV ////////////*/
 .breadcrumb-row {
   margin-left: 0;
@@ -855,6 +858,9 @@ p.meta {
   width: 100%;
   font-size: 150%;
   background: #EFEFEF;
+}
+.master-search .master-query:focus {
+  outline: none;
 }
 .master-search .master-query:focus + .search-dropdown {
   display: block;

@@ -5,103 +5,106 @@
 * BYU-Idaho's Footer (copy and paste from BYU-I stylesheet)
 ***********************************************-->
 
-<footer role="contentinfo" class="global-footer">
 
-  <div class="footer-graphic jumbotron"></div>
+</section> <!-- end site-content -->
 
-  <div class="footer-audience">
-    <div class="container">
-      <nav class="audience-nav text-center">
-        <a href="http://www.byui.edu/future-students/" class="btn btn-primary btn-sm">Future Students</a>
-        <a href="https://my.byui.edu/ics" class="btn btn-primary btn-sm">Current Students</a>
-        <a href="https://my.byui.edu/ics" class="btn btn-primary btn-sm">Employees</a>
-        <a href="http://beta.byui.edu/parents" class="btn btn-primary btn-sm">Parents and Family</a>
-        <a href="http://www.byuiconnect.com/s/1085/07-idaho/idaho-start.aspx?gid=4&amp;pgid=61" class="btn btn-primary btn-sm">Alumni</a>
-      </nav><!-- /.audience-nav -->
-      
-    </div><!-- /.container -->
-  </div><!-- /.footer-audience -->
+        <footer role="contentinfo" class="global-footer">
 
-  <div class="footer-links">
-    <div class="container">
-      <div id="footerAccordion" class="">
-        <div class="row">
-          <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
-            <a class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion" href="#collapseContact" >Contact <b class="caret"></b></a>
-            <address class="no-margin">
-              <ul id="collapseContact" class="no-margin collapse">
-                <li>
-                  <span aria-hidden="true" class="icon icon-office">&#160;</span>525 South Center St.<br/>
-                  Rexburg, ID, 83460
-                </li>
-                <li>
-                  <span aria-hidden="true" class="icon icon-phone">&#160;</span><a href="tel:12084961411">(208) 496-1411</a>
-                </li>
-                <li>
-                  <span aria-hidden="true" class="icon icon-mail">&#160;</span><a href="mailto:ask@byui.edu">ask@byui.edu</a>
-                </li>
-                <li>
-                  <span aria-hidden="true" class="icon icon-chat">&#160;</span><a href="http://www.byui.edu/feedback/?cid=fli:192">Feedback</a>
-                </li>
-              </ul>
-            </address>
-          </nav><!-- /.footer-column -->
-          <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
-            <a class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion" href="#collapseFollow">Follow <b class="caret"></b></a>
-            <ul id="collapseFollow" class="footer-social no-margin collapse">
-              <li><span aria-hidden="true" class="icon icon-facebook">&#160;</span><a href="http://www.byui.edu/social-media/facebook">Facebook</a></li>
-              <li><span aria-hidden="true" class="icon icon-twitter">&#160;</span><a href="http://www.byui.edu/social-media/twitter">Twitter</a></li>
-              <li><span aria-hidden="true" class="icon icon-youtube">&#160;</span><a href="http://www.byui.edu/social-media/youtube">Youtube</a></li>
-              <li><span aria-hidden="true" class="icon icon-linkedin">&#160;</span><a href="http://www.byui.edu/social-media/linkedin">LinkedIn</a></li>
-            </ul>
-          </nav><!-- /.footer-column -->
-          <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
-            <a href="#collapsePopular" class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion">Popular <b class="caret"></b></a>
-            <ul id="collapsePopular" class="no-margin collapse">
-              <li><a href="http://web.byui.edu/devotionalsandspeeches/speeches.aspx">Devotionals</a></li>
-              <li><a href="http://www.byui.edu/financial-services/my-personal-account/i-card">ID Cards</a></li>
-              <li><a href="http://www.byui.edu/human-resources/employment-opportunities">Jobs and Employment</a></li>
-              <li><a href="http://byui.universitytickets.com/user_pages/event_listings.aspx">Ticket Office</a></li>
-              <li><a href="http://web.byui.edu/WardsAndStakes/UnitInfo">Wards and Stakes</a></li>
-            </ul>
-          </nav><!-- /.footer-column -->
-          <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
-            <a href="#collapseHelp" class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion">Help <b class="caret"></b></a>
-            <ul id="collapseHelp" class="no-margin collapse">
-              <li><a href="http://www.byui.edu/ask/live-chat/?cid=hli:109">Ask BYUI</a></li>
-              <li><a href="http://www.byui.edu/disabilities/">Disability Services</a></li>
-              <li><a href="http://www.byui.edu/information-technology">Technical Help Desk</a></li>
-              <li><a href="http://www.byui.edu/student-support">Student Support</a></li>
-            </ul>
-          </nav><!-- /.footer-column -->
-        </div><!-- /.row -->
-      </div>
-    </div><!-- /.container -->
-  </div><!-- /.footer-links -->
+          <div class="footer-graphic jumbotron"></div>
 
-  <div class="footer-brand">
-    <div class="container">
-      <div class="school-branding row text-center">
-        <p>
-          <a href="http:///www.byu.edu/">BYU Provo</a>&#160;&#160;|&#160;&#160;
-          <a href="http:///www.byuh.edu/">BYU Hawaii</a>&#160;&#160;|&#160;&#160;
-          <a href="http://www.ldsbc.edu/">LDS Business College</a>&#160;&#160;|&#160;&#160;
-          <a href="http://www.byui.edu/online/pathway">Pathway</a>
-        </p>
-      </div><!-- /.school-branding -->
+          <div class="footer-audience">
+            <div class="container">
+              <nav class="audience-nav text-center">
+                <a href="http://www.byui.edu/future-students/" class="btn btn-primary btn-sm">Future Students</a>
+                <a href="https://my.byui.edu/ics" class="btn btn-primary btn-sm">Current Students</a>
+                <a href="https://my.byui.edu/ics" class="btn btn-primary btn-sm">Employees</a>
+                <a href="http://beta.byui.edu/parents" class="btn btn-primary btn-sm">Parents and Family</a>
+                <a href="http://www.byuiconnect.com/s/1085/07-idaho/idaho-start.aspx?gid=4&amp;pgid=61" class="btn btn-primary btn-sm">Alumni</a>
+              </nav><!-- /.audience-nav -->
+              
+            </div><!-- /.container -->
+          </div><!-- /.footer-audience -->
 
-      <div class="copyright row text-center">
-        <a href="http://www.byui.edu/copyright/policy/terms-of-use/?cid=fli:190">Copyright ©2013</a>&#160;&#160;|&#160;&#160;<a href="http://www.byui.edu/legal">Legal Notices</a>
-      </div><!-- /.copyright -->
+          <div class="footer-links">
+            <div class="container">
+              <div id="footerAccordion" class="">
+                <div class="row">
+                  <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
+                    <a class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion" href="#collapseContact" >Contact <b class="caret"></b></a>
+                    <address class="no-margin">
+                      <ul id="collapseContact" class="no-margin collapse">
+                        <li>
+                          <span aria-hidden="true" class="icon icon-office">&#160;</span>525 South Center St.<br/>
+                          Rexburg, ID, 83460
+                        </li>
+                        <li>
+                          <span aria-hidden="true" class="icon icon-phone">&#160;</span><a href="tel:12084961411">(208) 496-1411</a>
+                        </li>
+                        <li>
+                          <span aria-hidden="true" class="icon icon-mail">&#160;</span><a href="mailto:ask@byui.edu">ask@byui.edu</a>
+                        </li>
+                        <li>
+                          <span aria-hidden="true" class="icon icon-chat">&#160;</span><a href="http://www.byui.edu/feedback/?cid=fli:192">Feedback</a>
+                        </li>
+                      </ul>
+                    </address>
+                  </nav><!-- /.footer-column -->
+                  <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
+                    <a class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion" href="#collapseFollow">Follow <b class="caret"></b></a>
+                    <ul id="collapseFollow" class="footer-social no-margin collapse">
+                      <li><span aria-hidden="true" class="icon icon-facebook">&#160;</span><a href="http://www.byui.edu/social-media/facebook">Facebook</a></li>
+                      <li><span aria-hidden="true" class="icon icon-twitter">&#160;</span><a href="http://www.byui.edu/social-media/twitter">Twitter</a></li>
+                      <li><span aria-hidden="true" class="icon icon-youtube">&#160;</span><a href="http://www.byui.edu/social-media/youtube">Youtube</a></li>
+                      <li><span aria-hidden="true" class="icon icon-linkedin">&#160;</span><a href="http://www.byui.edu/social-media/linkedin">LinkedIn</a></li>
+                    </ul>
+                  </nav><!-- /.footer-column -->
+                  <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
+                    <a href="#collapsePopular" class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion">Popular <b class="caret"></b></a>
+                    <ul id="collapsePopular" class="no-margin collapse">
+                      <li><a href="http://web.byui.edu/devotionalsandspeeches/speeches.aspx">Devotionals</a></li>
+                      <li><a href="http://www.byui.edu/financial-services/my-personal-account/i-card">ID Cards</a></li>
+                      <li><a href="http://www.byui.edu/human-resources/employment-opportunities">Jobs and Employment</a></li>
+                      <li><a href="http://byui.universitytickets.com/user_pages/event_listings.aspx">Ticket Office</a></li>
+                      <li><a href="http://web.byui.edu/WardsAndStakes/UnitInfo">Wards and Stakes</a></li>
+                    </ul>
+                  </nav><!-- /.footer-column -->
+                  <nav class="footer-column col-all-12 col-xs-6 col-sm-3 pull-left">
+                    <a href="#collapseHelp" class="footer-column-heading" data-toggle="collapse" data-parent="#footerAccordion">Help <b class="caret"></b></a>
+                    <ul id="collapseHelp" class="no-margin collapse">
+                      <li><a href="http://www.byui.edu/ask/live-chat/?cid=hli:109">Ask BYUI</a></li>
+                      <li><a href="http://www.byui.edu/disabilities/">Disability Services</a></li>
+                      <li><a href="http://www.byui.edu/information-technology">Technical Help Desk</a></li>
+                      <li><a href="http://www.byui.edu/student-support">Student Support</a></li>
+                    </ul>
+                  </nav><!-- /.footer-column -->
+                </div><!-- /.row -->
+              </div>
+            </div><!-- /.container -->
+          </div><!-- /.footer-links -->
 
-      <div class="church-branding row text-center">
-        <p>
-          <a href="http://www.lds.org/"><span class="icon icon-lds-church"></span><span class="sr-only">The Church of Jesus Christ of Latter-Day Saints</span></a>
-        </p>
-      </div><!-- /.church-branding -->
-    </div><!-- /.container -->
-  </div><!-- /.footer-brand -->
-  
+          <div class="footer-brand">
+            <div class="container">
+              <div class="school-branding row text-center">
+                <p>
+                  <a href="http:///www.byu.edu/">BYU Provo</a>&#160;&#160;|&#160;&#160;
+                  <a href="http:///www.byuh.edu/">BYU Hawaii</a>&#160;&#160;|&#160;&#160;
+                  <a href="http://www.ldsbc.edu/">LDS Business College</a>&#160;&#160;|&#160;&#160;
+                  <a href="http://www.byui.edu/online/pathway">Pathway</a>
+                </p>
+              </div><!-- /.school-branding -->
+
+              <div class="copyright row text-center">
+                <a href="http://www.byui.edu/copyright/policy/terms-of-use/?cid=fli:190">Copyright ©2013</a>&#160;&#160;|&#160;&#160;<a href="http://www.byui.edu/legal">Legal Notices</a>
+              </div><!-- /.copyright -->
+
+              <div class="church-branding row text-center">
+                <p>
+                  <a href="http://www.lds.org/"><span class="icon icon-lds-church"></span><span class="sr-only">The Church of Jesus Christ of Latter-Day Saints</span></a>
+                </p>
+              </div><!-- /.church-branding -->
+            </div><!-- /.container -->
+          </div><!-- /.footer-brand -->
+          
           <!-- 
             BEGIN INTRUSIVE FEEDBACK BUTTON:
             THIS BUTTON SHOULD BE REMOVED 
@@ -109,13 +112,13 @@
             WITHOUT LOSING YOUR JOB 
           -->
           <style>
-            .feedback-toggle {
-              position: fixed;
-              bottom: -3px;
-              right: -4px;
-              display: none;
-              border: 1px solid #fff;
-            }
+          .feedback-toggle {
+            position: fixed;
+            bottom: -3px;
+            right: -4px;
+            display: none;
+            border: 1px solid #fff;
+          }
           </style>
           <script>
             $(function(){
