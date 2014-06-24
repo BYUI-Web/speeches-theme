@@ -1047,13 +1047,7 @@ p.meta {
 }
 @media (max-width: 767px) {
   .hero-feature .feature-caption {
-    /*.cap-cta {
-			text-align: center;
-			padding: 0;
-			.cta {
-				margin: 0 15px;
-			}
-		}*/
+    padding-left: 0;
   }
   .hero-feature .feature-caption .cap-title {
     text-align: center;
@@ -1061,6 +1055,9 @@ p.meta {
   .hero-feature .feature-caption .cap-desc {
     padding-left: 0;
     text-align: center;
+  }
+  .hero-feature .feature-caption .cap-cta {
+    padding-right: 0;
   }
 }
 /******************Speaker Page************************/
