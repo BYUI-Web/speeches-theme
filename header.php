@@ -63,7 +63,7 @@
 <body id="base_template top" <?php if ( is_home() ) :?> class="home"<?php endif; ?>><!-- Body tag must have page template name in it to inherit template-specific css rules -->
   <!-- AddThis Smart Layers BEGIN -->
   <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e8f53ed7638d457"></script>
+  <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e8f53ed7638d457"></script>
   <script type="text/javascript">
     addthis.layers({
       'theme' : 'transparent',
@@ -72,10 +72,10 @@
         'numPreferredServices' : 5
       }   
     });
-  </script>
+  </script> -->
   <!-- AddThis Smart Layers END -->
   <header role="banner" class="global-header">
-     <nav role="navigation" class="site-navigation navbar navbar-inverse">
+    <nav role="navigation" class="site-navigation navbar navbar-inverse">
       <div class="container">
         <div class="row">
           <div class="navbar-header visible-xs">
@@ -147,7 +147,7 @@
         </div>
 
         <div class="site-search-collapse navbar-collapse collapse">
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left visible-xs" role="search">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search" name="q">
               <span class="input-group-btn">
@@ -273,7 +273,7 @@
             <span class="sr-only">BYU-Idaho</span>
           </span>
         </a>
-        <div class="site-title"><?php //echo ( is_home() ) ? "Speeches" : ( is_category() ? single_cat_title() : get_the_title());?>Speeches</div>
+        <div class="site-title">Speeches</div>
         <form method="get" action="http://search.byui.edu/search?" _lpchecked="1"  role="search" class="desktop-search form-horizontal container hidden-xs row">
           <div class="search input-group">
             <input type="text" class="form-control" name="q" placeholder="Search" alt="Search the BYU-I website" />
