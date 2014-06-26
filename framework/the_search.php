@@ -20,11 +20,6 @@ if ($search_all) {
 $args = array(
     "post_type" => $search_what, 
     's' => $keyword,
-    "orderby" => "views", 
-    'meta_key' => 'pageviews',
-    'orderby' => 'meta_value_num',
-    'order' => 'DESC',
-    'posts_per_page' => 12
 ); 
 
 // the query
