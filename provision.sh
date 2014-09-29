@@ -8,7 +8,7 @@ sudo apt-get install --yes unzip
 sudo apt-get install --yes lynx
 
 # remove any existing files in the directory
-sudo rm -rf /var/www/html/*
+sudo rm -rf /var/www/html/!(wp-content)
 
 # get wordpress.zip
 curl https://wordpress.org/latest.zip > wordpress.zip
@@ -53,7 +53,8 @@ fi
 # Extract the installation archive
 sudo /bin/mkdir /tmp/wordpress
 sudo /bin/tar -C /tmp/wordpress -zxf /tmp/latest.tar.gz --strip-components=1
-sudo /bin/cp -r /tmp/wordpress/* $filesystem_directory
+sudo /bin/cp -r /tmp/wordpress/!(wp-content) $filesystem_directory
+sudo /bin/cp -r /tmp/wordpress/wp-content/!(themes) $filesystem_directory/wp-content
 
 # Fix the ownership of the files
 sudo chown nobody: $filesystem_directory -R
@@ -81,3 +82,15 @@ sudo /usr/bin/php -r "
 include '"$filesystem_directory"/wp-admin/install.php';
 wp_install('"$blog_title"', 'admin', '"$admin_email"', 1, '', '"$admin_pass"');
 " > /dev/null 2>&1
+
+# create .htaccess file
+# BEGIN WordPress
+echo "<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress" > /var/www/html/.htaccess
