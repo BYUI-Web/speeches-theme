@@ -52,7 +52,7 @@ switch ($multiversion_testing_key) {
         break;
 }
 
-require_once('custom-post-templates/partials/homepage_partials/'.$homepage_version); 
+require_once('custom-post-templates/partials/homepage_partials/'.$homepage_version);
 
 ?>
 

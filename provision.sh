@@ -57,7 +57,7 @@ sudo /bin/cp -r /tmp/wordpress/!(wp-content) $filesystem_directory
 sudo /bin/cp -r /tmp/wordpress/wp-content/!(themes) $filesystem_directory/wp-content
 
 # Fix the ownership of the files
-sudo chown nobody: $filesystem_directory -R
+sudo chown www-data: $filesystem_directory -R
 
 # Rename the default config file
 sudo /bin/mv $filesystem_directory/wp-config-sample.php $filesystem_directory/wp-config.php
@@ -92,5 +92,9 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+</IfModule>
+<IfModule mod_security.c>
+SecFilterEngine Off
+SecFilterScanPOST Off
 </IfModule>
 # END WordPress" > /var/www/html/.htaccess

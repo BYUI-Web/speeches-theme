@@ -19,7 +19,6 @@
 		</div>
 		<div class="sidebar-inner group speaker-bio">
 			<?php foreach ($presenters as $person) : ?>
-
 				<h2>Speaker Bio</h2>
 				<div class="group">
 					<div class="sidebar-speaker-image"><?php echo get_the_post_thumbnail($person); ?></div>
