@@ -43,6 +43,8 @@ function insertSpeaker($data) {
 }
 
 function insertSpeech($data, $speaker_id) {
+    global $forward;
+    
     $speech = array(
         "post_title" => $data->name,
         "post_status" => "publish",
@@ -63,10 +65,11 @@ function insertSpeech($data, $speaker_id) {
     if ($forward) {
         $date = date_create($data->date);
         date_add($date, date_interval_create_from_date_string('2 months'));
-        update_post_meta($post_id, "event_date", strtotime(date_format($date, "Y-m-d") . " 2:00 PM"));
-        $inFuture = (time() < strtotime(date_format($date, "Y-m-d"). " 2:00PM"));
+        $dateTime = strtotime(date_format($date, "Y-m-d") . " 2:00 PM");
+        update_post_meta($post_id, "event_date", $dateTime);
+        $inFuture = (time() < $dateTime);
     } else {
-        update_post_meta($post_id, "event_date", strtotime($date->date . " 2:00 PM"));
+        update_post_meta($post_id, "event_date", strtotime($data->date . " 2:00 PM"));
     }
     
 

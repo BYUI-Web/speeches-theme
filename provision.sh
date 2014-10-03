@@ -10,18 +10,6 @@ sudo apt-get install --yes lynx
 # remove any existing files in the directory
 sudo rm -rf /var/www/html/!(wp-content|import)
 
-# get wordpress.zip
-curl https://wordpress.org/latest.zip > wordpress.zip
-
-# unzip wordpress
-sudo unzip wordpress.zip -d /var/www/html
-
-# everything gets placed into a wordpress file inside of html so we need to move everything up one directory
-sudo mv /var/www/html/wordpress/* ../
-
-# remove the now empty directory
-sudo rm -rf /var/www/html/wordpress
-
 # WORDPRESS SETUP
 
 
