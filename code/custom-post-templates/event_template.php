@@ -17,6 +17,8 @@ $meta = get_post_meta(get_the_ID());
 //loop through meta and create variables with the name of the key
 foreach($meta as $key => $value) { ${$key} = $value[0]; }
 $current_post_type = get_post_type();
+$presenters = explode(",", $presenters);
+
 ?>
 <div class="container">
 	<div class="row">
