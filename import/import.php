@@ -96,6 +96,8 @@ function insertSpeech($data, $speaker_id) {
     //live stream
     wp_update_meta($post_id, "live_stream", "no");
     
+    echo "Inserted: " . $post_id . " " . $data->name;
+    
     return $post_id;
 
 }
