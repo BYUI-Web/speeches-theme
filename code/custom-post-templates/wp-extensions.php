@@ -218,8 +218,8 @@ function devotional_metaboxes() {
     $topics = get_post_meta($post->ID, 'topics', true);
 
     //parse event_date to the date and the time
-    $event_end_time = date('h:i A', $event_end_time);
-    $event_start_time = date('h:i A', $event_date);
+    $event_end_time = date('H:i', $event_end_time);
+    $event_start_time = date('H:i', $event_date);
     $event_date = date('Y-m-d', $event_date);
 
 
