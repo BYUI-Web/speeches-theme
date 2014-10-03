@@ -33,7 +33,7 @@ get_header();
 			</p>
 		</div>
 	</div>
-	<?php require_once 'partials/event_archive_sidebar.php'; ?>
+	<?php require_once '../partials/event_archive_sidebar.php'; ?>
 </div>
 </div>
 <?php get_footer(); ?>

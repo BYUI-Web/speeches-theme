@@ -18,7 +18,7 @@ $speaker_posts = getPostsBySpeaker($id);
         <div class="speaker-image">
             <img src="<?php echo $image[0]; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
         </div>
-        <?php require_once 'partials/speaker_social.php'; ?>
+        <?php require_once '../partials/speaker_social.php'; ?>
     </div>
     <div class="col-xs-12 col-md-9 speaker-bio-wrapper">
         <div class="speaker-name">

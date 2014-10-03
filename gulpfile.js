@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 
 gulp.task("copy", function() {
     return gulp.src(["./code/**/*", "!./**/*.less"])
-        .pipe(copy("./dist", {prefix: 2}));
+        .pipe(copy("./dist", {prefix: 1}));
 });
 
 gulp.task("sync", function() {
@@ -59,7 +59,7 @@ gulp.task('less', function() {
 gulp.task('minifycss', function() {
     return gulp.src('./dist/**/*.css')
         .pipe(minify())
-        .pipe(gulp.dest("./dist/"));
+        .pipe(gulp.dest("./dist/assets/css/"));
 });
 
 gulp.task('minifyjs', function() {
@@ -72,6 +72,6 @@ gulp.task('minifyjs', function() {
 
 gulp.task('default', ['insert', 'copy', 'less', 'minifycss', 'minifyjs'], function() {
     gulp.watch('./**/*.less', ['less', 'minifycss']);
-    gulp.watch('./code/assets/js/admin/*.js', ['minifyjs']);
-    gulp.watch('./code/**', ["insert", "copy"]);
+    gulp.watch(['./code/assets/js/admin/*.js', '!./dist/**/*.js'], ['minifyjs']);
+    gulp.watch(['./code/**', '!./dist/**'], ["insert", "copy"]);
 });

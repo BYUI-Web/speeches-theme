@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1);  error_reporting(E_ALL);
+
 // Register custom navigation walker
 require_once('navClass.php');
 add_theme_support( 'post-thumbnails' ); 
@@ -96,7 +98,7 @@ function breadcrumbs() {
   $after = '</span>'; // tag after the current crumb
   
   global $post;
-  $homeLink = get_bloginfo('url');
+  $homeLink = home_url();
   
   if (is_home() || is_front_page()) {
   
