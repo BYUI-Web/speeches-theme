@@ -12,57 +12,66 @@ var gulp = require('gulp'),
     fs = require("fs");
 
 gulp.task("copy", function() {
-    return gulp.src(["./code/src/**/*", "!./**/*.less"])
-        .pipe(copy("./code/dist", {prefix: 2}));
+    return gulp.src(["./code/**/*", "!./**/*.less"])
+        .pipe(copy("./dist", {prefix: 2}));
 });
 
 gulp.task("sync", function() {
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/_includes/header/header.html > code/src/assets/html/header.html");
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/_includes/footer/footer.html > code/src/assets/html/footer.html");
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/css/global.min.css > code/src/assets/css/global.min.css");  
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/_includes/header/header.html > code/assets/html/header.html");
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/_includes/footer/footer.html > code/assets/html/footer.html");
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/css/global.min.css > code/assets/css/global.min.css");  
 
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.eot > code/src/assets/fonts/icomoon.eot");  
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.svg > code/src/assets/fonts/icomoon.svg");  
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.ttf > code/src/assets/fonts/icomoon.ttf");  
-    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.woff > code/src/assets/fonts/icomoon.woff");  
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.eot > code/assets/fonts/icomoon.eot");  
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.svg > code/assets/fonts/icomoon.svg");  
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.ttf > code/assets/fonts/icomoon.ttf");  
+    exec("curl -L https://raw.githubusercontent.com/BYUI-Web/responsive-prototype/master/assets/fonts/icomoon.woff > code/assets/fonts/icomoon.woff");  
 
     console.log("Synced with responsive-prototype")
 });
 
-gulp.task("insert", function() {
-    return gulp.src(["./code/src/footer.php", "./code/src/header.php"])
+gulp.task("insert", ["insert:header", "insert:footer"]);
+
+gulp.task("insert:header", function() {
+    return gulp.src(["./code/header.php"])
     .pipe(gfi({
-        "<!-- header.html -->": "./code/src/assets/html/header.html",
-        "<!-- footer.html -->": "./code/src/assets/html/footer.html"
+        "<!-- header.html -->": "./code/assets/html/header.html"
     }))
     .pipe(replace("{{ page.title }}", "Speeches"))
-    .pipe(gulp.dest("./code/dist/"));
+    .pipe(gulp.dest("./dist/"));
+});
+
+gulp.task("insert:footer", function() {
+    return gulp.src(["./code/footer.php"])
+    .pipe(gfi({
+        "<!-- footer.html -->": "./code/assets/html/footer.html"
+    }))
+    .pipe(gulp.dest("./dist/"));
 });
 
 gulp.task('less', function() {
-    return gulp.src('./code/src/assets/css/style.less')
+    return gulp.src('./code/assets/css/style.less')
         .pipe(less())
         .pipe(rename("style.css"))
-        .pipe(gulp.dest("./code/dist/"))
+        .pipe(gulp.dest("./dist/"))
         .pipe(notify('LESS Compiled Succesfully'));;
 });
 
 gulp.task('minifycss', function() {
-    return gulp.src('./code/dist/**/*.css')
+    return gulp.src('./dist/**/*.css')
         .pipe(minify())
-        .pipe(gulp.dest("./code/dist/"));
+        .pipe(gulp.dest("./dist/"));
 });
 
 gulp.task('minifyjs', function() {
-    return gulp.src(['./code/src/assets/js/admin/*.js'])
+    return gulp.src(['./code/assets/js/admin/*.js'])
         .pipe(concat("speechesjs.min.js"))
         .pipe(uglify())
-        .pipe(gulp.dest('./code/dist/assets/js/'))
+        .pipe(gulp.dest('./dist/assets/js/'))
         .pipe(notify('Javascript Compiled Succesfully'));
 });
 
 gulp.task('default', ['insert', 'copy', 'less', 'minifycss', 'minifyjs'], function() {
     gulp.watch('./**/*.less', ['less', 'minifycss']);
-    gulp.watch('./code/src/assets/js/admin/*.js', ['minifyjs']);
-    gulp.watch('./code/src/**', ["insert", "copy"]);
+    gulp.watch('./code/assets/js/admin/*.js', ['minifyjs']);
+    gulp.watch('./code/**', ["insert", "copy"]);
 });

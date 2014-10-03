@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", inline: "sudo service apache2 restart", run: "always"
 
-  config.vm.synced_folder "./code/dist", "/var/www/html/wp-content/themes/speeches", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "./dist", "/var/www/html/wp-content/themes/speeches", owner: "www-data", group: "www-data"
   config.vm.synced_folder "./import", "/var/www/html/import", owner: "www-data", group: "www-data"
 
 end
