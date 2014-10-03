@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors',1);  error_reporting(E_ALL);
 
 // Register custom navigation walker
 require_once('navClass.php');
@@ -98,7 +97,7 @@ function breadcrumbs() {
   $after = '</span>'; // tag after the current crumb
   
   global $post;
-  $homeLink = home_url();
+  $homeLink = "/";
   
   if (is_home() || is_front_page()) {
   
@@ -132,7 +131,7 @@ function breadcrumbs() {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+        echo '<a href="/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
