@@ -3,14 +3,16 @@
 require_once '../wp-load.php';
 require_once 'html-parser.php';
 
-$speeches = json_decode(str_replace("/11602882", "", file_get_contents("speeches.json")));
+$speeches = json_decode(str_replace(["/11602882", "/18191252"], "", file_get_contents("speeches.json")));
+$numSpeeches = count($speeches);
 $forward = false;
 
 if ($argv[1] === "forward") {
     $forward = true;
+    $numSpeeches = 100;
 }
 
-for ($i = 0; $i < 10; $i++) {
+for ($i = 0; $i < $numSpeeches; $i++) {
     //only if it's a devotional or forum
     if ($speeches[$i]->type === "Devotionals" || $speeches[$i]->type === "University Forums") {
         //insert the speaker
@@ -91,8 +93,14 @@ function insertSpeech($data, $speaker_id) {
     
     //transcript
     if ($data->transcriptPath && !$inFuture) {
-        update_post_meta($post_id, "transcript", getTranscript($data->transcriptPath));
-        update_post_meta($post_id, "transcript", "yes");
+        $transcript = getTranscript($data->transcriptPath);
+        
+        if ($transcript !== false) {
+            update_post_meta($post_id, "transcript", $transcript);
+            update_post_meta($post_id, "transcript", "yes");
+        } else {
+            update_post_meta($post_id, "transcript_status", "not_yet");
+        }
     } else {
         update_post_meta($post_id, "transcript_status", "not_yet");
     }
@@ -118,14 +126,17 @@ function getVideoEmbed($video) {
 }
 
 function getTranscript($url) {
-    $html = file_get_html($url);
+    $html = @file_get_html($url);
     
-    $children = $html->find(".leftAREA", 0)->children();
-    array_slice($children, 0, 6);
     
-    $html = "";
-    foreach ($children as $child) {
-        $html .= $child->outerhtml;
+    if ($html !== false) {
+        $children = $html->find(".leftAREA", 0)->children();
+        array_slice($children, 0, 6);
+
+        $html = "";
+        foreach ($children as $child) {
+            $html .= $child->outerhtml;
+        }
     }
     
     return $html;
