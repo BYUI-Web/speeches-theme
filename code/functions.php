@@ -178,6 +178,8 @@ function breadcrumbs() {
       $userdata = get_userdata($author);
       echo $before . 'Articles posted by ' . $userdata->display_name . $after;
   
+    } elseif ($page = isPage()) {
+        echo $before . $page . $after;
     } elseif ( is_404() ) {
       echo $before . 'Error 404' . $after;
     }
@@ -192,6 +194,19 @@ function breadcrumbs() {
   
   }
 } // end qt_custom_breadcrumbs()
+
+function isPage() {
+    $url = $_SERVER["REQUEST_URI"];
+    $pageName = false;
+    
+    if ($url === "/calendar") {
+        $pageName = "Calendar";
+    } else if ($url === "/archive") {
+        $pageName = "Archive";
+    }
+    
+    return $pageName;
+}
 
 
 // Plugin Extension (Custom Post Types)
