@@ -8,7 +8,7 @@ sudo apt-get install --yes unzip
 sudo apt-get install --yes lynx
 
 # remove any existing files in the directory
-sudo rm -rf /var/www/html/!(wp-content)
+sudo rm -rf /var/www/html/!(wp-content|import)
 
 # get wordpress.zip
 curl https://wordpress.org/latest.zip > wordpress.zip
@@ -23,9 +23,6 @@ sudo mv /var/www/html/wordpress/* ../
 sudo rm -rf /var/www/html/wordpress
 
 # WORDPRESS SETUP
-
-# create the speeches database
-mysql -uroot -proot -e "create database speeches"
 
 
 # Get input
@@ -71,20 +68,22 @@ sudo /bin/sed -i "s/password_here/$db_password/g" $filesystem_directory/wp-confi
 sudo /bin/grep -A50 'table_prefix' $filesystem_directory/wp-config.php > /tmp/wp-temp-config
 sudo /bin/sed -i '/**#@/,/$p/d' $filesystem_directory/wp-config.php
 sudo /usr/bin/lynx --dump -width 200 https://api.wordpress.org/secret-key/1.1/salt/ >> $filesystem_directory/wp-config.php
+sudo echo "define('WP_DEFAULT_THEME', 'speeches');" >> $filesystem_directory/wp-config.php
+
 sudo /bin/cat /tmp/wp-temp-config >> $filesystem_directory/wp-config.php && rm /tmp/wp-temp-config -f
+
 
 # Create the database
 /usr/bin/mysql -u$db_user -p$db_password -e "DROP DATABASE IF EXISTS $db_name"
 /usr/bin/mysql -u$db_user -p$db_password -e "CREATE DATABASE $db_name"
 
-# Populate the database
+# install wordpress
 sudo /usr/bin/php -r "
 include '"$filesystem_directory"/wp-admin/install.php';
 wp_install('"$blog_title"', 'admin', '"$admin_email"', 1, '', '"$admin_pass"');
 " > /dev/null 2>&1
 
 # create .htaccess file
-# BEGIN WordPress
 echo "<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
@@ -96,5 +95,8 @@ RewriteRule . /index.php [L]
 <IfModule mod_security.c>
 SecFilterEngine Off
 SecFilterScanPOST Off
-</IfModule>
-# END WordPress" > /var/www/html/.htaccess
+</IfModule>" > /var/www/html/.htaccess
+
+# run the importer
+cd /var/www/html/import
+sudo /usr/bin/php import.php forward

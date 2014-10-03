@@ -12,6 +12,12 @@ function remove_menus(){
 }
 add_action( 'admin_menu', 'remove_menus' );
 
+// set permalink
+function set_permalink(){
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure('/%postname%/');
+}
+add_action('init', 'set_permalink');
 
 	// Add RSS links to <head> section
 automatic_feed_links();
