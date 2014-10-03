@@ -1,0 +1,37 @@
+/*////////////// NAV ////////////*/
+.breadcrumb-row {
+    margin-left:0;
+    background-color:#F5F5F5;
+    line-height: 40px;
+    margin-bottom:20px;
+    padding-left:15px;
+}
+nav {
+    &.navbar.navbar-default.custom-nav {
+        background-color:transparent;
+        border:none;
+        .navbar-brand {
+            color:@byui-blue;
+        }
+        .navbar-collapse {
+            padding-left:0;
+        }
+    }
+    &.navbar-default.custom-nav .navbar-nav > li > a {
+        color:@byui-blue;
+        &:hover {
+            color:lighten(@byui-blue,30%);
+        }
+    }
+    &.navbar-default.custom-nav .navbar-nav > .active > a {
+        background-color:#ffffff;
+        color:lighten(@byui-blue,30%);
+    }
+}
+.content-wrap {
+    ul.nav li.dropdown:hover > ul.dropdown-menu {
+        @media only screen and (min-width:@screen-sm-min) {
+            display: block;
+        }    
+    }
+}
