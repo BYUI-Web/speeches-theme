@@ -3,7 +3,7 @@
 require_once '../wp-load.php';
 require_once 'html-parser.php';
 
-$speeches = json_decode(str_replace("/11602882", file_get_contents("speeches.json")));
+$speeches = json_decode(str_replace("/11602882", "", file_get_contents("speeches.json")));
 $forward = false;
 
 if ($argv[1] === "forward") {
@@ -13,11 +13,11 @@ if ($argv[1] === "forward") {
 for ($i = 0; $i < 10; $i++) {
     //only if it's a devotional or forum
     if ($speeches[$i]->type === "Devotionals" || $speeches[$i]->type === "University Forums") {
-    //insert the speaker
-    $speaker_id = insertSpeaker($speeches[$i]);
+        //insert the speaker
+        $speaker_id = insertSpeaker($speeches[$i]);
 
-    //insert the speech
-    $post_id = insertSpeech($speeches[i], $speaker_id);
+        //insert the speech
+        $post_id = insertSpeech($speeches[$i], $speaker_id);
     }
 }
 
@@ -36,7 +36,7 @@ function insertSpeaker($data) {
 
         update_post_meta($post_id, "title", trim($data->speakerPosition));
         
-        echo "Inserted: " . $post_id . " " . trim($data->speakerName);
+        echo "Inserted: " . $post_id . " " . trim($data->speakerName) . "\n";
     }
     
     return $post_id;
@@ -54,49 +54,53 @@ function insertSpeech($data, $speaker_id) {
     } else if ($data->type === "University Forums") {
         $speech["post_type"] = "forum";
     }
-    
+
     $post_id = wp_insert_post($speech);
     
+    
     //event date
+    $inFuture = false;
     if ($forward) {
         $date = date_create($data->date);
         date_add($date, date_interval_create_from_date_string('2 months'));
-        wp_update_meta($post_id, "event_date", strtotime(date_format($date, "Y-m-d") . " 2:00 PM"));
+        update_post_meta($post_id, "event_date", strtotime(date_format($date, "Y-m-d") . " 2:00 PM"));
+        $inFuture = (time() < strtotime(date_format($date, "Y-m-d"). " 2:00PM"));
     } else {
-        wp_update_meta($post_id, "event_date", strtotime($date->date . " 2:00 PM"));
+        update_post_meta($post_id, "event_date", strtotime($date->date . " 2:00 PM"));
     }
     
+
     //audio
-    if (isset($data->mp3Path)) {
-        wp_update_meat($post_id, "audio_embed", "<audio src='" . $data->mp3Path . "' controls='true'></audio>");
-        wp_update_meta($post_id, "audio_status", "yes");
+    if (isset($data->mp3Path) && !$inFuture) {
+        update_post_meta($post_id, "audio_embed", "<audio src='" . $data->mp3Path . "' controls='true'></audio>");
+        update_post_meta($post_id, "audio_status", "yes");
     } else {
-        wp_update_meta($post_id, "audio_status", "not_yet");
+        update_post_meta($post_id, "audio_status", "not_yet");
     }
     
     //video
-    if (isset($data->videoPath)) {
-        wp_update_meat($post_id, "video_embed", getVideoEmbed($data->videoPath));
-        wp_update_meta($post_id, "video_status", "yes");
+    if (isset($data->videoPath) && !$inFuture) {
+        update_post_meta($post_id, "video_embed", getVideoEmbed($data->videoPath));
+        update_post_meta($post_id, "video_status", "yes");
     } else {
-        wp_update_meta($post_id, "video_status", "not_yet");
+        update_post_meta($post_id, "video_status", "not_yet");
     }
     
     //transcript
-    if ($data->transcriptPath) {
-        wp_update_meta($post_id, "transcript", getTranscript($data->transcriptPath));
-        wp_update_meta($post_id, "transcript", "yes");
+    if ($data->transcriptPath && !$inFuture) {
+        update_post_meta($post_id, "transcript", getTranscript($data->transcriptPath));
+        update_post_meta($post_id, "transcript", "yes");
     } else {
-        wp_update_meta($post_id, "transcript_status", "not_yet");
+        update_post_meta($post_id, "transcript_status", "not_yet");
     }
     
     //speaker
-    wp_update_meta($post_id, "presenters", $speaker_id);
+    update_post_meta($post_id, "presenters", $speaker_id);
     
     //live stream
-    wp_update_meta($post_id, "live_stream", "no");
+    update_post_meta($post_id, "live_stream", "no");
     
-    echo "Inserted: " . $post_id . " " . $data->name;
+    echo "Inserted: " . $post_id . " " . $data->name . "\n";
     
     return $post_id;
 
@@ -113,7 +117,7 @@ function getVideoEmbed($video) {
 function getTranscript($url) {
     $html = file_get_html($url);
     
-    $children = $html->find(".leftAREA")->children();
+    $children = $html->find(".leftAREA", 0)->children();
     array_slice($children, 0, 6);
     
     $html = "";
