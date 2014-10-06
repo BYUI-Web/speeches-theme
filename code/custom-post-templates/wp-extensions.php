@@ -144,7 +144,7 @@ add_action('init', 'create_post_pub');
 
 // Add the devotional Meta Boxes
 function add_forum_metaboxes() {
-    add_meta_box('forum_metaboxes', 'Forum Information', 'forum_metaboxes', 'forum', 'normal', 'default');
+    add_meta_box('forum_metaboxes', 'Forum Information', 'devotional_metaboxes', 'forum', 'normal', 'default');
 }
 
 function add_devotional_metaboxes() {
@@ -281,77 +281,6 @@ function devotional_metaboxes() {
     echo '<textarea rows="10" name="transcript" class="widefat">' . $transcript . '</textarea></div>';
 }
 
-function forum_metaboxes() {
-    global $post;
-
-    // Noncename needed to verify where the data originated
-    echo '<input type="hidden" name="event_nonce" id="event_nonce" value="' .
-    wp_create_nonce(plugin_basename(__FILE__)) . '" />';
-
-    // Get the location data if its already been entered
-    $video_embed = get_post_meta($post->ID, 'video_embed', true);
-    $video_download = get_post_meta($post->ID, 'video_download', true);
-    $audio_embed = get_post_meta($post->ID, 'audio_embed', true);
-    $audio_download = get_post_meta($post->ID, 'audio_download', true);
-    $event_date = get_post_meta($post->ID, 'event_date', true);
-    $prep_material = get_post_meta($post->ID, 'prep_material', true);
-    $transcript = get_post_meta($post->ID, 'transcript', true);
-    $presenters = get_post_meta($post->ID, 'presenters', true);
-    $event_start_time = get_post_meta($post->ID, 'event_start_time', true);
-    $event_end_time = get_post_meta($post->ID, 'event_end_time', true);
-    $event_location = get_post_meta($post->ID, 'event_location', true);
-    $live_stream_embed = get_post_meta($post->ID, 'live_stream_embed', true);
-    $topics = get_post_meta($post->ID, 'topics', true);
-    if ($presenters)
-        $presentersArray = explode(', ', $presenters);
-
-    echo '<script>';
-    echo 'prepopulate = [];';
-    if (is_array($presentersArray)) {
-        foreach ($presentersArray as $person) {
-            echo 'prepopulate.push({ "id" : ' . $person . ', "name" : "' . get_the_title($person) . '" });';
-        }
-    }
-    echo 'speakers = [];';
-
-    $loop = new WP_Query(array('post_type' => 'speaker'));
-    while ($loop->have_posts()) : $loop->the_post();
-    echo 'speakers.push({ "id" : ' . get_the_ID() . ', "name" : "' . get_the_title() . '" });';
-    endwhile;
-    echo '</script>';
-
-    // Echo out the field
-    echo '<p>Event Date:</p>';
-    echo '<input type="date" name="event_date" id="event_date" value="' . $event_date . '"/>';
-    echo '<p>Event Location:</p>';
-    echo '<input type="text" name="event_location" id="event_location" value="' . $event_location . '"/>';
-    echo '<p>Start Time:</p>';
-    echo '<input type="time" name="event_start_time" id="event_start_time" value="' . $event_start_time . '"/>';
-    echo '<p>End Time:</p>';
-    echo '<input type="time" name="event_end_time" id="event_end_time" value="' . $event_end_time . '"/>';
-    echo '<p>Live Stream:</p>';
-    echo '<input type="radio" name="live_stream" id="live_stream_yes" value="yes"/><label for="live_stream_yes">Yes </label><input type="radio" name="live_stream" id="live_stream_no" value="no" checked/><label for="live_stream_no">No</label>';
-    echo '<div id="live_stream"><p>Live Stream Embed Code: </p>';
-    echo '<textarea rows="4" name="live_stream_embed" class="widefat">' . $live_stream_embed . '</textarea></div>';
-    echo '<p>Presenters:</p>';
-    echo '<input type="hidden" name="presenters" id="speaker-ids" value="' . $presenters . '"/>';
-    echo '<input type="text" id="speaker-names" name="presenters_display" placeholder="Speaker Name" class="widefat"/>';
-    echo '<p>Preparatory Material (seperate with commas):</p>';
-    echo '<input type="text" name="prep_material" value="' . $prep_material . '" class="widefat" />';
-    echo '<p>Topics (seperate with commas):</p>';
-    echo '<input type="text" name="topics" value="' . $topics . '" class="widefat" />';
-    echo '<p>Video Embed Code: </p>';
-    echo '<textarea rows="4" name="video_embed" class="widefat">' . $video_embed . '</textarea>';
-    echo '<p>Video Download URL: </p>';
-    echo '<input type="text" name="video_download" value="' . $video_download . '" class="widefat" />';
-    echo '<p>Audio Embed Code: </p>';
-    echo '<textarea rows="4" name="audio_embed" class="widefat">' . $audio_embed . '</textarea>';
-    echo '<p>Audio Download URL: </p>';
-    echo '<input type="text" name="audio_download" value="' . $audio_download . '" class="widefat" />';
-    echo '<p>Transcript: </p>';
-    echo '<textarea rows="10" name="transcript" class="widefat">' . $transcript . '</textarea>';
-}
-
 // Save the Metabox Data
 function save_speaker_meta($post_id, $post) {
     // verify this came from the our screen and with proper authorization,
@@ -401,6 +330,7 @@ function save_speaker_meta($post_id, $post) {
 }
 
 add_action('save_post', 'save_speaker_meta', 1, 2); // save the custom fields
+
 // Save the Metabox Data
 function save_event_meta($post_id, $post) {
     date_default_timezone_set("America/Denver");

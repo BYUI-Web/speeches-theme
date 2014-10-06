@@ -118,7 +118,7 @@ function insertSpeech($data, $speaker_id) {
 }
 
 function getVideoEmbed($video) {
-    $split = explode("/", $vide);
+    $split = explode("/", $video);
     
     $entryId = $split[count($split) - 1];
     
