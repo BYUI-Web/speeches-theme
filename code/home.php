@@ -37,22 +37,8 @@ $recentLoop = new WP_Query( $args );
 <?php get_header(); ?>
 
 <?php 
-// A/B Testing Functionality
-$homepage_version = "";
 
-switch ($multiversion_testing_key) {
-    case 1:
-        $homepage_version = "version_1.php";
-        break;
-    case 2:
-        $homepage_version = "version_2.php";
-        break;
-    default:
-        $homepage_version = "old.php";
-        break;
-}
-
-require_once('partials/homepage_partials/'.$homepage_version);
+require_once('custom-post-templates/home.php');
 
 ?>
 

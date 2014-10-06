@@ -56,7 +56,7 @@ gulp.task('less', function() {
         .pipe(notify('LESS Compiled Succesfully'));;
 });
 
-gulp.task('minifycss', function() {
+gulp.task('minifycss', ["less"], function() {
     return gulp.src('./dist/**/*.css')
         .pipe(minify())
         .pipe(gulp.dest("./dist/assets/css/"));

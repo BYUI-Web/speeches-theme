@@ -101,7 +101,7 @@ function breadcrumbs() {
   
   if (is_home() || is_front_page()) {
   
-    if ($showOnHome == 1) echo '<nav id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+//    if ($showOnHome == 1) echo '<nav id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
   
   } else {
   
