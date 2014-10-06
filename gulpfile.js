@@ -60,7 +60,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('minifycss', function () {
-    return gulp.src(['./dist/**/*.css', '!./dist/style.css'])
+    return gulp.src(['./dist/**/*.css', '!./dist/style.css', "!./dist/assets/css/global.min.css"])
         .pipe(flatten("./dist/assets/css"))
         .pipe(minify())
         .pipe(gulp.dest("./dist/assets/css/"));

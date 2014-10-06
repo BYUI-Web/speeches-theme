@@ -52,7 +52,7 @@
                 <!-- default image is mobile (mobile first) plus this will prevent the double download from the polyfill on mobile -->
                 <img src="<?php bloginfo('template_url') ?>/assets/images/home/prepare-mobile.jpg" alt="Prepare for devotional" />
             </picture>
-            <figcaption class="col-xs-8 no-padding">
+            <figcaption class="col-xs-8">
                 <p class="home-image__caption">
                     Prepare for Devotional
                 </p>
@@ -66,7 +66,7 @@
                 <!-- default image is mobile (mobile first) plus this will prevent the double download from the polyfill on mobile -->
                 <img src="<?php bloginfo('template_url') ?>/assets/images/home/volunteer-mobile.jpg" alt="Volunteer at devotional" />
             </picture>            
-               <figcaption class="col-xs-8 no-padding">
+               <figcaption class="col-xs-8">
                 <p class="home-image__caption">
                     Volunteer
                 </p>
@@ -80,7 +80,7 @@
                 <!-- default image is mobile (mobile first) plus this will prevent the double download from the polyfill on mobile -->
                 <img src="<?php bloginfo('template_url') ?>/assets/images/home/behind-mobile.jpg" alt="Behind the Scenes" />
             </picture>
-            <figcaption class="col-xs-8 no-padding">
+            <figcaption class="col-xs-8">
                 <p class="home-image__caption">
                     Behind the Scenes
                 </p>

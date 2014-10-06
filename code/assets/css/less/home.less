@@ -6,6 +6,7 @@
 @nav-arrow__background: #AFB0B3;
 @week-background: #35A847;
 @caption-color: @white;
+@image--collapsable__border-color: #898A8E;
 
 
 
@@ -96,14 +97,43 @@
     }
      
      .home-image--collapsable {
-         padding: 1em;
+         margin: 0 1em;
+         padding: 1em 0;
+         border-bottom: @image--collapsable__border-color solid 2px;
+         
+         &:last-child {
+             border: none;
+         }
+         
+         picture {
+             padding-left: 0;
+         }
+         
+         figcaption {
+             padding-left: 0;
+         }
          
          .home-image__caption {
              color: #333;
              font-weight: bold;
              padding: 0;
              margin: 0;
-             font-size: 1.2em;
+         }
+     }
+     
+     .boxes {
+         padding: @contain;
+     }
+     .box {
+         .box();
+         margin: .5em 0;
+
+         .header {
+            font-weight: bold;
+         }
+
+         p {
+             margin-bottom: 0;
          }
      }
 }
