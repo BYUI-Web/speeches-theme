@@ -57,6 +57,8 @@ sudo /bin/grep -A50 'table_prefix' $filesystem_directory/wp-config.php > /tmp/wp
 sudo /bin/sed -i '/**#@/,/$p/d' $filesystem_directory/wp-config.php
 sudo /usr/bin/lynx --dump -width 200 https://api.wordpress.org/secret-key/1.1/salt/ >> $filesystem_directory/wp-config.php
 sudo echo "define('WP_DEFAULT_THEME', 'speeches');" >> $filesystem_directory/wp-config.php
+sudo echo "define('WP_HOME','http://speeches');" >> $filesystem_directory/wp-config.php
+sudo echo "define('WP_SITEURL','http://speeches');" >> $filesystem_directory/wp-config.php
 
 sudo /bin/cat /tmp/wp-temp-config >> $filesystem_directory/wp-config.php && rm /tmp/wp-temp-config -f
 
