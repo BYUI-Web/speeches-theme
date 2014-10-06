@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/global.min.css" type="text/css" media="screen, projection">
 
   <!-- BootStrap -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<!--  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">-->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   
 
