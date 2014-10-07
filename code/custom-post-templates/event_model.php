@@ -235,12 +235,12 @@ function getUpcomingNaturalTiming($speech) {
 		$now = strtotime('now');
 		$args = array(
 			'post_type' => $post_type,
-			'meta_key' => 'event_end_time',
+			'meta_key' => 'event_date',
 			'orderby' => 'meta_value_num',
 			'order' => 'ASC',
 			'meta_query' => array(
 				array(
-					'key' => 'event_end_time',
+					'key' => 'event_date',
 					'value' => $now,
 					'compare' => '<',
 					'type' => 'NUMERIC'

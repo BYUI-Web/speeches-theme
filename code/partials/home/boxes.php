@@ -1,5 +1,4 @@
 <?php 
-
 //get the most popular speeches
 $args = array("post_type" => array("devotional", "forum"), 
     "orderby" => "views", 
@@ -9,54 +8,62 @@ $args = array("post_type" => array("devotional", "forum"),
     'posts_per_page' => 1);
 
 $popularLoop = new WP_Query( $args );
+    
+    
+while ($popularLoop->have_posts()) {
+    $popularLoop->the_post();
+    $popular = get_post();
+}
+
+$popularSpeaker = get_post($popular->presenters);
+
+//get most recent
+$recent = getRecent(2, array("devotional", "forum"));
+
+//get upcoming
+$upcoming = getUpcoming(array("devotional", "forum"), 3);
 
 ?>
 
 
 <div class="boxes">
-        <div class="box">
-            <h4 class="header">Popular</h4>
-            <img class="speaker-image hidden-xs hidden-sm" src="<?php bloginfo('template_url') ?>/assets/images/home/dallin-h-oaks-large.jpg" />
-            <a href="#" class="speech-link">
-                <p class="when">25 February 2014</p>
-                <p class="title">Witnesses of God</p>
-                <p class="who">Elder Dallin H. Oaks</p>
-                <p class="position">Quorum of the Twelve Apostles</p>
-            </a>
-        </div>
-        <div class="box">
-            <h4 class="header">Recent</h4>
-            <a href="#" class="speech-link">
-                <p class="when">12 August 2014</p>
-                <p class="title">Expanding the Abundant Life</p>
-                <p class="who">Brother Leon Anderson</p>
-                <p class="position">Some position on campus</p>
-            </a>
-            <a href="#" class="speech-link">
-                <p class="when">12 August 2014</p>
-                <p class="title">Expanding the Abundant Life</p>
-                <p class="who">Brother Leon Anderson</p>
-                <p class="position">Some position on campus</p>
-            </a>
-            <a href="/archive" class="box-link">Archive</a>
-        </div>
-        <div class="box">
-            <h4 class="header">Upcoming</h4>
-            <a href="#" class="speech-link">
-                <p class="when">19 August 2014</p>
-                <p class="who">Brother Garth Nelson</p>
-                <p class="position">Manager on Campus</p>
-            </a>
-            <a href="#" class="speech-link">
-                <p class="when">19 August 2014</p>
-                <p class="who">Brother Garth Nelson</p>
-                <p class="position">Manager on Campus</p>
-            </a>
-            <a href="#" class="speech-link">
-                <p class="when">19 August 2014</p>
-                <p class="who">Brother Garth Nelson</p>
-                <p class="position">Manager on Campus</p>
-            </a>
-            <a href="/calendar" class="box-link">Calendar</a>
-        </div>
+    <div class="box">
+        <h4 class="header">Popular</h4>
+        <a href="<?php echo $popular->guid; ?>" class="speech-link">
+            <img class="speaker-image hidden-xs hidden-sm" src="<?php bloginfo('template_url') ?><?php echo get_the_post_thumbnail($popular->presenters); ?>" />
+            <p class="when"><?php echo date('d F Y', $popular->event_date); ?></p>
+            <p class="title"><?php echo $popular->post_title; ?></p>
+            <p class="who"><?php echo $popularSpeaker->post_title; ?></p>
+            <p class="position"><?php echo $popularSpeaker->title; ?></p>
+        </a>
     </div>
+    <div class="box">
+        <h4 class="header">Recent</h4>
+        <?php for($i = 0; $i < 2; $i++) :
+                $speech = get_post($recent[$i]);
+                $speaker = get_post($speech->presenters);
+            ?>
+            <a href="<?php echo $speech->guid; ?>" class="speech-link">
+                <p class="when"><?php echo date("d F Y", $speech->event_date); ?></p>
+                <p class="title"><?php echo $speech->post_title; ?></p>
+                <p class="who"><?php echo $speaker->post_title; ?></p>
+                <p class="position"><?php echo $speaker->title; ?></p>
+            </a>
+        <?php endfor ?>
+        <a href="/archive" class="box-link">Archive</a>
+    </div>
+    <div class="box">
+        <h4 class="header">Upcoming</h4>
+        <?php for ($i = 0; $i < 3; $i++) :
+                $speech = get_post($upcoming[$i]);
+                $speaker = get_post($speech->presenters);
+                ?>
+        <a href="<?php echo $speech->guid; ?>" class="speech-link">
+            <p class="when"><?php echo date("d F Y", $speech->event_date); ?></p>
+            <p class="who"><?php echo $speaker->post_title; ?></p>
+            <p class="position"><?php echo $speaker->title; ?></p>
+        </a>
+        <?php endfor ?>
+        <a href="/calendar" class="box-link">Calendar</a>
+    </div>
+</div>
