@@ -40,6 +40,7 @@ gulp.task("insert:header", function () {
             "<!-- header.html -->": "./code/assets/html/header.html"
         }))
         .pipe(replace("{{ page.title }}", "Speeches"))
+        .pipe(replace("{{ site.baseurl }}", "http://www.byui.edu"))
         .pipe(gulp.dest("./dist/"));
 });
 
