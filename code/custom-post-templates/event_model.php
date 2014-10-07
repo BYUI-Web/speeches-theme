@@ -200,10 +200,31 @@ function getUpcoming($post_type, $post_count = 'all') {
 			if ($post_count != 'all')
 				if ($counter == $post_count)
 					break;
-			}
-		}
-		return $upcoming_posts;
-	}
+        }
+    }
+    return $upcoming_posts;
+}
+
+function getUpcomingNaturalTiming($speech) {
+    $time = $speech->event_date;
+    $string = "";
+    
+    //first check if it is this week
+    if ($time < strtotime("sunday")) {
+        $string = "This Week";
+    } else if ($time < strtotime("sunday next week")) {
+        $string = "Next Week";
+    } else if ($time < strtotime("last day of")) {
+        $string = "This Month";
+    } else if ($time < strtotime("last day of next month")) {
+        $string = "Next Month";
+    } else {
+        $string = "This Semester";
+    }
+    
+    return $string;
+    
+}
 
 	/* * *********************************************************** */
 	/* * ********* Gets $post_count worth of posts ********** */
@@ -214,12 +235,12 @@ function getUpcoming($post_type, $post_count = 'all') {
 		$now = strtotime('now');
 		$args = array(
 			'post_type' => $post_type,
-			'meta_key' => 'event_end_time',
+			'meta_key' => 'event_date',
 			'orderby' => 'meta_value_num',
 			'order' => 'ASC',
 			'meta_query' => array(
 				array(
-					'key' => 'event_end_time',
+					'key' => 'event_date',
 					'value' => $now,
 					'compare' => '<',
 					'type' => 'NUMERIC'

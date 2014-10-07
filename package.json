@@ -27,6 +27,7 @@
     "gulp-notify": "~1.2.1",
     "gulp-rename": "~1.2.0",
     "gulp-replace": "^0.4.0",
+    "gulp-semiflat": "0.0.9",
     "gulp-uglify": "~0.2.1"
   }
 }

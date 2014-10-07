@@ -25,12 +25,13 @@
   <!-- jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-  <!-- BootStrap -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  
   <!-- BYU-I Stylesheets -->
   <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/global.min.css" type="text/css" media="screen, projection">
+
+  <!-- BootStrap -->
+<!--  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">-->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
 
   <!-- EMERGENCY FEED Parsing -->
   <!--<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/emergency.min.js"></script>-->

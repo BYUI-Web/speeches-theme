@@ -22,5 +22,6 @@
   }());
 </script>
 <?php endif; ?>
+<script src="<?php bloginfo('template_url') ?>/assets/js/vendor/picturefill.min.js"></script>
 </body>
 </html>
