@@ -5,7 +5,7 @@
     }
   </style>
 <![endif]-->
-<section class="home-page container">
+<section class="home-page">
     <?php include __DIR__.'/../partials/home/nav.php'; ?>
     <?php include __DIR__.'/../partials/home/home-images.php'; ?>
     

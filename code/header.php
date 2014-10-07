@@ -70,7 +70,4 @@
 
   <main role="main">
     <div class="container content-wrap">
-    <div class="row breadcrumb-row">
-        <?php breadcrumbs(); ?>
-      </div>
-    </div>
+    <?php breadcrumbs(); ?>

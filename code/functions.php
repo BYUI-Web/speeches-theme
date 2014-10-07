@@ -105,7 +105,7 @@ function breadcrumbs() {
   
   } else {
   
-    echo '<nav id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    echo '<div class="breadcrumb-row"><nav id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
   
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
@@ -190,7 +190,7 @@ function breadcrumbs() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
   
-    echo '</nav>';
+    echo '</nav></div>';
   
   }
 } // end qt_custom_breadcrumbs()
