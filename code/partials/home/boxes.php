@@ -5,7 +5,16 @@ $args = array("post_type" => array("devotional", "forum"),
     'meta_key' => 'pageviews',
     'orderby' => 'meta_value_num',
     'order' => 'DESC',
-    'posts_per_page' => 1);
+    'posts_per_page' => 1,
+    'meta_query' => array(
+        array(
+            'key' => 'event_date',
+            'value' => strtotime("now"),
+            'compare' => '<',
+            'type' => 'NUMERIC'
+            )
+        )
+    );
 
 $popularLoop = new WP_Query( $args );
     
