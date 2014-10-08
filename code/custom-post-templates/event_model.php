@@ -27,61 +27,37 @@ function postTimeStatus($post_id) {
 /* * ********* Returns Array of 2 posts || "No Posts Found"; ********** */
 /* * ********************************************************* */
 
-function getPostsBySpeaker($current_post_id) {
-	$speakerPosts = array();
-	$counter = 0;
-	$current_post_presenters = get_post_meta($current_post_id, 'presenters', true);
+function getPostsBySpeaker($speaker_id, $current_speech_id) {
+    $posts = array();
 
-	if ($current_post_presenters)
-		$current_post_presenters = explode(', ', $current_post_presenters);
-	else
-		$current_post_presenters = $current_post_id;
-
-	$loop = new WP_Query(array('post_type' => array('devotional', 'forum'), "orderby" => "views"));
-	if ($loop->have_posts()) {
-		while ($loop->have_posts()) {
-			$loop->the_post();
-			$post_id = get_the_ID();
-			$loop_presenters = get_post_meta(get_the_ID(), 'presenters', true);
-			if ($loop_presenters)
-				$loop_presenters = explode(', ', $loop_presenters);
-			foreach ($loop_presenters as $test) {
-				if (is_array($current_post_presenters)) {
-					foreach ($current_post_presenters as $comp) {
-						if ($test == $comp) {
-							if ($post_id != $current_post_id) {
-								$add = true;
-								foreach ($speakerPosts as $toAdd) {
-									if ($toAdd == $post_id)
-										$add = false;
-								}
-								if ($add)
-									array_push($speakerPosts, $post_id);
-							}
-						}
-					}
-				} else {
-					if ($test == $current_post_presenters) {
-						if ($post_id != $current_post_id) {
-							$add = true;
-							foreach ($speakerPosts as $toAdd) {
-								if ($toAdd == $post_id)
-									$add = false;
-							}
-							if ($add)
-								array_push($speakerPosts, $post_id);
-						}
-					}
-				}
-			}
-			if (count($speakerPosts) == 2)
-				break;
-		}
-	}
-	if (($speakerPosts))
-		return $speakerPosts;
-	else
-		return "No Posts Found";
+    $args = array(
+        'post_type' => array('devotional','forum'),
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
+        "post__not_in" => array(intval($current_speech_id)),
+        'meta_query' => array(
+            array(
+                'key' => 'presenters',
+                'value' => $speaker_id,
+                'compare' => 'IN'
+            )                   
+        )
+    );
+    $loop = new WP_Query($args);
+    
+    while ($loop->have_posts()) {
+        $loop->the_post();
+        $post = get_post();        
+        array_push($posts, get_post());
+    }
+    
+    if (count($posts) > 0) {
+        return $posts;
+    } else {
+        return false;
+    }
+    
 }
 
 /* * *********************************************************** */
@@ -92,37 +68,26 @@ function getPostsBySpeaker($current_post_id) {
 
 function getPostsByTopic($post_id) {
 	$current_post_tags = get_the_tags($post_id);
-	$sameTopicPosts = array();
-	$counter = 0;
-	$loop = new WP_Query(array('post_type' => array('devotional', 'forum')));
-	if ($loop->have_posts()) {
-		while ($loop->have_posts()) {
-			$loop->the_post();
-			$tags = get_the_tags();
-
-			foreach ($tags as $tag) {
-				foreach ($current_post_tags as $tagTest) {
-					if ($tag->name == $tagTest->name) {
-						$counter++;
-						if (!(get_the_ID() == $current_post)) {
-							$toAdd = get_the_ID();
-							$exists = false;
-							foreach ($sameTopicPosts as $id) {
-								if ($id == $toAdd)
-									$exists = true;
-							}
-							if (!$exists) {
-								if (count($sameTopicPosts) < 2)
-									array_push($sameTopicPosts, $toAdd);
-							}
-						}
-						continue;
-					}
-				}
-			}
-		}
-	}
-	return $sameTopicPosts;
+    $posts = false;
+    
+    if ($current_post_tags) { 
+        $tags = array_map(function($tag) {
+            return $tag->name . ",";
+        }, $current_post_tags);
+        
+        $args = array(
+            "post_type" => array("devotional", "forum"),
+            "meta_key" => "event_date",
+            "orderby" => "meta_value_num",
+            "order" => "asc",
+            "posts_per_page" => 3,
+            "tags" => $tags,
+            "post__not_in" => array(intval($post_id))
+        );
+        $posts = get_posts($args); 
+    }
+    
+	return $posts;
 }
 
 /* * *********************************************************** */

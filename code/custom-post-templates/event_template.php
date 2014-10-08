@@ -3,7 +3,7 @@ ini_set('display_errors',1);  error_reporting(E_ALL);
 // Include Model
 require_once 'event_model.php';
 
-$current_post = get_the_ID();
+$current_post = get_post(get_the_ID());
 $current_post_type = get_post_type();
 
 
@@ -29,13 +29,8 @@ $presenters = array_map("get_post",explode(",", $presenters));
             <?php include __DIR__."/../partials/event-sidebar/event-details.php"; ?>
             <?php include __DIR__."/../partials/event-sidebar/speaker-bio.php"; ?>
             <?php include __DIR__."/../partials/event-sidebar/featured-speeches.php"; ?>
-            <hr>
             <?php include __DIR__."/../partials/event-sidebar/on-topic.php"; ?>
-            <hr>
             <?php include __DIR__."/../partials/event-sidebar/other-speeches.php"; ?>
-            <div class="center">
-                <a class="speeches-button" href="/<?php echo $current_post_type; ?>s">View All <?php echo $current_post_type; ?>s</a>
-            </div>
         </div>
     </aside>
 </div>

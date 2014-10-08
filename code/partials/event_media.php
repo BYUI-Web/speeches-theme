@@ -98,24 +98,24 @@ else {
             </a>
         </div>
     </div>
-    <div class="addition-featured-more">
-        <div id="watch">
-            <ul>
-                <li><a href="<?php echo $video_download; ?>" download>Download Video</a></li>
-                <li><a href="#">Share (embed link)</a></li>
-            </ul>
+    <?php if (isset($video_download) || isset ($audio_download)) { ?>
+        <div class="addition-featured-more">
+           <?php if (isset($video_download)) { ?>
+                <div id="watch">
+                    <ul>
+                        <li><a href="<?php echo $video_download; ?>" download>Download Video</a></li>
+                        <li><a href="#">Share (embed link)</a></li>
+                    </ul>
+                </div>
+            <?php } ?>
+            <?php if (isset($audio_download)) { ?>
+                <div id="listen">
+                    <ul>
+                        <li><a href="<?php echo $audio_download; ?>" download>Download MP3</a></li>
+                        <li><a href="#">Share (embed link)</a></li>
+                    </ul>
+                </div>
+            <?php } ?>
         </div>
-        <div id="read">
-            <ul>
-                <li><a href="#">Download Transcript</a></li>
-                <li><a href="#">Share (embed link)</a></li>
-            </ul>
-        </div>
-        <div id="listen">
-            <ul>
-                <li><a href="<?php echo $audio_download; ?>" download>Download MP3</a></li>
-                <li><a href="#">Share (embed link)</a></li>
-            </ul>
-        </div>
-    </div>
+    <?php } ?>
 </div>

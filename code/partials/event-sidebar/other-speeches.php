@@ -1,16 +1,18 @@
-<div>
+<?php 
+$posts = getRecent(3, $current_post_type);
+?>
+   
+
+<div class="sidebar-inner other-speeches">
     <h3>Other <?php echo $current_post_type; ?>s</h3>
-    <?php
-    $loop = new WP_Query( array( 'post_type' => $current_post_type, "orderby" => "views") );
-    while ( $loop->have_posts() ) : $loop->the_post(); 
-        $meta = get_post_meta(get_the_ID());
-        if (get_the_ID() == $current_post)
-            continue;
-        ?>
-        <div>
-            <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
-            <p><?php echo getSpeaker(get_the_ID()); ?></p>
-            <p class="meta"><?php echo getSpeakerTitle(get_the_ID()); ?></p>
-        </div>
-    <?php endwhile; ?>
+        <?php foreach($posts as $post) : $post = get_post($post)?>
+            <div class="speech-brief">
+                <a href="<?php echo $post->guid ?>"><?php echo $post->post_title ?></a>
+                <p><?php 
+                    $speaker = get_post($post->presenters);
+                    echo $speaker->post_title;
+                    ?></p>
+            </div>
+        <?php endforeach; ?>
+    <a class="read-more" href="<?php echo $current_post_type; ?>s">View More</a>
 </div>

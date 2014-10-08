@@ -1,16 +1,18 @@
-<div class="sidebar-inner group sidebar-featured-speeches">
-    <h3>Related Speeches</h3>
+<?php 
+$posts = getPostsBySpeaker($current_post->presenters, $current_post->ID); 
+if ($posts) {
+?>
+<div class="sidebar-inner group by-speaker">
+    <h3>By This Speaker</h3>
     <div>
-        <h3>Other By this Speaker</h3>
-        <?php 
-        $posts = getPostsBySpeaker($current_post); 
-        if (is_array($posts)) :
-            foreach ($posts as $post) : ?>
-        <div>
-            <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
-            <p><?php echo getSpeaker($post); ?></p>
-            <p class="meta"><?php echo getSpeakerTitle($post); ?>
-            </p>
-        </div>
-    <?php endforeach; else: echo $posts; endif;?>
+        <?php foreach ($posts as $post) : ?>
+            <div class="speech-brief">
+                <a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a>
+                <?php foreach($presenters as $presentor) : ?>
+                    <p><?php echo $presenter->post_title; ?></p>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach;?>
+    </div>
 </div>
+<?php } ?>
