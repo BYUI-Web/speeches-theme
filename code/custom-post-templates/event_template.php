@@ -25,7 +25,7 @@ $presenters = explode(",", $presenters);
 	    <div class="col-xs-12 col-sm-8">
 	        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 	            <?php include_once(__DIR__.'/../partials/event_media.php'); ?>
-	            <?php include_once(__DIR__.'../partials/transcript_discuss.php'); ?>
+	            <?php include_once(__DIR__.'/../partials/transcript_discuss.php'); ?>
 	        </div>
 	    </div>
 	<?php require_once __DIR__.'/../partials/event_template_sidebar.php'; ?>

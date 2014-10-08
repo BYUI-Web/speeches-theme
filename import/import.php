@@ -94,10 +94,9 @@ function insertSpeech($data, $speaker_id) {
     //transcript
     if ($data->transcriptPath && !$inFuture) {
         $transcript = getTranscript($data->transcriptPath);
-        
         if ($transcript !== false) {
             update_post_meta($post_id, "transcript", $transcript);
-            update_post_meta($post_id, "transcript", "yes");
+            update_post_meta($post_id, "transcript_status", "yes");
         } else {
             update_post_meta($post_id, "transcript_status", "not_yet");
         }
@@ -126,18 +125,19 @@ function getVideoEmbed($video) {
 }
 
 function getTranscript($url) {
-    $html = @file_get_html($url);
-    
+    $html = @file_get_html($url);    
     
     if ($html !== false) {
         $children = $html->find(".leftAREA", 0)->children();
-        array_slice($children, 0, 6);
-
+        $children = array_slice($children, 6);
         $html = "";
-        foreach ($children as $child) {
-            $html .= $child->outerhtml;
+        $numChildren = count($children);
+        for ($i = 0; $i < $numChildren; $i++) {
+            $html .= $children[$i]->outertext;
         }
     }
+    
+    $html = str_replace("<p>&nbsp;</p>", "", $html);
     
     return $html;
 }
