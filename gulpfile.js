@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     flatten = require("gulp-semiflat"),
     plumber = require("gulp-plumber"),
     imagemin = require("gulp-imagemin"),
+    autoprefixer = require("gulp-autoprefixer"),
     exec = require("child_process").exec,
     fs = require("fs");
 
@@ -71,6 +72,9 @@ gulp.task('minifycss', function () {
         .pipe(plumber())
         .pipe(flatten("./dist/assets/css"))
         .pipe(minify())
+        .pipe(autoprefixer({
+            browsers: ["last 2 versions", "ie 9"]
+        }))
         .pipe(gulp.dest("./dist/assets/css/"));
 });
 
@@ -99,8 +103,9 @@ gulp.task("imagemin", function () {
         .pipe(gulp.dest("./dist/assets/images"))
 });
 
-gulp.task('default', ['insert', 'copy', 'less', 'minifycss', "minifystyle", 'minifyjs'], function () {
+gulp.task('default', ['insert', 'copy', 'less', 'minifycss', "minifystyle", 'minifyjs', 'imagemin'], function () {
     gulp.watch('./**/*.less', ['less', 'minifycss']);
     gulp.watch(['./code/assets/js/admin/*.js', '!./dist/**/*.js'], ['minifyjs']);
     gulp.watch(['./code/**', '!./dist/**'], ["insert", "copy"]);
+    gulp.watch(['./code/assets/images/**'], ["imagemin"]);
 });
