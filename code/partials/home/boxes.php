@@ -25,6 +25,11 @@ while ($popularLoop->have_posts()) {
 }
 
 $popularSpeaker = get_post($popular->presenters);
+$popularSpeakerImage = get_the_post_thumbnail($popular->presenters, array("class" => "speaker-image hidden-xs hidden-sm"));
+if ($popularSpeakerImage === "") {
+    $popularSpeakerImage = "<img class='speaker-image hidden-xs hidden-sm' src='" . get_bloginfo('template_url') . "/assets/images/photo-unavailable.jpg'  />";
+
+}
 
 //get most recent
 $recent = getRecent(2, array("devotional", "forum"));
@@ -39,7 +44,7 @@ $upcoming = getUpcoming(array("devotional", "forum"), 3);
     <div class="box">
         <h4 class="header">Popular</h4>
         <a href="<?php echo $popular->guid; ?>" class="speech-link">
-            <img class="speaker-image hidden-xs hidden-sm" src="<?php bloginfo('template_url') ?><?php echo get_the_post_thumbnail($popular->presenters); ?>" />
+            <?php echo $popularSpeakerImage ?>
             <p class="when"><?php echo date('d F Y', $popular->event_date); ?></p>
             <p class="title"><?php echo $popular->post_title; ?></p>
             <p class="who"><?php echo $popularSpeaker->post_title; ?></p>

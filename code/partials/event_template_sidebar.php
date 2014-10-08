@@ -21,7 +21,13 @@
 			<?php foreach ($presenters as $person) : ?>
 				<h2>Speaker Bio</h2>
 				<div class="group">
-					<div class="sidebar-speaker-image"><?php echo get_the_post_thumbnail($person); ?></div>
+					<div class="sidebar-speaker-image"><?php 
+                        $speakerImage = get_the_post_thumbnail($person); 
+                        if ($speakerImage === "") {
+                            $speakerImage = "<img src='" . get_bloginfo("template_url") . "/assets/images/photo-unavailable.jpg' />";
+                        }
+                        echo $speakerImage;
+                        ?></div>
 					<div class="sidebar-speaker-info">
 						<h3><?php echo get_the_title($person); ?></h3>
 						<?php 

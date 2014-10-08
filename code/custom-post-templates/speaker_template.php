@@ -9,6 +9,9 @@ $id = get_the_ID();
 $speaker_id = $id;
 $speakerName = get_the_title();
 $image = wp_get_attachment_image_src(get_post_thumbnail_id());
+if (!$image) {
+    $image = get_bloginfo("template_url") . "/assets/images/photo-unavailable.jpg";
+}
 $bio = wpautop(get_post_meta($id, "speaker_bio", true));
 $speaker_posts = getPostsBySpeaker($id);
 ?>
@@ -16,7 +19,7 @@ $speaker_posts = getPostsBySpeaker($id);
 <div class="row speaker-wrapper">
     <div class="col-xs-12 col-md-3">
         <div class="speaker-image">
-            <img src="<?php echo $image[0]; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
+            <img src="<?php echo $image; ?>" alt="<?php echo $speakerName; ?>'s Image"/>
         </div>
         <?php require_once __DIR__.'/../partials/speaker_social.php'; ?>
     </div>
