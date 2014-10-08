@@ -11,6 +11,7 @@ function postTimeStatus($post_id) {
 	$now = strtotime('now');
 	$post_start_time = get_post_meta($post_id, 'event_date');
 	$post_end_time = get_post_meta($post_id, 'event_end_time');
+    
 	if ($now > $post_end_time[0]) {
 		return 'past';
 	} elseif ($now > $post_start_time) {

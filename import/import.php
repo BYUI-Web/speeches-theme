@@ -68,10 +68,13 @@ function insertSpeech($data, $speaker_id) {
         $date = date_create($data->date);
         date_add($date, date_interval_create_from_date_string('3 months'));
         $dateTime = strtotime(date_format($date, "Y-m-d") . " 2:00 PM");
+        $dateEndTime = strtotime(date_format($date, "Y-m-d") . " 3:00 PM");
         update_post_meta($post_id, "event_date", $dateTime);
+        update_post_meta($post_id, "event_end_time", $dateEndTime);
         $inFuture = (time() < $dateTime);
     } else {
         update_post_meta($post_id, "event_date", strtotime($data->date . " 2:00 PM"));
+        update_post_meta($post_id, "event_end_time", strtotime($data->date . " 3:00 PM"));
     }
     
 
