@@ -27,7 +27,7 @@ function postTimeStatus($post_id) {
 /* * ********* Returns Array of 2 posts || "No Posts Found"; ********** */
 /* * ********************************************************* */
 
-function getPostsBySpeaker($speaker_id, $current_speech_id) {
+function getPostsBySpeaker($speaker_id, $current_speech_id = -1) {
     $posts = array();
 
     $args = array(
