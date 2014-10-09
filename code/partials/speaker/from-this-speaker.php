@@ -14,13 +14,9 @@ $speaker_posts = getPostsBySpeaker($speaker->ID);
                     $transcript_snippet = substr($speech->transcript, 0, 150);
                     ?>
                     <li class="row">
-                        <div class="speaker-post-date col-xs-2">
-                            <p class="speaker-post-day"><?php echo date("d", $speech->event_date); ?></p>
-                            <p class="speaker-post-my"><?php echo date("M Y", $speech->event_date); ?></p>
-                        </div>
                         <div class="col-xs-10">
                             <a href="<?php echo $speech->guid; ?>" class="speaker-post-title"><?php echo $speech->post_title; ?></a>
-                            <blockquote class="speaker-post-snip"><?php echo $transcript_snippet; ?>...</blockquote>
+                            <p class="event-date"><?php echo date("F d, Y", $speech->event_date); ?></p>
                         </div>
                     </li>
                 <?php endforeach; ?>

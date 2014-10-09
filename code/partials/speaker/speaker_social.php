@@ -6,7 +6,7 @@ $website = $speaker->website;
 ?>
 
 <?php if (!empty($facebook) || !empty($twitter) || !empty($google_plus) || !empty($website)) : ?>
-    <div class="connect speech-box">
+    <div class="connect speech-box col-all-12 col-xs-6 col-md-12">
         <h3>Connect</h3>
         <div class="speaker-social">
             <?php
