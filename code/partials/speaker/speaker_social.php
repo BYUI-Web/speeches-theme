@@ -1,8 +1,8 @@
 <?php
-$facebook = get_post_meta($speaker_id, "facebook", true);
-$twitter = get_post_meta($speaker_id, "twitter", true);
-$google_plus = get_post_meta($speaker_id, "google_plus", true);
-$website = get_post_meta($speaker_id, "website", true);
+$facebook = $speaker->facebook;
+$twitter = $speaker->twitter;
+$google_plus = $speaker->google_plus;
+$website = $speaker->website;
 ?>
 
 <?php if (!empty($facebook) || !empty($twitter) || !empty($google_plus) || !empty($website)) : ?>
@@ -25,4 +25,4 @@ $website = get_post_meta($speaker_id, "website", true);
             ?>
         </div>
     </div>
-    <?php endif; ?>
+<?php endif; ?>
