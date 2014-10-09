@@ -14,6 +14,7 @@ Version: 2.0
 @import "less/header.less";
 @import "less/nav.less";
 @import "less/aside.less";
+@import "less/event-media.less";
 
 /* PAGES */
 @import "less/home.less"; 
@@ -73,113 +74,6 @@ div.entry {
         color:#fff;
         text-decoration: none;
         background-color:lighten(#323133,20%);
-    }
-}
-
-
-div.event-featured {
-    object {
-        width:100% !important;
-    }
-    #video-player {
-        img {
-            width: 100%;
-        }
-        p {
-            background-color: @orange;
-            color: #FFFFFF;
-            margin-top: -40px;
-            padding: 20px 5px;
-            position: relative;
-            top: -280px;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        iframe {
-            width:100%;
-        }
-    }
-    #audio-player {
-        display:none;
-    }
-    .additional-featured {
-        margin-top:20px;
-        .custom-box {
-            width:25%;
-            display:block;
-            float:left;
-            padding-right:2%;
-            cursor: pointer;
-            @media only screen and (max-width:768px) {
-                width:50%;
-                &:nth-child(2) {
-                    border-right:none;
-                    border-bottom:1px solid @byui-blue;
-                }
-                &:first-child {
-                    border-bottom:1px solid @byui-blue;
-                }
-            }
-            .left {
-                text-align: left;
-                float:left;
-            }
-            &.last {
-                border:none;
-            }
-            &:hover {
-                background-color:@byui-blue;
-                h3 {
-                    color:#fff;
-                }
-            }
-            h3 {
-                margin:0;
-                color:@byui-blue;
-                font-size:18px;
-                line-height: 60px;
-                @media only screen and (min-width:768px) {
-                    line-height: 40px;
-                }
-                @media only screen and (min-width:992px) {
-                    line-height: 60px;
-                }
-            }
-            &:after {
-                clear:both;
-            }
-            .feat_icon {
-                padding-left:15px;
-                height:60px;
-                .paddingTopBot(10px);
-                width: auto;
-                float: left;
-                @media only screen and (min-width:768px) {
-                    height: 40px;
-                }
-                @media only screen and (min-width:992px) {
-                    height: 60px;
-                }
-            }
-        }
-        .disabled {
-            h3 {
-                color: lighten(@gray, 30%);
-            }
-        }
-    }
-    .addition-featured-more {
-        clear:both;
-        div {
-            display:none;
-            ul {
-                margin-top:10px;
-                list-style-type:none;
-            }
-        }
-        div:first-child {
-            display:block;
-        }
     }
 }
 

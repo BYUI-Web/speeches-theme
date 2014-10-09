@@ -34,5 +34,5 @@ $presenters = array_map("get_post",explode(",", $presenters));
         </div>
     </aside>
 </div>
-
+<script src="<?php bloginfo('template_url') ?>/assets/js/theme/mediaDisplay.js"></script>
 <?php get_footer(); ?>
