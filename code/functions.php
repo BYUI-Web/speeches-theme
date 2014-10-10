@@ -208,6 +208,16 @@ function isPage() {
     return $pageName;
 }
 
+function wp_get_all_tags( $args = '' ) {
+
+    $tags = get_terms('post_tag');
+    $topics = array();
+    foreach($tags as $tag) {
+        array_push($topics, $tag->name);
+    }
+    return $topics;
+}
+
 
 // Plugin Extension (Custom Post Types)
 require_once 'custom-post-templates/wp-extensions.php';

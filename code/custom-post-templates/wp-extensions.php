@@ -490,7 +490,7 @@ function indv_pages($template) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;
         }
     }
-    if ($page == '/archive') {
+    if (strpos($page, "/archive") !== -1) {
         $templatefilename = 'event_archive.php';
         if (file_exists(TEMPLATEPATH . '/custom-post-templates/' . $templatefilename)) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;

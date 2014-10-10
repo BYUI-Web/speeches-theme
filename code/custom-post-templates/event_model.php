@@ -324,4 +324,26 @@ function getUpcomingNaturalTiming($speech) {
 		$location = get_post_meta($post_id, 'event_location');
 		return $location[0];
 	}
-	?>
+
+
+    /* Gets the date ranges for all of the speeches */
+    function getDateRanges() {
+        $oldestSpeech = get_posts(array(
+            "post_type" => array("devotional", "forum"),
+            'meta_key' => 'event_date',
+			'orderby' => 'meta_value_num',
+            'order' => 'ASC',
+            "posts_per_page" => 1
+        ))[0];
+        $newestSpeech = get_posts(array(
+            "post_type" => array("devotional", "forum"),
+            'meta_key' => 'event_date',
+			'orderby' => 'meta_value_num',
+            'order' => 'DESC',
+            "posts_per_page" => 1
+        ))[0];
+        
+        
+        return array(intval(date("Y", $oldestSpeech->event_date)), intval(date("Y", $newestSpeech->event_date)));        
+    }
+?>
