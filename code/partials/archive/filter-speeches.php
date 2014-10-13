@@ -9,12 +9,19 @@ if ($events == "") {
     $events = array("devotional", "forum");
 }
 
+//set the topic
+$topics = get_query_var("topic");
 
 
 $args = array(
     "post_type" => $events,
     "posts_per_page" => -1
 );
+
+//if the topic is not empty then we want to set it
+if ($topics != "") {
+    $args["tag_slug__in"] = $topics;
+}
 
 //get the number of posts
 $countQuery = new WP_Query();
