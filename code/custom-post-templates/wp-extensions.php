@@ -490,7 +490,7 @@ function indv_pages($template) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;
         }
     }
-    if (strpos($page, "/archive") !== -1) {
+    if (strpos($page, "/archive") !== false) {
         $templatefilename = 'event_archive.php';
         if (file_exists(TEMPLATEPATH . '/custom-post-templates/' . $templatefilename)) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;
@@ -548,6 +548,13 @@ function change_default_title( $title ){
 }
 
 add_filter( 'enter_title_here', 'change_default_title' );
+
+function add_query_vars_filter( $vars ){
+    $vars[] = "page";
+    array_push($vars, "event");
+    return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
 ?>
