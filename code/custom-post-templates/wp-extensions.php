@@ -554,6 +554,10 @@ function add_query_vars_filter( $vars ){
     array_push($vars, "event");
     array_push($vars, "topic");
     array_push($vars, "speaker");
+    array_push($vars, "start_month");
+    array_push($vars, "start_year");
+    array_push($vars, "end_month");
+    array_push($vars, "end_year");
     return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );

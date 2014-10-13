@@ -1,5 +1,18 @@
 /************* Speaker Archive *************/
 
+@button-background: #333;
+@button-color: #fff;
+
+.archive-filters {
+    .btn {
+        margin-top: .5em;
+    }
+    .btn-default {
+        color: @button-color;
+        background-color: @button-background;        
+    }
+}
+
 /* Sidebar */
 .filter-box {
     border: black solid 1px;
@@ -88,15 +101,60 @@
             &:hover {
                 text-decoration:none;
             }
+        }
+    }
+}
+.archive-results {
+    .result-count {
+        text-transform:uppercase;
+        margin: 0 0 20px;
+        padding-bottom:5px;
+        border-bottom:solid #eee 2px;
+        font-weight:bold;
+        font-size:120%;
+    }
+    .result {
+        margin-left:25px;
+        margin-bottom:20px;
 
-/** Styles for demo testing, these can be removed as soon as needed **/
-            &:active {
-                display: none;
-                & + .flat-form-elements {
-                    display:block !important;
-                }
+        &.devotional {
+            .result-header {
+                color:#d9541e;
             }
-/*END DEMO STYLES*/
+        }
+
+        &.forum {
+            .result-header {
+                color:#9e4276;
+            }
+        }
+
+        .result-header {
+            font-size:125%;
+            font-weight:bold;
+            line-height:110%;
+
+            .result-type {
+                text-transform:uppercase;
+            }
+        }
+
+        .result-title {
+            font-size:125%;
+            font-weight:bold;
+            line-height:120%;
+            color: #333;
+        }
+
+        .result-presenter {
+            font-weight:bold;
+            font-size:85%;
+        }
+
+        .result-presenter-title {
+            font-size:85%;
+            font-style:italic;
+            line-height:100%;
         }
     }
 }

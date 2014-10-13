@@ -8,8 +8,8 @@ include __DIR__."/filter-speeches.php";
             $speaker = get_post($speech->presenters);        
     ?>
         <div class="<?php echo $speech->post_type;?> result">
-            <a href="<?php echo $speech->guid; ?>" class="result-header"><span class="result-type"><?php echo ucwords($speech->post_type); ?></span>: <?php echo date("F jS, Y", $speech->event_date); ?></a>
-            <div class="result-title"><?php echo $speech->post_title; ?></div>
+            <div class="result-header"><span class="result-type"><?php echo ucwords($speech->post_type); ?></span>: <?php echo date("F jS, Y", $speech->event_date); ?></div>
+            <a href="<?php echo $speech->guid; ?>" ><div class="result-title"><?php echo $speech->post_title; ?></div></a>
             <div class="result-presenter"><?php echo $speaker->post_title; ?></div>
             <div class="result-presenter-title"><?php echo $speaker->title; ?></div>
         </div>
