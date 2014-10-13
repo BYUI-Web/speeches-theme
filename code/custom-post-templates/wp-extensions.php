@@ -553,6 +553,7 @@ function add_query_vars_filter( $vars ){
     $vars[] = "page";
     array_push($vars, "event");
     array_push($vars, "topic");
+    array_push($vars, "speaker");
     return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
