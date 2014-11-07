@@ -210,6 +210,7 @@ function devotional_metaboxes() {
     $prep_material = get_post_meta($post->ID, 'prep_material', true);
     $transcript_status = get_post_meta($post->ID, 'transcript_status' ,true);
     $transcript = get_post_meta($post->ID, 'transcript', true);
+    $excerpt = get_post_meta($post->ID, 'excerpt', true);
     $presenters = get_post_meta($post->ID, 'presenters', true);
     $event_end_time = get_post_meta($post->ID, 'event_end_time', true);
     $event_location = get_post_meta($post->ID, 'event_location', true);
@@ -277,8 +278,10 @@ function devotional_metaboxes() {
     echo '<input type="text" name="audio_download" value="' . $audio_download . '" class="widefat" /></div>';
     echo '<p>Transcript</p>';
     echo '<input type="radio" name="transcript_status" value="yes" id="transcript_status_yes"' . (($transcript_status == "yes") ? 'checked' : '') . '/><label for="transcript_status_yes">Yes </label><input type="radio" name="transcript_status" value="not_yet" id="transcript_status_not_yet" value="not_yet" ' . (($transcript_status == "not_yet" || $transcript_status == "not_yet") ? 'checked' : '') . '/><label for="transcript_status_not_yet">Not Yet </label><input type="radio" name="transcript_status" id="transcript_status_never" value="never"' . (($transcript_status == "never") ? 'checked' : '') . '/><label for="transcript_status_never">Never </label>';
+    echo '<div id="transcript-excerpt"><p>Excerpt: </p>';
+    echo '<textarea rows="5" name="excerpt" class="widefat">' . $excerpt . '</textarea></div>';
     echo '<div id="transcript"><p>Transcript: </p>';
-    echo '<textarea rows="10" name="transcript" class="widefat">' . $transcript . '</textarea></div>';
+    wp_editor($transcript, "transcript-editor", array("textarea_name" => "transcript"));
 }
 
 // Save the Metabox Data
@@ -374,6 +377,7 @@ function save_event_meta($post_id, $post) {
     $devotional_meta['video_status'] = $_POST['video_status'];
     $devotional_meta['audio_status'] = $_POST['audio_status'];
     $devotional_meta['transcript_status'] = $_POST['transcript_status'];
+    $devotional_meta["excerpt"] = $_POST["excerpt"];
 
     //convert event_date meta tag to unix time stamp
     $devotional_meta['event_date'] = strtotime($devotional_meta['event_date']);

@@ -4,7 +4,6 @@ var gulp = require('gulp'),
     gfi = require("gulp-file-insert"),
     less = require("gulp-less"),
     minify = require("gulp-minify-css"),
-    notify = require("gulp-notify"),
     rename = require("gulp-rename"),
     uglify = require("gulp-uglify"),
     replace = require("gulp-replace"),
@@ -63,8 +62,7 @@ gulp.task('less', function () {
         .pipe(plumber())
         .pipe(less())
         .pipe(rename("style.css"))
-        .pipe(gulp.dest("./dist/"))
-        .pipe(notify('LESS Compiled Succesfully'));;
+        .pipe(gulp.dest("./dist/"));
 });
 
 gulp.task('minifycss', function () {
@@ -90,8 +88,7 @@ gulp.task('minifyjs', function () {
         .pipe(plumber())
         .pipe(concat("speechesjs.min.js"))
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/assets/js/'))
-        .pipe(notify('Javascript Compiled Succesfully'));
+        .pipe(gulp.dest('./dist/assets/js/'));
 });
 
 gulp.task("imagemin", function () {

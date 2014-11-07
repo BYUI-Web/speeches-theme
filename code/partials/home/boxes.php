@@ -49,6 +49,7 @@ $upcoming = getUpcoming(array("devotional", "forum"), 3);
             <p class="title"><?php echo $popular->post_title; ?></p>
             <p class="who"><?php echo $popularSpeaker->post_title; ?></p>
             <p class="position"><?php echo $popularSpeaker->title; ?></p>
+            <p class="excerpt"><?php echo $popular->excerpt; ?></p>
         </a>
     </div>
     <div class="box">
