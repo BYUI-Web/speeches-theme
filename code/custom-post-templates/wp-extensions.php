@@ -281,7 +281,7 @@ function devotional_metaboxes() {
     echo '<div id="transcript-excerpt"><p>Excerpt: </p>';
     echo '<textarea rows="5" name="excerpt" class="widefat">' . $excerpt . '</textarea></div>';
     echo '<div id="transcript"><p>Transcript: </p>';
-    echo '<textarea rows="10" name="transcript" class="widefat">' . $transcript . '</textarea></div>';
+    wp_editor($transcript, "transcript-editor", array("textarea_name" => "transcript"));
 }
 
 // Save the Metabox Data
