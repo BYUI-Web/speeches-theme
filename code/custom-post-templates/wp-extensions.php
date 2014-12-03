@@ -494,7 +494,7 @@ function indv_pages($template) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;
         }
     }
-    if ($page == '/archive') {
+    if (strpos($page, "/archive") !== false) {
         $templatefilename = 'event_archive.php';
         if (file_exists(TEMPLATEPATH . '/custom-post-templates/' . $templatefilename)) {
             $return_template = TEMPLATEPATH . '/custom-post-templates/' . $templatefilename;
@@ -552,6 +552,19 @@ function change_default_title( $title ){
 }
 
 add_filter( 'enter_title_here', 'change_default_title' );
+
+function add_query_vars_filter( $vars ){
+    $vars[] = "page";
+    array_push($vars, "event");
+    array_push($vars, "topic");
+    array_push($vars, "speaker");
+    array_push($vars, "start_month");
+    array_push($vars, "start_year");
+    array_push($vars, "end_month");
+    array_push($vars, "end_year");
+    return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
 ?>
