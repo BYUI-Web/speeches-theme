@@ -35,11 +35,13 @@ jQuery(document).ready(function() {
     });
     
     jQuery('#transcript_status_not_yet, #transcript_status_never').click(function() {
-       jQuery('#transcript').hide(); 
+       jQuery('#transcript').hide();
+       jQuery("#transcript-excerpt").hide();
     });
     
     jQuery('#transcript_status_yes').click(function() {
-       jQuery('#transcript').show(); 
+       jQuery('#transcript').show();
+       jQuery("#transcript-excerpt").show();
     });
     
     jQuery('#live_stream_no').click(function() {
